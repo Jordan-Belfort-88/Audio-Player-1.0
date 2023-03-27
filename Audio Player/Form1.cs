@@ -6,184 +6,184 @@ namespace Audio_Player
 
     public partial class Form1 : Form
     {
-        // Canal 1
+        // Channel 1
         private WaveOutEvent waveOutAudio;
         private WaveOutEvent waveOutMic;
-        private string rutaArchivo;
+        private string fileRoute;
         private WaveInEvent waveInDevice;
-        private bool reproduciendo = false;
+        private bool playing = false;
         private long pausePosition = 0;
         private AudioFileReader reader;
         private float volumen = 1f;
-        private WaveFormat waveFormatSeleccionado;
+        private WaveFormat waveFormatSelected;
 
-        // Canal 2
+        // Channel 2
         private WaveOutEvent waveOutAudio2;
         private WaveOutEvent waveOutMic2;
-        private string rutaArchivo2;
+        private string fileRoute2;
         private WaveInEvent waveInDevice2;
-        private bool reproduciendo2 = false;
+        private bool playing2 = false;
         private long pausePosition2 = 0;
         private AudioFileReader reader2;
         private float volumen2 = 1f;
-        private WaveFormat waveFormatSeleccionado2;
+        private WaveFormat waveFormatSelected2;
 
-        // Canal 3
+        // Channel 3
         private WaveOutEvent waveOutAudio3;
         private WaveOutEvent waveOutMic3;
-        private string rutaArchivo3;
+        private string fileRoute3;
         private WaveInEvent waveInDevice3;
-        private bool reproduciendo3 = false;
+        private bool playing3 = false;
         private long pausePosition3 = 0;
         private AudioFileReader reader3;
         private float volumen3 = 1f;
-        private WaveFormat waveFormatSeleccionado3;
+        private WaveFormat waveFormatSelected3;
 
-        // Canal 4
+        // Channel 4
         private WaveOutEvent waveOutAudio4;
         private WaveOutEvent waveOutMic4;
-        private string rutaArchivo4;
+        private string fileRoute4;
         private WaveInEvent waveInDevice4;
-        private bool reproduciendo4 = false;
+        private bool playing4 = false;
         private long pausePosition4 = 0;
         private AudioFileReader reader4;
         private float volumen4 = 1f;
-        private WaveFormat waveFormatSeleccionado4;
+        private WaveFormat waveFormatSelected4;
 
         public Form1()
         {
             InitializeComponent();
-            LlenarComboBoxSalidas();
+            FillComboBoxOuts();
 
-            // Establecer el valor por defecto
-            waveFormatSeleccionado = new WaveFormat(22050, 16, 1);
-            waveFormatSeleccionado2 = new WaveFormat(22050, 16, 1);
-            waveFormatSeleccionado3 = new WaveFormat(22050, 16, 1);
-            waveFormatSeleccionado4 = new WaveFormat(22050, 16, 1);
+            // Set default value
+            waveFormatSelected = new WaveFormat(22050, 16, 1);
+            waveFormatSelected2 = new WaveFormat(22050, 16, 1);
+            waveFormatSelected3 = new WaveFormat(22050, 16, 1);
+            waveFormatSelected4 = new WaveFormat(22050, 16, 1);
         }
 
-        private void LlenarComboBoxSalidas()
+        private void FillComboBoxOuts()
         {
-            // Obtener información sobre los dispositivos de salida de audio disponibles
+            // Get avaible devices information
             for (int i = 0; i < WaveOut.DeviceCount; i++)
             {
                 WaveOutCapabilities capabilities = WaveOut.GetCapabilities(i);
-                CBSalidas.Items.Add(capabilities.ProductName);
-                CBSalidas2.Items.Add(capabilities.ProductName);
-                CBSalidas3.Items.Add(capabilities.ProductName);
-                CBSalidas4.Items.Add(capabilities.ProductName);
+                CBOuts.Items.Add(capabilities.ProductName);
+                CBOuts2.Items.Add(capabilities.ProductName);
+                CBOuts3.Items.Add(capabilities.ProductName);
+                CBOuts4.Items.Add(capabilities.ProductName);
             }
         }
 
-        private void CBSalidas_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void CBSalidas2_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void CBSalidas3_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void CBSalidas4_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Bloquear_CheckedChanged(object sender, EventArgs e)
+        private void block_CheckedChanged(object sender, EventArgs e)
         {
-            if (Bloquear1.Checked)
+            if (Block1.Checked)
             {
-                CBSalidas.Enabled = false;
+                CBOuts.Enabled = false;
             }
             else
             {
-                CBSalidas.Enabled = true;
+                CBOuts.Enabled = true;
             }
         }
-        private void Bloquear2_CheckedChanged(object sender, EventArgs e)
+        private void block2_CheckedChanged(object sender, EventArgs e)
         {
-            if (Bloquear2.Checked)
+            if (Block2.Checked)
             {
-                CBSalidas2.Enabled = false;
+                CBOuts2.Enabled = false;
             }
             else
             {
-                CBSalidas2.Enabled = true;
+                CBOuts2.Enabled = true;
             }
         }
-        private void Bloquear3_CheckedChanged(object sender, EventArgs e)
+        private void block3_CheckedChanged(object sender, EventArgs e)
         {
-            if (Bloquear3.Checked)
+            if (Block3.Checked)
             {
-                CBSalidas3.Enabled = false;
+                CBOuts3.Enabled = false;
             }
             else
             {
-                CBSalidas3.Enabled = true;
+                CBOuts3.Enabled = true;
             }
         }
-        private void Bloquear4_CheckedChanged(object sender, EventArgs e)
+        private void block4_CheckedChanged(object sender, EventArgs e)
         {
-            if (Bloquear4.Checked)
+            if (Block4.Checked)
             {
-                CBSalidas4.Enabled = false;
+                CBOuts4.Enabled = false;
             }
             else
             {
-                CBSalidas4.Enabled = true;
+                CBOuts4.Enabled = true;
             }
         }
 
 
-        private void BotónSeleccionar_Click(object sender, EventArgs e)
+        private void buttonSelect_Click(object sender, EventArgs e)
         {
-            // Mostrar el cuadro de diálogo para seleccionar un archivo de audio
-            if (AbrirArchivo.ShowDialog() == DialogResult.OK)
+            // Show dialog to select an audio file
+            if (openFile.ShowDialog() == DialogResult.OK)
             {
-                // Obtener la ruta del archivo de audio seleccionado
-                rutaArchivo = AbrirArchivo.FileName;
+                // Get the selected file route
+                fileRoute = openFile.FileName;
 
             }
         }
-        private void BotónSeleccionar2_Click(object sender, EventArgs e)
+        private void buttonSelect2_Click(object sender, EventArgs e)
         {
-            // Mostrar el cuadro de diálogo para seleccionar un archivo de audio
-            if (AbrirArchivo2.ShowDialog() == DialogResult.OK)
+            // Show dialog to select an audio file
+            if (openFile2.ShowDialog() == DialogResult.OK)
             {
-                // Obtener la ruta del archivo de audio seleccionado
-                rutaArchivo2 = AbrirArchivo2.FileName;
+                // Get the selected file route
+                fileRoute2 = openFile2.FileName;
 
             }
         }
-        private void BotónSeleccionar3_Click(object sender, EventArgs e)
+        private void buttonSelect3_Click(object sender, EventArgs e)
         {
-            // Mostrar el cuadro de diálogo para seleccionar un archivo de audio
-            if (AbrirArchivo3.ShowDialog() == DialogResult.OK)
+            // Show dialog to select an audio file
+            if (openFile3.ShowDialog() == DialogResult.OK)
             {
-                // Obtener la ruta del archivo de audio seleccionado
-                rutaArchivo3 = AbrirArchivo3.FileName;
+                // Get the selected file route
+                fileRoute3 = openFile3.FileName;
 
             }
         }
-        private void BotónSeleccionar4_Click(object sender, EventArgs e)
+        private void buttonSelect4_Click(object sender, EventArgs e)
         {
-            // Mostrar el cuadro de diálogo para seleccionar un archivo de audio
-            if (AbrirArchivo4.ShowDialog() == DialogResult.OK)
+            // Show dialog to select an audio file
+            if (openFile4.ShowDialog() == DialogResult.OK)
             {
-                // Obtener la ruta del archivo de audio seleccionado
-                rutaArchivo4 = AbrirArchivo4.FileName;
+                // Get the selected file route
+                fileRoute4 = openFile4.FileName;
 
             }
         }
 
         private void Play_Click_1(object sender, EventArgs e)
         {
-            if (!reproduciendo)
+            if (!playing)
             {
-                // Verificar si ya hay una instancia de WaveOut en uso
+                // Check if there is a WaveOut instance in use
                 if (waveOutAudio != null)
                 {
                     waveOutAudio.Stop();
@@ -191,57 +191,57 @@ namespace Audio_Player
                     waveOutAudio = null;
                 }
 
-                // Crear una instancia de WaveOut para reproducir el archivo de audio
+                // Generates a WaveOut instance to play the audio file
                 waveOutAudio = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada = CBSalidas.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada = CBOuts.SelectedIndex;
 
-                if (string.IsNullOrEmpty(rutaArchivo))
+                if (string.IsNullOrEmpty(fileRoute))
                 {
                     MessageBox.Show("Please select an audio file.");
                     return;
                 }
 
 
-                // Crear una instancia de AudioFileReader para leer el archivo de audio
-                reader = new AudioFileReader(rutaArchivo);
+                // Generates an AudioFileReade instance to read the audio file
+                reader = new AudioFileReader(fileRoute);
 
 
 
-                // Conectar el dispositivo de salida con la instancia de AudioFileReader
+                // Connects the output device with the AudioFileReader instance
                 waveOutAudio.DeviceNumber = salidaSeleccionada;
                 waveOutAudio.Init(reader);
 
-                // Restaurar la posición y el volumen guardados
+                // Restore saved position and volume
                 reader.Volume = volumen;
                 reader.Position = pausePosition;
 
-                // Reproducir el archivo de audio
+                // Play audio file
                 waveOutAudio.Play();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play1.Text = "⏸";
-                reproduciendo = true;
+                playing = true;
             }
             else
             {
-                // Detener reproducción y liberar recursos
+                // Stop play and free resources
                 pausePosition = reader.Position;
-                volumen = reader.Volume; // guardar el volumen actual
+                volumen = reader.Volume; // save current volume
                 waveOutAudio.Stop();
                 waveOutAudio.Dispose();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play1.Text = "▶";
-                reproduciendo = false;
+                playing = false;
             }
         }
         private void Play_Click2(object sender, EventArgs e)
         {
-            if (!reproduciendo2)
+            if (!playing2)
             {
-                // Verificar si ya hay una instancia de WaveOut en uso
+                // Check if there is a WaveOut instance in use
                 if (waveOutAudio2 != null)
                 {
                     waveOutAudio2.Stop();
@@ -249,57 +249,57 @@ namespace Audio_Player
                     waveOutAudio2 = null;
                 }
 
-                // Crear una instancia de WaveOut para reproducir el archivo de audio
+                // Generates a WaveOut instance to play the audio file
                 waveOutAudio2 = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada2 = CBSalidas2.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada2 = CBOuts2.SelectedIndex;
 
-                if (string.IsNullOrEmpty(rutaArchivo2))
+                if (string.IsNullOrEmpty(fileRoute2))
                 {
                     MessageBox.Show("Please select an audio file.");
                     return;
                 }
 
 
-                // Crear una instancia de AudioFileReader para leer el archivo de audio
-                reader2 = new AudioFileReader(rutaArchivo2);
+                // Generates an AudioFileReade instance to read the audio file
+                reader2 = new AudioFileReader(fileRoute2);
 
 
 
-                // Conectar el dispositivo de salida con la instancia de AudioFileReader
+                // Connects the output device with the AudioFileReader instance
                 waveOutAudio2.DeviceNumber = salidaSeleccionada2;
                 waveOutAudio2.Init(reader2);
 
-                // Restaurar la posición y el volumen guardados
+                // Restore saved position and volume
                 reader2.Volume = volumen2;
                 reader2.Position = pausePosition2;
 
-                // Reproducir el archivo de audio
+                // Play audio file
                 waveOutAudio2.Play();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play2.Text = "⏸";
-                reproduciendo2 = true;
+                playing2 = true;
             }
             else
             {
-                // Detener reproducción y liberar recursos
+                // Stop play and free resources
                 pausePosition2 = reader2.Position;
-                volumen2 = reader2.Volume; // guardar el volumen actual
+                volumen2 = reader2.Volume; // save current volume
                 waveOutAudio2.Stop();
                 waveOutAudio2.Dispose();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play2.Text = "▶";
-                reproduciendo2 = false;
+                playing2 = false;
             }
         }
         private void Play_Click3(object sender, EventArgs e)
         {
-            if (!reproduciendo3)
+            if (!playing3)
             {
-                // Verificar si ya hay una instancia de WaveOut en uso
+                // Check if there is a WaveOut instance in use
                 if (waveOutAudio3 != null)
                 {
                     waveOutAudio3.Stop();
@@ -307,57 +307,57 @@ namespace Audio_Player
                     waveOutAudio3 = null;
                 }
 
-                // Crear una instancia de WaveOut para reproducir el archivo de audio
+                // Generates a WaveOut instance to play the audio file
                 waveOutAudio3 = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada3 = CBSalidas3.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada3 = CBOuts3.SelectedIndex;
 
-                if (string.IsNullOrEmpty(rutaArchivo3))
+                if (string.IsNullOrEmpty(fileRoute3))
                 {
                     MessageBox.Show("Please select an audio file.");
                     return;
                 }
 
 
-                // Crear una instancia de AudioFileReader para leer el archivo de audio
-                reader3 = new AudioFileReader(rutaArchivo3);
+                // Generates an AudioFileReade instance to read the audio file
+                reader3 = new AudioFileReader(fileRoute3);
 
 
 
-                // Conectar el dispositivo de salida con la instancia de AudioFileReader
+                // Connects the output device with the AudioFileReader instance
                 waveOutAudio3.DeviceNumber = salidaSeleccionada3;
                 waveOutAudio3.Init(reader3);
 
-                // Restaurar la posición y el volumen guardados
+                // Restore saved position and volume
                 reader3.Volume = volumen3;
                 reader3.Position = pausePosition3;
 
-                // Reproducir el archivo de audio
+                // Play audio file
                 waveOutAudio3.Play();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play3.Text = "⏸";
-                reproduciendo3 = true;
+                playing3 = true;
             }
             else
             {
-                // Detener reproducción y liberar recursos
+                // Stop play and free resources
                 pausePosition3 = reader3.Position;
-                volumen3 = reader3.Volume; // guardar el volumen actual
+                volumen3 = reader3.Volume; // save current volume
                 waveOutAudio3.Stop();
                 waveOutAudio3.Dispose();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play3.Text = "▶";
-                reproduciendo3 = false;
+                playing3 = false;
             }
         }
         private void Play_Click4(object sender, EventArgs e)
         {
-            if (!reproduciendo4)
+            if (!playing4)
             {
-                // Verificar si ya hay una instancia de WaveOut en uso
+                // Check if there is a WaveOut instance in use
                 if (waveOutAudio4 != null)
                 {
                     waveOutAudio4.Stop();
@@ -365,50 +365,50 @@ namespace Audio_Player
                     waveOutAudio4 = null;
                 }
 
-                // Crear una instancia de WaveOut para reproducir el archivo de audio
+                // Generates a WaveOut instance to play the audio file
                 waveOutAudio4 = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada4 = CBSalidas4.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada4 = CBOuts4.SelectedIndex;
 
-                if (string.IsNullOrEmpty(rutaArchivo4))
+                if (string.IsNullOrEmpty(fileRoute4))
                 {
                     MessageBox.Show("Please select an audio file.");
                     return;
                 }
 
 
-                // Crear una instancia de AudioFileReader para leer el archivo de audio
-                reader4 = new AudioFileReader(rutaArchivo4);
+                // Generates an AudioFileReade instance to read the audio file
+                reader4 = new AudioFileReader(fileRoute4);
 
 
 
-                // Conectar el dispositivo de salida con la instancia de AudioFileReader
+                // Connects the output device with the AudioFileReader instance
                 waveOutAudio4.DeviceNumber = salidaSeleccionada4;
                 waveOutAudio4.Init(reader4);
 
-                // Restaurar la posición y el volumen guardados
+                // Restore saved position and volume
                 reader4.Volume = volumen4;
                 reader4.Position = pausePosition4;
 
-                // Reproducir el archivo de audio
+                // Play audio file
                 waveOutAudio4.Play();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play4.Text = "⏸";
-                reproduciendo4 = true;
+                playing4 = true;
             }
             else
             {
-                // Detener reproducción y liberar recursos
+                // Stop play and free resources
                 pausePosition4 = reader4.Position;
-                volumen4 = reader4.Volume; // guardar el volumen actual
+                volumen4 = reader4.Volume; // save current volume
                 waveOutAudio4.Stop();
                 waveOutAudio4.Dispose();
 
-                // Cambiar texto del botón y actualizar estado de reproducción
+                // Changes button text and update playing state
                 Play4.Text = "▶";
-                reproduciendo4 = false;
+                playing4 = false;
             }
         }
 
@@ -420,7 +420,7 @@ namespace Audio_Player
                 waveOutAudio.Stop();
                 waveOutAudio.Dispose();
                 waveOutAudio = null;
-                reproduciendo = false;
+                playing = false;
                 Play1.Text = "▶";
             }
             else
@@ -434,7 +434,7 @@ namespace Audio_Player
                 waveOutAudio2.Stop();
                 waveOutAudio2.Dispose();
                 waveOutAudio2 = null;
-                reproduciendo2 = false;
+                playing2 = false;
                 Play2.Text = "▶";
             }
             else
@@ -448,7 +448,7 @@ namespace Audio_Player
                 waveOutAudio3.Stop();
                 waveOutAudio3.Dispose();
                 waveOutAudio3 = null;
-                reproduciendo3 = false;
+                playing3 = false;
                 Play3.Text = "▶";
             }
             else
@@ -462,7 +462,7 @@ namespace Audio_Player
                 waveOutAudio4.Stop();
                 waveOutAudio4.Dispose();
                 waveOutAudio4 = null;
-                reproduciendo4 = false;
+                playing4 = false;
                 Play4.Text = "▶";
             }
             else
@@ -475,36 +475,36 @@ namespace Audio_Player
             {
                 this.waveInDevice = new WaveInEvent();
                 this.waveInDevice.DataAvailable += WaveInDevice_DataAvailable;
-                this.waveInDevice.WaveFormat = waveFormatSeleccionado;
+                this.waveInDevice.WaveFormat = waveFormatSelected;
                 this.waveInDevice.StartRecording();
 
-                // Crear una instancia de WaveOut para reproducir el audio grabado
+                // Generates a WaveOut instance to play the recorded audio
                 waveOutMic = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada = CBSalidas.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada = CBOuts.SelectedIndex;
 
-                // Conectar el dispositivo de salida con la instancia de WaveInProvider
+                // Connect the output device with the WaveInProvider instance
                 waveOutMic.DeviceNumber = salidaSeleccionada;
                 waveOutMic.Init(new WaveInProvider(waveInDevice));
 
-                // Reproducir el audio grabado en tiempo real
+                // Plays the recorded audio in real time
                 waveOutMic.Volume = 0.8f;
                 waveOutMic.Play();
 
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar1.Text = "Stop";
             }
             else
             {
                 this.waveInDevice.StopRecording();
 
-                // Detener la reproducción del audio grabado y liberar los recursos
+                // Stops playing the recorded audio and free resources
                 waveInDevice.Dispose();
                 waveInDevice = null;
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar1.Text = "Record";
             }
         }
@@ -514,36 +514,36 @@ namespace Audio_Player
             {
                 this.waveInDevice2 = new WaveInEvent();
                 this.waveInDevice2.DataAvailable += WaveInDevice_DataAvailable;
-                this.waveInDevice2.WaveFormat = waveFormatSeleccionado2;
+                this.waveInDevice2.WaveFormat = waveFormatSelected2;
                 this.waveInDevice2.StartRecording();
 
-                // Crear una instancia de WaveOut para reproducir el audio grabado
+                // Generates a WaveOut instance to play the recorded audio
                 waveOutMic2 = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada2 = CBSalidas2.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada2 = CBOuts2.SelectedIndex;
 
-                // Conectar el dispositivo de salida con la instancia de WaveInProvider
+                // Connect the output device with the WaveInProvider instance
                 waveOutMic2.DeviceNumber = salidaSeleccionada2;
                 waveOutMic2.Init(new WaveInProvider(waveInDevice2));
 
-                // Reproducir el audio grabado en tiempo real
+                // Plays the recorded audio in real time
                 waveOutMic2.Volume = 0.8f;
                 waveOutMic2.Play();
 
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar2.Text = "Stop";
             }
             else
             {
                 this.waveInDevice2.StopRecording();
 
-                // Detener la reproducción del audio grabado y liberar los recursos
+                // Stops playing the recorded audio and free resources
                 waveInDevice2.Dispose();
                 waveInDevice2 = null;
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar2.Text = "Record";
             }
         }
@@ -553,36 +553,36 @@ namespace Audio_Player
             {
                 this.waveInDevice3 = new WaveInEvent();
                 this.waveInDevice3.DataAvailable += WaveInDevice_DataAvailable;
-                this.waveInDevice3.WaveFormat = waveFormatSeleccionado3;
+                this.waveInDevice3.WaveFormat = waveFormatSelected3;
                 this.waveInDevice3.StartRecording();
 
-                // Crear una instancia de WaveOut para reproducir el audio grabado
+                // Generates a WaveOut instance to play the recorded audio
                 waveOutMic3 = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada3 = CBSalidas3.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada3 = CBOuts3.SelectedIndex;
 
-                // Conectar el dispositivo de salida con la instancia de WaveInProvider
+                // Connect the output device with the WaveInProvider instance
                 waveOutMic3.DeviceNumber = salidaSeleccionada3;
                 waveOutMic3.Init(new WaveInProvider(waveInDevice3));
 
-                // Reproducir el audio grabado en tiempo real
+                // Plays the recorded audio in real time
                 waveOutMic3.Volume = 0.8f;
                 waveOutMic3.Play();
 
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar3.Text = "Stop";
             }
             else
             {
                 this.waveInDevice3.StopRecording();
 
-                // Detener la reproducción del audio grabado y liberar los recursos
+                // Stops playing the recorded audio and free resources
                 waveInDevice3.Dispose();
                 waveInDevice3 = null;
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar3.Text = "Record";
             }
         }
@@ -592,36 +592,36 @@ namespace Audio_Player
             {
                 this.waveInDevice4 = new WaveInEvent();
                 this.waveInDevice4.DataAvailable += WaveInDevice_DataAvailable;
-                this.waveInDevice4.WaveFormat = waveFormatSeleccionado4;
+                this.waveInDevice4.WaveFormat = waveFormatSelected4;
                 this.waveInDevice4.StartRecording();
 
-                // Crear una instancia de WaveOut para reproducir el audio grabado
+                // Generates a WaveOut instance to play the recorded audio
                 waveOutMic4 = new WaveOutEvent();
 
-                // Obtener el índice del dispositivo de salida seleccionado
-                int salidaSeleccionada4 = CBSalidas4.SelectedIndex;
+                // Gets the selected output device index
+                int salidaSeleccionada4 = CBOuts4.SelectedIndex;
 
-                // Conectar el dispositivo de salida con la instancia de WaveInProvider
+                // Connect the output device with the WaveInProvider instance
                 waveOutMic4.DeviceNumber = salidaSeleccionada4;
                 waveOutMic4.Init(new WaveInProvider(waveInDevice4));
 
-                // Reproducir el audio grabado en tiempo real
+                // Plays the recorded audio in real time
                 waveOutMic4.Volume = 0.8f;
                 waveOutMic4.Play();
 
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar4.Text = "Stop";
             }
             else
             {
                 this.waveInDevice4.StopRecording();
 
-                // Detener la reproducción del audio grabado y liberar los recursos
+                // Stops playing the recorded audio and free resources
                 waveInDevice4.Dispose();
                 waveInDevice4 = null;
 
-                // Actualizar la interfaz de usuario
+                // Update UI
                 Grabar4.Text = "Record";
             }
         }
@@ -631,10 +631,10 @@ namespace Audio_Player
 
         }
 
-        public void BarraVolumenAudio_Scroll(object sender, EventArgs e)
+        public void scrollVolumeAudio_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenAudio1.Tag = reader;
-            int volumen = BarraVolumenAudio1.Value;
+            scrollVolumeAudio1.Tag = reader;
+            int volumen = scrollVolumeAudio1.Value;
             labelAudio1.Text = "Audio\n   " + volumen.ToString();
 
             if (waveOutAudio != null)
@@ -642,10 +642,10 @@ namespace Audio_Player
                 reader.Volume = (float)volumen / 100f;
             }
         }
-        private void BarraVolumenAudio2_Scroll(object sender, EventArgs e)
+        private void scrollVolumeAudio2_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenAudio2.Tag = reader2;
-            int volumen2 = BarraVolumenAudio2.Value;
+            scrollVolumeAudio2.Tag = reader2;
+            int volumen2 = scrollVolumeAudio2.Value;
             labelAudio2.Text = "Audio\n   " + volumen2.ToString();
 
             if (waveOutAudio2 != null)
@@ -653,10 +653,10 @@ namespace Audio_Player
                 reader2.Volume = (float)volumen2 / 100f;
             }
         }
-        private void BarraVolumenAudio3_Scroll(object sender, EventArgs e)
+        private void scrollVolumeAudio3_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenAudio3.Tag = reader3;
-            int volumen3 = BarraVolumenAudio3.Value;
+            scrollVolumeAudio3.Tag = reader3;
+            int volumen3 = scrollVolumeAudio3.Value;
             labelAudio3.Text = "Audio\n   " + volumen3.ToString();
 
             if (waveOutAudio3 != null)
@@ -664,10 +664,10 @@ namespace Audio_Player
                 reader3.Volume = (float)volumen3 / 100f;
             }
         }
-        private void BarraVolumenAudio4_Scroll(object sender, EventArgs e)
+        private void scrollVolumeAudio4_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenAudio4.Tag = reader4;
-            int volumen4 = BarraVolumenAudio4.Value;
+            scrollVolumeAudio4.Tag = reader4;
+            int volumen4 = scrollVolumeAudio4.Value;
             labelAudio4.Text = "Audio\n   " + volumen4.ToString();
 
             if (waveOutAudio4 != null)
@@ -680,10 +680,10 @@ namespace Audio_Player
 
         }
 
-        private void BarraVolumenMic_Scroll(object sender, EventArgs e)
+        private void scrollVolumeMic_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenMic1.Tag = waveOutMic;
-            int volumen3 = BarraVolumenMic1.Value;
+            scrollVolumeMic1.Tag = waveOutMic;
+            int volumen3 = scrollVolumeMic1.Value;
             labelVoice1.Text = "Voice\n   " + volumen3.ToString();
 
             if (waveOutMic != null)
@@ -691,10 +691,10 @@ namespace Audio_Player
                 waveOutMic.Volume = (float)volumen3 / 100f;
             }
         }
-        private void BarraVolumenMic2_Scroll(object sender, EventArgs e)
+        private void scrollVolumeMic2_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenMic2.Tag = waveOutMic2;
-            int volumen4 = BarraVolumenMic2.Value;
+            scrollVolumeMic2.Tag = waveOutMic2;
+            int volumen4 = scrollVolumeMic2.Value;
             labelVoice2.Text = "Voice\n   " + volumen4.ToString();
 
             if (waveOutMic2 != null)
@@ -702,10 +702,10 @@ namespace Audio_Player
                 waveOutMic2.Volume = (float)volumen4 / 100f;
             }
         }
-        private void BarraVolumenMic3_Scroll(object sender, EventArgs e)
+        private void scrollVolumeMic3_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenMic3.Tag = waveOutMic3;
-            int volumen5 = BarraVolumenMic3.Value;
+            scrollVolumeMic3.Tag = waveOutMic3;
+            int volumen5 = scrollVolumeMic3.Value;
             labelVoice3.Text = "Voice\n   " + volumen5.ToString();
 
             if (waveOutMic3 != null)
@@ -713,10 +713,10 @@ namespace Audio_Player
                 waveOutMic3.Volume = (float)volumen5 / 100f;
             }
         }
-        private void BarraVolumenMic4_Scroll(object sender, EventArgs e)
+        private void scrollVolumeMic4_Scroll(object sender, EventArgs e)
         {
-            BarraVolumenMic4.Tag = waveOutMic4;
-            int volumen6 = BarraVolumenMic4.Value;
+            scrollVolumeMic4.Tag = waveOutMic4;
+            int volumen6 = scrollVolumeMic4.Value;
             labelVoice4.Text = "Voice\n   " + volumen6.ToString();
 
             if (waveOutMic4 != null)
@@ -730,21 +730,21 @@ namespace Audio_Player
             Point punto = recordSettings1.PointToScreen(new Point(0, recordSettings1.Height));
             settings1.Show(punto);
         }
-        private void calidadBaja_Click(object sender, EventArgs e)
+        private void qualityLow_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado = new WaveFormat(11025, 8, 1);
+            waveFormatSelected = new WaveFormat(11025, 8, 1);
         }
-        private void calidadMedia_Click(object sender, EventArgs e)
+        private void qualityMedium_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado = new WaveFormat(22050, 16, 1);
+            waveFormatSelected = new WaveFormat(22050, 16, 1);
         }
-        private void calidadAlta_Click(object sender, EventArgs e)
+        private void qualityHigh_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado = new WaveFormat(44100, 16, 1);
+            waveFormatSelected = new WaveFormat(44100, 16, 1);
         }
-        private void calidadUltra_Click(object sender, EventArgs e)
+        private void qualityUltra_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado = new WaveFormat(96000, 24, 1);
+            waveFormatSelected = new WaveFormat(96000, 24, 1);
         }
 
         private void recordSettings2_Click(object sender, EventArgs e)
@@ -752,21 +752,21 @@ namespace Audio_Player
             Point punto = recordSettings2.PointToScreen(new Point(0, recordSettings2.Height));
             settings2.Show(punto);
         }
-        private void calidadBaja2_Click(object sender, EventArgs e)
+        private void qualityLow2_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado2 = new WaveFormat(11025, 8, 1);
+            waveFormatSelected2 = new WaveFormat(11025, 8, 1);
         }
-        private void calidadMedia2_Click(object sender, EventArgs e)
+        private void qualityMedium2_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado2 = new WaveFormat(22050, 16, 1);
+            waveFormatSelected2 = new WaveFormat(22050, 16, 1);
         }
-        private void calidadAlta2_Click(object sender, EventArgs e)
+        private void qualityHigh2_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado2 = new WaveFormat(44100, 16, 1);
+            waveFormatSelected2 = new WaveFormat(44100, 16, 1);
         }
-        private void calidadUltra2_Click(object sender, EventArgs e)
+        private void qualityUltra2_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado2 = new WaveFormat(96000, 24, 1);
+            waveFormatSelected2 = new WaveFormat(96000, 24, 1);
         }
 
         private void recordSettings3_Click(object sender, EventArgs e)
@@ -774,21 +774,21 @@ namespace Audio_Player
             Point punto = recordSettings3.PointToScreen(new Point(0, recordSettings3.Height));
             settings3.Show(punto);
         }
-        private void calidadBaja3_Click(object sender, EventArgs e)
+        private void qualityLow3_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado3 = new WaveFormat(11025, 8, 1);
+            waveFormatSelected3 = new WaveFormat(11025, 8, 1);
         }
-        private void calidadMedia3_Click(object sender, EventArgs e)
+        private void qualityMedium3_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado3 = new WaveFormat(22050, 16, 1);
+            waveFormatSelected3 = new WaveFormat(22050, 16, 1);
         }
-        private void calidadAlta3_Click(object sender, EventArgs e)
+        private void qualityHigh3_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado3 = new WaveFormat(44100, 16, 1);
+            waveFormatSelected3 = new WaveFormat(44100, 16, 1);
         }
-        private void calidadUltra3_Click(object sender, EventArgs e)
+        private void qualityUltra3_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado3 = new WaveFormat(96000, 24, 1);
+            waveFormatSelected3 = new WaveFormat(96000, 24, 1);
         }
 
         private void recordSettings4_Click(object sender, EventArgs e)
@@ -796,21 +796,21 @@ namespace Audio_Player
             Point punto = recordSettings4.PointToScreen(new Point(0, recordSettings4.Height));
             settings4.Show(punto);
         }
-        private void calidadBaja4_Click(object sender, EventArgs e)
+        private void qualityLow4_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado4 = new WaveFormat(11025, 8, 1);
+            waveFormatSelected4 = new WaveFormat(11025, 8, 1);
         }
-        private void calidadMedia4_Click(object sender, EventArgs e)
+        private void qualityMedium4_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado4 = new WaveFormat(22050, 16, 1);
+            waveFormatSelected4 = new WaveFormat(22050, 16, 1);
         }
-        private void calidadAlta4_Click(object sender, EventArgs e)
+        private void qualityHigh4_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado4 = new WaveFormat(44100, 16, 1);
+            waveFormatSelected4 = new WaveFormat(44100, 16, 1);
         }
-        private void calidadUltra4_Click(object sender, EventArgs e)
+        private void qualityUltra4_Click(object sender, EventArgs e)
         {
-            waveFormatSeleccionado4 = new WaveFormat(96000, 24, 1);
+            waveFormatSelected4 = new WaveFormat(96000, 24, 1);
         }
     }
 

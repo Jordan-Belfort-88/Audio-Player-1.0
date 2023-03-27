@@ -30,139 +30,139 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            CBSalidas = new ComboBox();
-            AbrirArchivo = new OpenFileDialog();
-            BotónSeleccionar1 = new Button();
-            BarraVolumenAudio1 = new TrackBar();
+            CBOuts = new ComboBox();
+            openFile = new OpenFileDialog();
+            buttonSelect1 = new Button();
+            scrollVolumeAudio1 = new TrackBar();
             labelAudio1 = new Label();
             Grabar1 = new Button();
             labelVoice1 = new Label();
-            BarraVolumenMic1 = new TrackBar();
-            labelSeleccionar1 = new Label();
-            Bloquear1 = new CheckBox();
+            scrollVolumeMic1 = new TrackBar();
+            labelSelect1 = new Label();
+            Block1 = new CheckBox();
             Stop1 = new Button();
             Play1 = new Button();
-            NombreCanal = new Label();
-            NombreCanal2 = new Label();
-            labelSeleccionar2 = new Label();
-            CBSalidas2 = new ComboBox();
-            BotónSeleccionar2 = new Button();
+            labelChannel1 = new Label();
+            labelChannel2 = new Label();
+            labelSelect2 = new Label();
+            CBOuts2 = new ComboBox();
+            buttonSelect2 = new Button();
             Play2 = new Button();
             Stop2 = new Button();
             Grabar2 = new Button();
-            Bloquear2 = new CheckBox();
-            BarraVolumenAudio2 = new TrackBar();
-            BarraVolumenMic2 = new TrackBar();
+            Block2 = new CheckBox();
+            scrollVolumeAudio2 = new TrackBar();
+            scrollVolumeMic2 = new TrackBar();
             labelAudio2 = new Label();
             labelVoice2 = new Label();
-            AbrirArchivo2 = new OpenFileDialog();
-            NombreCanal3 = new Label();
-            labelSeleccionar3 = new Label();
-            CBSalidas3 = new ComboBox();
-            Bloquear3 = new CheckBox();
-            BotónSeleccionar3 = new Button();
+            openFile2 = new OpenFileDialog();
+            labelChannel3 = new Label();
+            labelSelect3 = new Label();
+            CBOuts3 = new ComboBox();
+            Block3 = new CheckBox();
+            buttonSelect3 = new Button();
             Play3 = new Button();
             Stop3 = new Button();
             Grabar3 = new Button();
-            BarraVolumenAudio3 = new TrackBar();
-            BarraVolumenMic3 = new TrackBar();
+            scrollVolumeAudio3 = new TrackBar();
+            scrollVolumeMic3 = new TrackBar();
             labelAudio3 = new Label();
             labelVoice3 = new Label();
-            NombreCanal4 = new Label();
-            labelSeleccionar4 = new Label();
-            CBSalidas4 = new ComboBox();
-            BotónSeleccionar4 = new Button();
+            labelChannel4 = new Label();
+            labelSelect4 = new Label();
+            CBOuts4 = new ComboBox();
+            buttonSelect4 = new Button();
             Play4 = new Button();
             Stop4 = new Button();
             Grabar4 = new Button();
-            Bloquear4 = new CheckBox();
-            BarraVolumenAudio4 = new TrackBar();
-            BarraVolumenMic4 = new TrackBar();
+            Block4 = new CheckBox();
+            scrollVolumeAudio4 = new TrackBar();
+            scrollVolumeMic4 = new TrackBar();
             labelAudio4 = new Label();
             labelVoice4 = new Label();
-            AbrirArchivo3 = new OpenFileDialog();
-            AbrirArchivo4 = new OpenFileDialog();
+            openFile3 = new OpenFileDialog();
+            openFile4 = new OpenFileDialog();
             recordSettings1 = new Button();
             settings1 = new ContextMenuStrip(components);
-            calidadBaja = new ToolStripMenuItem();
-            calidadMedia = new ToolStripMenuItem();
-            calidadAlta = new ToolStripMenuItem();
-            calidadUltra = new ToolStripMenuItem();
+            qualityLow = new ToolStripMenuItem();
+            qualityMedium = new ToolStripMenuItem();
+            qualityHigh = new ToolStripMenuItem();
+            qualityUltra = new ToolStripMenuItem();
             recordSettings2 = new Button();
             settings2 = new ContextMenuStrip(components);
-            calidadBaja2 = new ToolStripMenuItem();
-            calidadMedia2 = new ToolStripMenuItem();
-            calidadAlta2 = new ToolStripMenuItem();
-            calidadUltra2 = new ToolStripMenuItem();
+            qualityLow2 = new ToolStripMenuItem();
+            qualityMedium2 = new ToolStripMenuItem();
+            qualityHigh2 = new ToolStripMenuItem();
+            qualityUltra2 = new ToolStripMenuItem();
             recordSettings3 = new Button();
             settings3 = new ContextMenuStrip(components);
-            calidadBaja3 = new ToolStripMenuItem();
-            calidadMedia3 = new ToolStripMenuItem();
-            calidadAlta3 = new ToolStripMenuItem();
-            calidadUltra3 = new ToolStripMenuItem();
+            qualityLow3 = new ToolStripMenuItem();
+            qualityMedium3 = new ToolStripMenuItem();
+            qualityHigh3 = new ToolStripMenuItem();
+            qualityUltra3 = new ToolStripMenuItem();
             recordSettings4 = new Button();
             settings4 = new ContextMenuStrip(components);
-            calidadBaja4 = new ToolStripMenuItem();
-            calidadMedia4 = new ToolStripMenuItem();
-            calidadAlta4 = new ToolStripMenuItem();
-            calidadUltra4 = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic4).BeginInit();
+            qualityLow4 = new ToolStripMenuItem();
+            qualityMedium4 = new ToolStripMenuItem();
+            qualityHigh4 = new ToolStripMenuItem();
+            qualityUltra4 = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic4).BeginInit();
             settings1.SuspendLayout();
             settings2.SuspendLayout();
             settings3.SuspendLayout();
             settings4.SuspendLayout();
             SuspendLayout();
             // 
-            // CBSalidas
+            // CBOuts
             // 
-            CBSalidas.BackColor = SystemColors.WindowFrame;
-            CBSalidas.DropDownStyle = ComboBoxStyle.DropDownList;
-            CBSalidas.DropDownWidth = 266;
-            CBSalidas.ForeColor = SystemColors.MenuText;
-            CBSalidas.FormattingEnabled = true;
-            CBSalidas.Location = new Point(12, 83);
-            CBSalidas.Name = "CBSalidas";
-            CBSalidas.Size = new Size(266, 33);
-            CBSalidas.TabIndex = 1;
-            CBSalidas.SelectedIndexChanged += CBSalidas_SelectedIndexChanged;
+            CBOuts.BackColor = SystemColors.WindowFrame;
+            CBOuts.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBOuts.DropDownWidth = 266;
+            CBOuts.ForeColor = SystemColors.MenuText;
+            CBOuts.FormattingEnabled = true;
+            CBOuts.Location = new Point(12, 83);
+            CBOuts.Name = "CBOuts";
+            CBOuts.Size = new Size(266, 33);
+            CBOuts.TabIndex = 1;
+            CBOuts.SelectedIndexChanged += CBOuts_SelectedIndexChanged;
             // 
-            // AbrirArchivo
+            // openFile
             // 
-            AbrirArchivo.Filter = "\"|*.wav;*.mp3;*.ogg\"";
+            openFile.Filter = "\"|*.wav;*.mp3;*.ogg\"";
             // 
-            // BotónSeleccionar1
+            // buttonSelect1
             // 
-            BotónSeleccionar1.BackColor = Color.DimGray;
-            BotónSeleccionar1.FlatAppearance.BorderColor = Color.Gray;
-            BotónSeleccionar1.FlatStyle = FlatStyle.Popup;
-            BotónSeleccionar1.Location = new Point(12, 122);
-            BotónSeleccionar1.Name = "BotónSeleccionar1";
-            BotónSeleccionar1.Size = new Size(266, 34);
-            BotónSeleccionar1.TabIndex = 3;
-            BotónSeleccionar1.Text = "Select audio file";
-            BotónSeleccionar1.UseVisualStyleBackColor = false;
-            BotónSeleccionar1.Click += BotónSeleccionar_Click;
+            buttonSelect1.BackColor = Color.DimGray;
+            buttonSelect1.FlatAppearance.BorderColor = Color.Gray;
+            buttonSelect1.FlatStyle = FlatStyle.Popup;
+            buttonSelect1.Location = new Point(12, 122);
+            buttonSelect1.Name = "buttonSelect1";
+            buttonSelect1.Size = new Size(266, 34);
+            buttonSelect1.TabIndex = 3;
+            buttonSelect1.Text = "Select audio file";
+            buttonSelect1.UseVisualStyleBackColor = false;
+            buttonSelect1.Click += buttonSelect_Click;
             // 
-            // BarraVolumenAudio1
+            // scrollVolumeAudio1
             // 
-            BarraVolumenAudio1.Location = new Point(325, 55);
-            BarraVolumenAudio1.Maximum = 100;
-            BarraVolumenAudio1.Name = "BarraVolumenAudio1";
-            BarraVolumenAudio1.Orientation = Orientation.Vertical;
-            BarraVolumenAudio1.Size = new Size(69, 118);
-            BarraVolumenAudio1.TabIndex = 4;
-            BarraVolumenAudio1.Tag = "waveOutDevice";
-            BarraVolumenAudio1.TickFrequency = 5;
-            BarraVolumenAudio1.TickStyle = TickStyle.Both;
-            BarraVolumenAudio1.Value = 20;
-            BarraVolumenAudio1.Scroll += BarraVolumenAudio_Scroll;
+            scrollVolumeAudio1.Location = new Point(325, 55);
+            scrollVolumeAudio1.Maximum = 100;
+            scrollVolumeAudio1.Name = "scrollVolumeAudio1";
+            scrollVolumeAudio1.Orientation = Orientation.Vertical;
+            scrollVolumeAudio1.Size = new Size(69, 118);
+            scrollVolumeAudio1.TabIndex = 4;
+            scrollVolumeAudio1.Tag = "waveOutDevice";
+            scrollVolumeAudio1.TickFrequency = 5;
+            scrollVolumeAudio1.TickStyle = TickStyle.Both;
+            scrollVolumeAudio1.Value = 20;
+            scrollVolumeAudio1.Scroll += scrollVolumeAudio_Scroll;
             // 
             // labelAudio1
             // 
@@ -199,43 +199,43 @@
             labelVoice1.TabIndex = 7;
             labelVoice1.Text = "Voice";
             // 
-            // BarraVolumenMic1
+            // scrollVolumeMic1
             // 
-            BarraVolumenMic1.Location = new Point(400, 55);
-            BarraVolumenMic1.Maximum = 100;
-            BarraVolumenMic1.Name = "BarraVolumenMic1";
-            BarraVolumenMic1.Orientation = Orientation.Vertical;
-            BarraVolumenMic1.Size = new Size(69, 118);
-            BarraVolumenMic1.TabIndex = 8;
-            BarraVolumenMic1.Tag = "waveOutDevice2";
-            BarraVolumenMic1.TickFrequency = 5;
-            BarraVolumenMic1.TickStyle = TickStyle.Both;
-            BarraVolumenMic1.Value = 80;
-            BarraVolumenMic1.Scroll += BarraVolumenMic_Scroll;
+            scrollVolumeMic1.Location = new Point(400, 55);
+            scrollVolumeMic1.Maximum = 100;
+            scrollVolumeMic1.Name = "scrollVolumeMic1";
+            scrollVolumeMic1.Orientation = Orientation.Vertical;
+            scrollVolumeMic1.Size = new Size(69, 118);
+            scrollVolumeMic1.TabIndex = 8;
+            scrollVolumeMic1.Tag = "waveOutDevice2";
+            scrollVolumeMic1.TickFrequency = 5;
+            scrollVolumeMic1.TickStyle = TickStyle.Both;
+            scrollVolumeMic1.Value = 80;
+            scrollVolumeMic1.Scroll += scrollVolumeMic_Scroll;
             // 
-            // labelSeleccionar1
+            // labelSelect1
             // 
-            labelSeleccionar1.AutoSize = true;
-            labelSeleccionar1.ForeColor = SystemColors.ControlDark;
-            labelSeleccionar1.Location = new Point(12, 55);
-            labelSeleccionar1.Name = "labelSeleccionar1";
-            labelSeleccionar1.Size = new Size(171, 25);
-            labelSeleccionar1.TabIndex = 9;
-            labelSeleccionar1.Text = "Select audio output:";
+            labelSelect1.AutoSize = true;
+            labelSelect1.ForeColor = SystemColors.ControlDark;
+            labelSelect1.Location = new Point(12, 55);
+            labelSelect1.Name = "labelSelect1";
+            labelSelect1.Size = new Size(171, 25);
+            labelSelect1.TabIndex = 9;
+            labelSelect1.Text = "Select audio output:";
             // 
-            // Bloquear1
+            // Block1
             // 
-            Bloquear1.AutoSize = true;
-            Bloquear1.FlatAppearance.BorderColor = Color.DimGray;
-            Bloquear1.FlatAppearance.CheckedBackColor = Color.DimGray;
-            Bloquear1.FlatStyle = FlatStyle.Popup;
-            Bloquear1.ForeColor = SystemColors.ControlDark;
-            Bloquear1.Location = new Point(284, 90);
-            Bloquear1.Name = "Bloquear1";
-            Bloquear1.Size = new Size(18, 17);
-            Bloquear1.TabIndex = 10;
-            Bloquear1.UseVisualStyleBackColor = true;
-            Bloquear1.CheckedChanged += Bloquear_CheckedChanged;
+            Block1.AutoSize = true;
+            Block1.FlatAppearance.BorderColor = Color.DimGray;
+            Block1.FlatAppearance.CheckedBackColor = Color.DimGray;
+            Block1.FlatStyle = FlatStyle.Popup;
+            Block1.ForeColor = SystemColors.ControlDark;
+            Block1.Location = new Point(284, 90);
+            Block1.Name = "Block1";
+            Block1.Size = new Size(18, 17);
+            Block1.TabIndex = 10;
+            Block1.UseVisualStyleBackColor = true;
+            Block1.CheckedChanged += block_CheckedChanged;
             // 
             // Stop1
             // 
@@ -263,63 +263,63 @@
             Play1.UseVisualStyleBackColor = false;
             Play1.Click += Play_Click_1;
             // 
-            // NombreCanal
+            // labelChannel1
             // 
-            NombreCanal.AutoSize = true;
-            NombreCanal.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            NombreCanal.ForeColor = SystemColors.ControlDark;
-            NombreCanal.Location = new Point(180, 10);
-            NombreCanal.Name = "NombreCanal";
-            NombreCanal.Size = new Size(150, 36);
-            NombreCanal.TabIndex = 13;
-            NombreCanal.Text = "CHANNEL 1";
+            labelChannel1.AutoSize = true;
+            labelChannel1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            labelChannel1.ForeColor = SystemColors.ControlDark;
+            labelChannel1.Location = new Point(180, 10);
+            labelChannel1.Name = "labelChannel1";
+            labelChannel1.Size = new Size(150, 36);
+            labelChannel1.TabIndex = 13;
+            labelChannel1.Text = "CHANNEL 1";
             // 
-            // NombreCanal2
+            // labelChannel2
             // 
-            NombreCanal2.AutoSize = true;
-            NombreCanal2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            NombreCanal2.ForeColor = SystemColors.ControlDark;
-            NombreCanal2.Location = new Point(171, 235);
-            NombreCanal2.Name = "NombreCanal2";
-            NombreCanal2.Size = new Size(150, 36);
-            NombreCanal2.TabIndex = 14;
-            NombreCanal2.Text = "CHANNEL 2";
+            labelChannel2.AutoSize = true;
+            labelChannel2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            labelChannel2.ForeColor = SystemColors.ControlDark;
+            labelChannel2.Location = new Point(171, 235);
+            labelChannel2.Name = "labelChannel2";
+            labelChannel2.Size = new Size(150, 36);
+            labelChannel2.TabIndex = 14;
+            labelChannel2.Text = "CHANNEL 2";
             // 
-            // labelSeleccionar2
+            // labelSelect2
             // 
-            labelSeleccionar2.AutoSize = true;
-            labelSeleccionar2.ForeColor = SystemColors.ControlDark;
-            labelSeleccionar2.Location = new Point(12, 283);
-            labelSeleccionar2.Name = "labelSeleccionar2";
-            labelSeleccionar2.Size = new Size(171, 25);
-            labelSeleccionar2.TabIndex = 15;
-            labelSeleccionar2.Text = "Select audio output:";
+            labelSelect2.AutoSize = true;
+            labelSelect2.ForeColor = SystemColors.ControlDark;
+            labelSelect2.Location = new Point(12, 283);
+            labelSelect2.Name = "labelSelect2";
+            labelSelect2.Size = new Size(171, 25);
+            labelSelect2.TabIndex = 15;
+            labelSelect2.Text = "Select audio output:";
             // 
-            // CBSalidas2
+            // CBOuts2
             // 
-            CBSalidas2.BackColor = SystemColors.WindowFrame;
-            CBSalidas2.DropDownStyle = ComboBoxStyle.DropDownList;
-            CBSalidas2.DropDownWidth = 266;
-            CBSalidas2.ForeColor = SystemColors.MenuText;
-            CBSalidas2.FormattingEnabled = true;
-            CBSalidas2.Location = new Point(12, 311);
-            CBSalidas2.Name = "CBSalidas2";
-            CBSalidas2.Size = new Size(266, 33);
-            CBSalidas2.TabIndex = 16;
-            CBSalidas2.SelectedIndexChanged += CBSalidas2_SelectedIndexChanged;
+            CBOuts2.BackColor = SystemColors.WindowFrame;
+            CBOuts2.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBOuts2.DropDownWidth = 266;
+            CBOuts2.ForeColor = SystemColors.MenuText;
+            CBOuts2.FormattingEnabled = true;
+            CBOuts2.Location = new Point(12, 311);
+            CBOuts2.Name = "CBOuts2";
+            CBOuts2.Size = new Size(266, 33);
+            CBOuts2.TabIndex = 16;
+            CBOuts2.SelectedIndexChanged += CBOuts2_SelectedIndexChanged;
             // 
-            // BotónSeleccionar2
+            // buttonSelect2
             // 
-            BotónSeleccionar2.BackColor = Color.DimGray;
-            BotónSeleccionar2.FlatAppearance.BorderColor = Color.Gray;
-            BotónSeleccionar2.FlatStyle = FlatStyle.Popup;
-            BotónSeleccionar2.Location = new Point(12, 350);
-            BotónSeleccionar2.Name = "BotónSeleccionar2";
-            BotónSeleccionar2.Size = new Size(266, 34);
-            BotónSeleccionar2.TabIndex = 17;
-            BotónSeleccionar2.Text = "Select audio file";
-            BotónSeleccionar2.UseVisualStyleBackColor = false;
-            BotónSeleccionar2.Click += BotónSeleccionar2_Click;
+            buttonSelect2.BackColor = Color.DimGray;
+            buttonSelect2.FlatAppearance.BorderColor = Color.Gray;
+            buttonSelect2.FlatStyle = FlatStyle.Popup;
+            buttonSelect2.Location = new Point(12, 350);
+            buttonSelect2.Name = "buttonSelect2";
+            buttonSelect2.Size = new Size(266, 34);
+            buttonSelect2.TabIndex = 17;
+            buttonSelect2.Text = "Select audio file";
+            buttonSelect2.UseVisualStyleBackColor = false;
+            buttonSelect2.Click += buttonSelect2_Click;
             // 
             // Play2
             // 
@@ -361,47 +361,47 @@
             Grabar2.UseVisualStyleBackColor = false;
             Grabar2.Click += Grabar_Click2;
             // 
-            // Bloquear2
+            // Block2
             // 
-            Bloquear2.AutoSize = true;
-            Bloquear2.FlatAppearance.BorderColor = Color.DimGray;
-            Bloquear2.FlatAppearance.CheckedBackColor = Color.DimGray;
-            Bloquear2.FlatStyle = FlatStyle.Popup;
-            Bloquear2.ForeColor = SystemColors.ControlDark;
-            Bloquear2.Location = new Point(284, 318);
-            Bloquear2.Name = "Bloquear2";
-            Bloquear2.Size = new Size(18, 17);
-            Bloquear2.TabIndex = 21;
-            Bloquear2.UseVisualStyleBackColor = true;
-            Bloquear2.CheckedChanged += Bloquear2_CheckedChanged;
+            Block2.AutoSize = true;
+            Block2.FlatAppearance.BorderColor = Color.DimGray;
+            Block2.FlatAppearance.CheckedBackColor = Color.DimGray;
+            Block2.FlatStyle = FlatStyle.Popup;
+            Block2.ForeColor = SystemColors.ControlDark;
+            Block2.Location = new Point(284, 318);
+            Block2.Name = "Block2";
+            Block2.Size = new Size(18, 17);
+            Block2.TabIndex = 21;
+            Block2.UseVisualStyleBackColor = true;
+            Block2.CheckedChanged += block2_CheckedChanged;
             // 
-            // BarraVolumenAudio2
+            // scrollVolumeAudio2
             // 
-            BarraVolumenAudio2.Location = new Point(325, 283);
-            BarraVolumenAudio2.Maximum = 100;
-            BarraVolumenAudio2.Name = "BarraVolumenAudio2";
-            BarraVolumenAudio2.Orientation = Orientation.Vertical;
-            BarraVolumenAudio2.Size = new Size(69, 118);
-            BarraVolumenAudio2.TabIndex = 22;
-            BarraVolumenAudio2.Tag = "waveOutDevice";
-            BarraVolumenAudio2.TickFrequency = 5;
-            BarraVolumenAudio2.TickStyle = TickStyle.Both;
-            BarraVolumenAudio2.Value = 20;
-            BarraVolumenAudio2.Scroll += BarraVolumenAudio2_Scroll;
+            scrollVolumeAudio2.Location = new Point(325, 283);
+            scrollVolumeAudio2.Maximum = 100;
+            scrollVolumeAudio2.Name = "scrollVolumeAudio2";
+            scrollVolumeAudio2.Orientation = Orientation.Vertical;
+            scrollVolumeAudio2.Size = new Size(69, 118);
+            scrollVolumeAudio2.TabIndex = 22;
+            scrollVolumeAudio2.Tag = "waveOutDevice";
+            scrollVolumeAudio2.TickFrequency = 5;
+            scrollVolumeAudio2.TickStyle = TickStyle.Both;
+            scrollVolumeAudio2.Value = 20;
+            scrollVolumeAudio2.Scroll += scrollVolumeAudio2_Scroll;
             // 
-            // BarraVolumenMic2
+            // scrollVolumeMic2
             // 
-            BarraVolumenMic2.Location = new Point(400, 283);
-            BarraVolumenMic2.Maximum = 100;
-            BarraVolumenMic2.Name = "BarraVolumenMic2";
-            BarraVolumenMic2.Orientation = Orientation.Vertical;
-            BarraVolumenMic2.Size = new Size(69, 118);
-            BarraVolumenMic2.TabIndex = 23;
-            BarraVolumenMic2.Tag = "waveOutDevice2";
-            BarraVolumenMic2.TickFrequency = 5;
-            BarraVolumenMic2.TickStyle = TickStyle.Both;
-            BarraVolumenMic2.Value = 80;
-            BarraVolumenMic2.Scroll += BarraVolumenMic2_Scroll;
+            scrollVolumeMic2.Location = new Point(400, 283);
+            scrollVolumeMic2.Maximum = 100;
+            scrollVolumeMic2.Name = "scrollVolumeMic2";
+            scrollVolumeMic2.Orientation = Orientation.Vertical;
+            scrollVolumeMic2.Size = new Size(69, 118);
+            scrollVolumeMic2.TabIndex = 23;
+            scrollVolumeMic2.Tag = "waveOutDevice2";
+            scrollVolumeMic2.TickFrequency = 5;
+            scrollVolumeMic2.TickStyle = TickStyle.Both;
+            scrollVolumeMic2.Value = 80;
+            scrollVolumeMic2.Scroll += scrollVolumeMic2_Scroll;
             // 
             // labelAudio2
             // 
@@ -423,70 +423,70 @@
             labelVoice2.TabIndex = 25;
             labelVoice2.Text = "Voice";
             // 
-            // AbrirArchivo2
+            // openFile2
             // 
-            AbrirArchivo2.Filter = "\"|*.wav;*.mp3;*.ogg\"";
+            openFile2.Filter = "\"|*.wav;*.mp3;*.ogg\"";
             // 
-            // NombreCanal3
+            // labelChannel3
             // 
-            NombreCanal3.AutoSize = true;
-            NombreCanal3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            NombreCanal3.ForeColor = SystemColors.ControlDark;
-            NombreCanal3.Location = new Point(662, 10);
-            NombreCanal3.Name = "NombreCanal3";
-            NombreCanal3.Size = new Size(150, 36);
-            NombreCanal3.TabIndex = 26;
-            NombreCanal3.Text = "CHANNEL 3";
+            labelChannel3.AutoSize = true;
+            labelChannel3.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            labelChannel3.ForeColor = SystemColors.ControlDark;
+            labelChannel3.Location = new Point(662, 10);
+            labelChannel3.Name = "labelChannel3";
+            labelChannel3.Size = new Size(150, 36);
+            labelChannel3.TabIndex = 26;
+            labelChannel3.Text = "CHANNEL 3";
             // 
-            // labelSeleccionar3
+            // labelSelect3
             // 
-            labelSeleccionar3.AutoSize = true;
-            labelSeleccionar3.ForeColor = SystemColors.ControlDark;
-            labelSeleccionar3.Location = new Point(498, 55);
-            labelSeleccionar3.Name = "labelSeleccionar3";
-            labelSeleccionar3.Size = new Size(171, 25);
-            labelSeleccionar3.TabIndex = 27;
-            labelSeleccionar3.Text = "Select audio output:";
+            labelSelect3.AutoSize = true;
+            labelSelect3.ForeColor = SystemColors.ControlDark;
+            labelSelect3.Location = new Point(498, 55);
+            labelSelect3.Name = "labelSelect3";
+            labelSelect3.Size = new Size(171, 25);
+            labelSelect3.TabIndex = 27;
+            labelSelect3.Text = "Select audio output:";
             // 
-            // CBSalidas3
+            // CBOuts3
             // 
-            CBSalidas3.BackColor = SystemColors.WindowFrame;
-            CBSalidas3.DropDownStyle = ComboBoxStyle.DropDownList;
-            CBSalidas3.DropDownWidth = 266;
-            CBSalidas3.ForeColor = SystemColors.MenuText;
-            CBSalidas3.FormattingEnabled = true;
-            CBSalidas3.Location = new Point(498, 83);
-            CBSalidas3.Name = "CBSalidas3";
-            CBSalidas3.Size = new Size(266, 33);
-            CBSalidas3.TabIndex = 28;
-            CBSalidas3.SelectedIndexChanged += CBSalidas3_SelectedIndexChanged;
+            CBOuts3.BackColor = SystemColors.WindowFrame;
+            CBOuts3.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBOuts3.DropDownWidth = 266;
+            CBOuts3.ForeColor = SystemColors.MenuText;
+            CBOuts3.FormattingEnabled = true;
+            CBOuts3.Location = new Point(498, 83);
+            CBOuts3.Name = "CBOuts3";
+            CBOuts3.Size = new Size(266, 33);
+            CBOuts3.TabIndex = 28;
+            CBOuts3.SelectedIndexChanged += CBOuts3_SelectedIndexChanged;
             // 
-            // Bloquear3
+            // Block3
             // 
-            Bloquear3.AutoSize = true;
-            Bloquear3.FlatAppearance.BorderColor = Color.DimGray;
-            Bloquear3.FlatAppearance.CheckedBackColor = Color.DimGray;
-            Bloquear3.FlatStyle = FlatStyle.Popup;
-            Bloquear3.ForeColor = SystemColors.ControlDark;
-            Bloquear3.Location = new Point(770, 90);
-            Bloquear3.Name = "Bloquear3";
-            Bloquear3.Size = new Size(18, 17);
-            Bloquear3.TabIndex = 29;
-            Bloquear3.UseVisualStyleBackColor = true;
-            Bloquear3.CheckedChanged += Bloquear3_CheckedChanged;
+            Block3.AutoSize = true;
+            Block3.FlatAppearance.BorderColor = Color.DimGray;
+            Block3.FlatAppearance.CheckedBackColor = Color.DimGray;
+            Block3.FlatStyle = FlatStyle.Popup;
+            Block3.ForeColor = SystemColors.ControlDark;
+            Block3.Location = new Point(770, 90);
+            Block3.Name = "Block3";
+            Block3.Size = new Size(18, 17);
+            Block3.TabIndex = 29;
+            Block3.UseVisualStyleBackColor = true;
+            Block3.CheckedChanged += block3_CheckedChanged;
             // 
-            // BotónSeleccionar3
+            // buttonSelect3
             // 
-            BotónSeleccionar3.BackColor = Color.DimGray;
-            BotónSeleccionar3.FlatAppearance.BorderColor = Color.Gray;
-            BotónSeleccionar3.FlatStyle = FlatStyle.Popup;
-            BotónSeleccionar3.Location = new Point(498, 122);
-            BotónSeleccionar3.Name = "BotónSeleccionar3";
-            BotónSeleccionar3.Size = new Size(266, 34);
-            BotónSeleccionar3.TabIndex = 30;
-            BotónSeleccionar3.Text = "Select audio file";
-            BotónSeleccionar3.UseVisualStyleBackColor = false;
-            BotónSeleccionar3.Click += BotónSeleccionar3_Click;
+            buttonSelect3.BackColor = Color.DimGray;
+            buttonSelect3.FlatAppearance.BorderColor = Color.Gray;
+            buttonSelect3.FlatStyle = FlatStyle.Popup;
+            buttonSelect3.Location = new Point(498, 122);
+            buttonSelect3.Name = "buttonSelect3";
+            buttonSelect3.Size = new Size(266, 34);
+            buttonSelect3.TabIndex = 30;
+            buttonSelect3.Text = "Select audio file";
+            buttonSelect3.UseVisualStyleBackColor = false;
+            buttonSelect3.Click += buttonSelect3_Click;
             // 
             // Play3
             // 
@@ -528,33 +528,33 @@
             Grabar3.UseVisualStyleBackColor = false;
             Grabar3.Click += Grabar_Click3;
             // 
-            // BarraVolumenAudio3
+            // scrollVolumeAudio3
             // 
-            BarraVolumenAudio3.Location = new Point(813, 55);
-            BarraVolumenAudio3.Maximum = 100;
-            BarraVolumenAudio3.Name = "BarraVolumenAudio3";
-            BarraVolumenAudio3.Orientation = Orientation.Vertical;
-            BarraVolumenAudio3.Size = new Size(69, 118);
-            BarraVolumenAudio3.TabIndex = 34;
-            BarraVolumenAudio3.Tag = "waveOutDevice";
-            BarraVolumenAudio3.TickFrequency = 5;
-            BarraVolumenAudio3.TickStyle = TickStyle.Both;
-            BarraVolumenAudio3.Value = 20;
-            BarraVolumenAudio3.Scroll += BarraVolumenAudio3_Scroll;
+            scrollVolumeAudio3.Location = new Point(813, 55);
+            scrollVolumeAudio3.Maximum = 100;
+            scrollVolumeAudio3.Name = "scrollVolumeAudio3";
+            scrollVolumeAudio3.Orientation = Orientation.Vertical;
+            scrollVolumeAudio3.Size = new Size(69, 118);
+            scrollVolumeAudio3.TabIndex = 34;
+            scrollVolumeAudio3.Tag = "waveOutDevice";
+            scrollVolumeAudio3.TickFrequency = 5;
+            scrollVolumeAudio3.TickStyle = TickStyle.Both;
+            scrollVolumeAudio3.Value = 20;
+            scrollVolumeAudio3.Scroll += scrollVolumeAudio3_Scroll;
             // 
-            // BarraVolumenMic3
+            // scrollVolumeMic3
             // 
-            BarraVolumenMic3.Location = new Point(888, 55);
-            BarraVolumenMic3.Maximum = 100;
-            BarraVolumenMic3.Name = "BarraVolumenMic3";
-            BarraVolumenMic3.Orientation = Orientation.Vertical;
-            BarraVolumenMic3.Size = new Size(69, 118);
-            BarraVolumenMic3.TabIndex = 35;
-            BarraVolumenMic3.Tag = "waveOutDevice2";
-            BarraVolumenMic3.TickFrequency = 5;
-            BarraVolumenMic3.TickStyle = TickStyle.Both;
-            BarraVolumenMic3.Value = 80;
-            BarraVolumenMic3.Scroll += BarraVolumenMic3_Scroll;
+            scrollVolumeMic3.Location = new Point(888, 55);
+            scrollVolumeMic3.Maximum = 100;
+            scrollVolumeMic3.Name = "scrollVolumeMic3";
+            scrollVolumeMic3.Orientation = Orientation.Vertical;
+            scrollVolumeMic3.Size = new Size(69, 118);
+            scrollVolumeMic3.TabIndex = 35;
+            scrollVolumeMic3.Tag = "waveOutDevice2";
+            scrollVolumeMic3.TickFrequency = 5;
+            scrollVolumeMic3.TickStyle = TickStyle.Both;
+            scrollVolumeMic3.Value = 80;
+            scrollVolumeMic3.Scroll += scrollVolumeMic3_Scroll;
             // 
             // labelAudio3
             // 
@@ -576,52 +576,52 @@
             labelVoice3.TabIndex = 37;
             labelVoice3.Text = "Voice";
             // 
-            // NombreCanal4
+            // labelChannel4
             // 
-            NombreCanal4.AutoSize = true;
-            NombreCanal4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            NombreCanal4.ForeColor = SystemColors.ControlDark;
-            NombreCanal4.Location = new Point(662, 235);
-            NombreCanal4.Name = "NombreCanal4";
-            NombreCanal4.Size = new Size(150, 36);
-            NombreCanal4.TabIndex = 38;
-            NombreCanal4.Text = "CHANNEL 4";
+            labelChannel4.AutoSize = true;
+            labelChannel4.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            labelChannel4.ForeColor = SystemColors.ControlDark;
+            labelChannel4.Location = new Point(662, 235);
+            labelChannel4.Name = "labelChannel4";
+            labelChannel4.Size = new Size(150, 36);
+            labelChannel4.TabIndex = 38;
+            labelChannel4.Text = "CHANNEL 4";
             // 
-            // labelSeleccionar4
+            // labelSelect4
             // 
-            labelSeleccionar4.AutoSize = true;
-            labelSeleccionar4.ForeColor = SystemColors.ControlDark;
-            labelSeleccionar4.Location = new Point(498, 283);
-            labelSeleccionar4.Name = "labelSeleccionar4";
-            labelSeleccionar4.Size = new Size(171, 25);
-            labelSeleccionar4.TabIndex = 39;
-            labelSeleccionar4.Text = "Select audio output:";
+            labelSelect4.AutoSize = true;
+            labelSelect4.ForeColor = SystemColors.ControlDark;
+            labelSelect4.Location = new Point(498, 283);
+            labelSelect4.Name = "labelSelect4";
+            labelSelect4.Size = new Size(171, 25);
+            labelSelect4.TabIndex = 39;
+            labelSelect4.Text = "Select audio output:";
             // 
-            // CBSalidas4
+            // CBOuts4
             // 
-            CBSalidas4.BackColor = SystemColors.WindowFrame;
-            CBSalidas4.DropDownStyle = ComboBoxStyle.DropDownList;
-            CBSalidas4.DropDownWidth = 266;
-            CBSalidas4.ForeColor = SystemColors.MenuText;
-            CBSalidas4.FormattingEnabled = true;
-            CBSalidas4.Location = new Point(498, 311);
-            CBSalidas4.Name = "CBSalidas4";
-            CBSalidas4.Size = new Size(266, 33);
-            CBSalidas4.TabIndex = 40;
-            CBSalidas4.SelectedIndexChanged += CBSalidas4_SelectedIndexChanged;
+            CBOuts4.BackColor = SystemColors.WindowFrame;
+            CBOuts4.DropDownStyle = ComboBoxStyle.DropDownList;
+            CBOuts4.DropDownWidth = 266;
+            CBOuts4.ForeColor = SystemColors.MenuText;
+            CBOuts4.FormattingEnabled = true;
+            CBOuts4.Location = new Point(498, 311);
+            CBOuts4.Name = "CBOuts4";
+            CBOuts4.Size = new Size(266, 33);
+            CBOuts4.TabIndex = 40;
+            CBOuts4.SelectedIndexChanged += CBOuts4_SelectedIndexChanged;
             // 
-            // BotónSeleccionar4
+            // buttonSelect4
             // 
-            BotónSeleccionar4.BackColor = Color.DimGray;
-            BotónSeleccionar4.FlatAppearance.BorderColor = Color.Gray;
-            BotónSeleccionar4.FlatStyle = FlatStyle.Popup;
-            BotónSeleccionar4.Location = new Point(498, 350);
-            BotónSeleccionar4.Name = "BotónSeleccionar4";
-            BotónSeleccionar4.Size = new Size(266, 34);
-            BotónSeleccionar4.TabIndex = 41;
-            BotónSeleccionar4.Text = "Select audio file";
-            BotónSeleccionar4.UseVisualStyleBackColor = false;
-            BotónSeleccionar4.Click += BotónSeleccionar4_Click;
+            buttonSelect4.BackColor = Color.DimGray;
+            buttonSelect4.FlatAppearance.BorderColor = Color.Gray;
+            buttonSelect4.FlatStyle = FlatStyle.Popup;
+            buttonSelect4.Location = new Point(498, 350);
+            buttonSelect4.Name = "buttonSelect4";
+            buttonSelect4.Size = new Size(266, 34);
+            buttonSelect4.TabIndex = 41;
+            buttonSelect4.Text = "Select audio file";
+            buttonSelect4.UseVisualStyleBackColor = false;
+            buttonSelect4.Click += buttonSelect4_Click;
             // 
             // Play4
             // 
@@ -663,47 +663,47 @@
             Grabar4.UseVisualStyleBackColor = false;
             Grabar4.Click += Grabar_Click4;
             // 
-            // Bloquear4
+            // Block4
             // 
-            Bloquear4.AutoSize = true;
-            Bloquear4.FlatAppearance.BorderColor = Color.DimGray;
-            Bloquear4.FlatAppearance.CheckedBackColor = Color.DimGray;
-            Bloquear4.FlatStyle = FlatStyle.Popup;
-            Bloquear4.ForeColor = SystemColors.ControlDark;
-            Bloquear4.Location = new Point(770, 318);
-            Bloquear4.Name = "Bloquear4";
-            Bloquear4.Size = new Size(18, 17);
-            Bloquear4.TabIndex = 45;
-            Bloquear4.UseVisualStyleBackColor = true;
-            Bloquear4.CheckedChanged += Bloquear4_CheckedChanged;
+            Block4.AutoSize = true;
+            Block4.FlatAppearance.BorderColor = Color.DimGray;
+            Block4.FlatAppearance.CheckedBackColor = Color.DimGray;
+            Block4.FlatStyle = FlatStyle.Popup;
+            Block4.ForeColor = SystemColors.ControlDark;
+            Block4.Location = new Point(770, 318);
+            Block4.Name = "Block4";
+            Block4.Size = new Size(18, 17);
+            Block4.TabIndex = 45;
+            Block4.UseVisualStyleBackColor = true;
+            Block4.CheckedChanged += block4_CheckedChanged;
             // 
-            // BarraVolumenAudio4
+            // scrollVolumeAudio4
             // 
-            BarraVolumenAudio4.Location = new Point(813, 283);
-            BarraVolumenAudio4.Maximum = 100;
-            BarraVolumenAudio4.Name = "BarraVolumenAudio4";
-            BarraVolumenAudio4.Orientation = Orientation.Vertical;
-            BarraVolumenAudio4.Size = new Size(69, 118);
-            BarraVolumenAudio4.TabIndex = 46;
-            BarraVolumenAudio4.Tag = "waveOutDevice";
-            BarraVolumenAudio4.TickFrequency = 5;
-            BarraVolumenAudio4.TickStyle = TickStyle.Both;
-            BarraVolumenAudio4.Value = 20;
-            BarraVolumenAudio4.Scroll += BarraVolumenAudio4_Scroll;
+            scrollVolumeAudio4.Location = new Point(813, 283);
+            scrollVolumeAudio4.Maximum = 100;
+            scrollVolumeAudio4.Name = "scrollVolumeAudio4";
+            scrollVolumeAudio4.Orientation = Orientation.Vertical;
+            scrollVolumeAudio4.Size = new Size(69, 118);
+            scrollVolumeAudio4.TabIndex = 46;
+            scrollVolumeAudio4.Tag = "waveOutDevice";
+            scrollVolumeAudio4.TickFrequency = 5;
+            scrollVolumeAudio4.TickStyle = TickStyle.Both;
+            scrollVolumeAudio4.Value = 20;
+            scrollVolumeAudio4.Scroll += scrollVolumeAudio4_Scroll;
             // 
-            // BarraVolumenMic4
+            // scrollVolumeMic4
             // 
-            BarraVolumenMic4.Location = new Point(888, 283);
-            BarraVolumenMic4.Maximum = 100;
-            BarraVolumenMic4.Name = "BarraVolumenMic4";
-            BarraVolumenMic4.Orientation = Orientation.Vertical;
-            BarraVolumenMic4.Size = new Size(69, 118);
-            BarraVolumenMic4.TabIndex = 47;
-            BarraVolumenMic4.Tag = "waveOutDevice2";
-            BarraVolumenMic4.TickFrequency = 5;
-            BarraVolumenMic4.TickStyle = TickStyle.Both;
-            BarraVolumenMic4.Value = 80;
-            BarraVolumenMic4.Scroll += BarraVolumenMic4_Scroll;
+            scrollVolumeMic4.Location = new Point(888, 283);
+            scrollVolumeMic4.Maximum = 100;
+            scrollVolumeMic4.Name = "scrollVolumeMic4";
+            scrollVolumeMic4.Orientation = Orientation.Vertical;
+            scrollVolumeMic4.Size = new Size(69, 118);
+            scrollVolumeMic4.TabIndex = 47;
+            scrollVolumeMic4.Tag = "waveOutDevice2";
+            scrollVolumeMic4.TickFrequency = 5;
+            scrollVolumeMic4.TickStyle = TickStyle.Both;
+            scrollVolumeMic4.Value = 80;
+            scrollVolumeMic4.Scroll += scrollVolumeMic4_Scroll;
             // 
             // labelAudio4
             // 
@@ -725,13 +725,13 @@
             labelVoice4.TabIndex = 49;
             labelVoice4.Text = "Voice";
             // 
-            // AbrirArchivo3
+            // openFile3
             // 
-            AbrirArchivo3.Filter = "\"|*.wav;*.mp3;*.ogg\"";
+            openFile3.Filter = "\"|*.wav;*.mp3;*.ogg\"";
             // 
-            // AbrirArchivo4
+            // openFile4
             // 
-            AbrirArchivo4.Filter = "\"|*.wav;*.mp3;*.ogg\"";
+            openFile4.Filter = "\"|*.wav;*.mp3;*.ogg\"";
             // 
             // recordSettings1
             // 
@@ -752,37 +752,37 @@
             // 
             settings1.BackColor = SystemColors.ControlDark;
             settings1.ImageScalingSize = new Size(24, 24);
-            settings1.Items.AddRange(new ToolStripItem[] { calidadBaja, calidadMedia, calidadAlta, calidadUltra });
+            settings1.Items.AddRange(new ToolStripItem[] { qualityLow, qualityMedium, qualityHigh, qualityUltra });
             settings1.Name = "contextMenuStrip1";
             settings1.Size = new Size(301, 132);
             // 
-            // calidadBaja
+            // qualityLow
             // 
-            calidadBaja.Name = "calidadBaja";
-            calidadBaja.Size = new Size(300, 32);
-            calidadBaja.Text = "11025 Hz 8 bits (Low)";
-            calidadBaja.Click += calidadBaja_Click;
+            qualityLow.Name = "qualityLow";
+            qualityLow.Size = new Size(300, 32);
+            qualityLow.Text = "11025 Hz 8 bits (Low)";
+            qualityLow.Click += qualityLow_Click;
             // 
-            // calidadMedia
+            // qualityMedium
             // 
-            calidadMedia.Name = "calidadMedia";
-            calidadMedia.Size = new Size(300, 32);
-            calidadMedia.Text = "22050 Hz 16 bits (Medium)";
-            calidadMedia.Click += calidadMedia_Click;
+            qualityMedium.Name = "qualityMedium";
+            qualityMedium.Size = new Size(300, 32);
+            qualityMedium.Text = "22050 Hz 16 bits (Medium)";
+            qualityMedium.Click += qualityMedium_Click;
             // 
-            // calidadAlta
+            // qualityHigh
             // 
-            calidadAlta.Name = "calidadAlta";
-            calidadAlta.Size = new Size(300, 32);
-            calidadAlta.Text = "44100 Hz 16 bits (High)";
-            calidadAlta.Click += calidadAlta_Click;
+            qualityHigh.Name = "qualityHigh";
+            qualityHigh.Size = new Size(300, 32);
+            qualityHigh.Text = "44100 Hz 16 bits (High)";
+            qualityHigh.Click += qualityHigh_Click;
             // 
-            // calidadUltra
+            // qualityUltra
             // 
-            calidadUltra.Name = "calidadUltra";
-            calidadUltra.Size = new Size(300, 32);
-            calidadUltra.Text = "96000 Hz 24 bits (Ultra)";
-            calidadUltra.Click += calidadUltra_Click;
+            qualityUltra.Name = "qualityUltra";
+            qualityUltra.Size = new Size(300, 32);
+            qualityUltra.Text = "96000 Hz 24 bits (Ultra)";
+            qualityUltra.Click += qualityUltra_Click;
             // 
             // recordSettings2
             // 
@@ -803,37 +803,37 @@
             // 
             settings2.BackColor = SystemColors.ControlDark;
             settings2.ImageScalingSize = new Size(24, 24);
-            settings2.Items.AddRange(new ToolStripItem[] { calidadBaja2, calidadMedia2, calidadAlta2, calidadUltra2 });
+            settings2.Items.AddRange(new ToolStripItem[] { qualityLow2, qualityMedium2, qualityHigh2, qualityUltra2 });
             settings2.Name = "contextMenuStrip1";
-            settings2.Size = new Size(301, 165);
+            settings2.Size = new Size(301, 132);
             // 
-            // calidadBaja2
+            // qualityLow2
             // 
-            calidadBaja2.Name = "calidadBaja2";
-            calidadBaja2.Size = new Size(300, 32);
-            calidadBaja2.Text = "11025 Hz 8 bits (Low)";
-            calidadBaja2.Click += calidadBaja2_Click;
+            qualityLow2.Name = "qualityLow2";
+            qualityLow2.Size = new Size(300, 32);
+            qualityLow2.Text = "11025 Hz 8 bits (Low)";
+            qualityLow2.Click += qualityLow2_Click;
             // 
-            // calidadMedia2
+            // qualityMedium2
             // 
-            calidadMedia2.Name = "calidadMedia2";
-            calidadMedia2.Size = new Size(300, 32);
-            calidadMedia2.Text = "22050 Hz 16 bits (Medium)";
-            calidadMedia2.Click += calidadMedia2_Click;
+            qualityMedium2.Name = "qualityMedium2";
+            qualityMedium2.Size = new Size(300, 32);
+            qualityMedium2.Text = "22050 Hz 16 bits (Medium)";
+            qualityMedium2.Click += qualityMedium2_Click;
             // 
-            // calidadAlta2
+            // qualityHigh2
             // 
-            calidadAlta2.Name = "calidadAlta2";
-            calidadAlta2.Size = new Size(300, 32);
-            calidadAlta2.Text = "44100 Hz 16 bits (High)";
-            calidadAlta2.Click += calidadAlta2_Click;
+            qualityHigh2.Name = "qualityHigh2";
+            qualityHigh2.Size = new Size(300, 32);
+            qualityHigh2.Text = "44100 Hz 16 bits (High)";
+            qualityHigh2.Click += qualityHigh2_Click;
             // 
-            // calidadUltra2
+            // qualityUltra2
             // 
-            calidadUltra2.Name = "calidadUltra2";
-            calidadUltra2.Size = new Size(300, 32);
-            calidadUltra2.Text = "96000 Hz 24 bits (Ultra)";
-            calidadUltra2.Click += calidadUltra2_Click;
+            qualityUltra2.Name = "qualityUltra2";
+            qualityUltra2.Size = new Size(300, 32);
+            qualityUltra2.Text = "96000 Hz 24 bits (Ultra)";
+            qualityUltra2.Click += qualityUltra2_Click;
             // 
             // recordSettings3
             // 
@@ -854,37 +854,37 @@
             // 
             settings3.BackColor = SystemColors.ControlDark;
             settings3.ImageScalingSize = new Size(24, 24);
-            settings3.Items.AddRange(new ToolStripItem[] { calidadBaja3, calidadMedia3, calidadAlta3, calidadUltra3 });
+            settings3.Items.AddRange(new ToolStripItem[] { qualityLow3, qualityMedium3, qualityHigh3, qualityUltra3 });
             settings3.Name = "contextMenuStrip1";
             settings3.Size = new Size(301, 132);
             // 
-            // calidadBaja3
+            // qualityLow3
             // 
-            calidadBaja3.Name = "calidadBaja3";
-            calidadBaja3.Size = new Size(300, 32);
-            calidadBaja3.Text = "11025 Hz 8 bits (Low)";
-            calidadBaja3.Click += calidadBaja3_Click;
+            qualityLow3.Name = "qualityLow3";
+            qualityLow3.Size = new Size(300, 32);
+            qualityLow3.Text = "11025 Hz 8 bits (Low)";
+            qualityLow3.Click += qualityLow3_Click;
             // 
-            // calidadMedia3
+            // qualityMedium3
             // 
-            calidadMedia3.Name = "calidadMedia3";
-            calidadMedia3.Size = new Size(300, 32);
-            calidadMedia3.Text = "22050 Hz 16 bits (Medium)";
-            calidadMedia3.Click += calidadMedia3_Click;
+            qualityMedium3.Name = "qualityMedium3";
+            qualityMedium3.Size = new Size(300, 32);
+            qualityMedium3.Text = "22050 Hz 16 bits (Medium)";
+            qualityMedium3.Click += qualityMedium3_Click;
             // 
-            // calidadAlta3
+            // qualityHigh3
             // 
-            calidadAlta3.Name = "calidadAlta3";
-            calidadAlta3.Size = new Size(300, 32);
-            calidadAlta3.Text = "44100 Hz 16 bits (High)";
-            calidadAlta3.Click += calidadAlta3_Click;
+            qualityHigh3.Name = "qualityHigh3";
+            qualityHigh3.Size = new Size(300, 32);
+            qualityHigh3.Text = "44100 Hz 16 bits (High)";
+            qualityHigh3.Click += qualityHigh3_Click;
             // 
-            // calidadUltra3
+            // qualityUltra3
             // 
-            calidadUltra3.Name = "calidadUltra3";
-            calidadUltra3.Size = new Size(300, 32);
-            calidadUltra3.Text = "96000 Hz 24 bits (Ultra)";
-            calidadUltra3.Click += calidadUltra3_Click;
+            qualityUltra3.Name = "qualityUltra3";
+            qualityUltra3.Size = new Size(300, 32);
+            qualityUltra3.Text = "96000 Hz 24 bits (Ultra)";
+            qualityUltra3.Click += qualityUltra3_Click;
             // 
             // recordSettings4
             // 
@@ -905,37 +905,37 @@
             // 
             settings4.BackColor = SystemColors.ControlDark;
             settings4.ImageScalingSize = new Size(24, 24);
-            settings4.Items.AddRange(new ToolStripItem[] { calidadBaja4, calidadMedia4, calidadAlta4, calidadUltra4 });
+            settings4.Items.AddRange(new ToolStripItem[] { qualityLow4, qualityMedium4, qualityHigh4, qualityUltra4 });
             settings4.Name = "contextMenuStrip1";
             settings4.Size = new Size(301, 132);
             // 
-            // calidadBaja4
+            // qualityLow4
             // 
-            calidadBaja4.Name = "calidadBaja4";
-            calidadBaja4.Size = new Size(300, 32);
-            calidadBaja4.Text = "11025 Hz 8 bits (Low)";
-            calidadBaja4.Click += calidadBaja4_Click;
+            qualityLow4.Name = "qualityLow4";
+            qualityLow4.Size = new Size(300, 32);
+            qualityLow4.Text = "11025 Hz 8 bits (Low)";
+            qualityLow4.Click += qualityLow4_Click;
             // 
-            // calidadMedia4
+            // qualityMedium4
             // 
-            calidadMedia4.Name = "calidadMedia4";
-            calidadMedia4.Size = new Size(300, 32);
-            calidadMedia4.Text = "22050 Hz 16 bits (Medium)";
-            calidadMedia4.Click += calidadMedia4_Click;
+            qualityMedium4.Name = "qualityMedium4";
+            qualityMedium4.Size = new Size(300, 32);
+            qualityMedium4.Text = "22050 Hz 16 bits (Medium)";
+            qualityMedium4.Click += qualityMedium4_Click;
             // 
-            // calidadAlta4
+            // qualityHigh4
             // 
-            calidadAlta4.Name = "calidadAlta4";
-            calidadAlta4.Size = new Size(300, 32);
-            calidadAlta4.Text = "44100 Hz 16 bits (High)";
-            calidadAlta4.Click += calidadAlta4_Click;
+            qualityHigh4.Name = "qualityHigh4";
+            qualityHigh4.Size = new Size(300, 32);
+            qualityHigh4.Text = "44100 Hz 16 bits (High)";
+            qualityHigh4.Click += qualityHigh4_Click;
             // 
-            // calidadUltra4
+            // qualityUltra4
             // 
-            calidadUltra4.Name = "calidadUltra4";
-            calidadUltra4.Size = new Size(300, 32);
-            calidadUltra4.Text = "96000 Hz 24 bits (Ultra)";
-            calidadUltra4.Click += calidadUltra4_Click;
+            qualityUltra4.Name = "qualityUltra4";
+            qualityUltra4.Size = new Size(300, 32);
+            qualityUltra4.Text = "96000 Hz 24 bits (Ultra)";
+            qualityUltra4.Click += qualityUltra4_Click;
             // 
             // Form1
             // 
@@ -949,52 +949,52 @@
             Controls.Add(recordSettings1);
             Controls.Add(labelVoice4);
             Controls.Add(labelAudio4);
-            Controls.Add(BarraVolumenMic4);
-            Controls.Add(BarraVolumenAudio4);
-            Controls.Add(Bloquear4);
+            Controls.Add(scrollVolumeMic4);
+            Controls.Add(scrollVolumeAudio4);
+            Controls.Add(Block4);
             Controls.Add(Grabar4);
             Controls.Add(Stop4);
             Controls.Add(Play4);
-            Controls.Add(BotónSeleccionar4);
-            Controls.Add(CBSalidas4);
-            Controls.Add(labelSeleccionar4);
-            Controls.Add(NombreCanal4);
+            Controls.Add(buttonSelect4);
+            Controls.Add(CBOuts4);
+            Controls.Add(labelSelect4);
+            Controls.Add(labelChannel4);
             Controls.Add(labelVoice3);
             Controls.Add(labelAudio3);
-            Controls.Add(BarraVolumenMic3);
-            Controls.Add(BarraVolumenAudio3);
+            Controls.Add(scrollVolumeMic3);
+            Controls.Add(scrollVolumeAudio3);
             Controls.Add(Grabar3);
             Controls.Add(Stop3);
             Controls.Add(Play3);
-            Controls.Add(BotónSeleccionar3);
-            Controls.Add(Bloquear3);
-            Controls.Add(CBSalidas3);
-            Controls.Add(labelSeleccionar3);
-            Controls.Add(NombreCanal3);
+            Controls.Add(buttonSelect3);
+            Controls.Add(Block3);
+            Controls.Add(CBOuts3);
+            Controls.Add(labelSelect3);
+            Controls.Add(labelChannel3);
             Controls.Add(labelVoice2);
             Controls.Add(labelAudio2);
-            Controls.Add(BarraVolumenMic2);
-            Controls.Add(BarraVolumenAudio2);
-            Controls.Add(Bloquear2);
+            Controls.Add(scrollVolumeMic2);
+            Controls.Add(scrollVolumeAudio2);
+            Controls.Add(Block2);
             Controls.Add(Grabar2);
             Controls.Add(Stop2);
             Controls.Add(Play2);
-            Controls.Add(BotónSeleccionar2);
-            Controls.Add(CBSalidas2);
-            Controls.Add(labelSeleccionar2);
-            Controls.Add(NombreCanal2);
-            Controls.Add(NombreCanal);
+            Controls.Add(buttonSelect2);
+            Controls.Add(CBOuts2);
+            Controls.Add(labelSelect2);
+            Controls.Add(labelChannel2);
+            Controls.Add(labelChannel1);
             Controls.Add(Play1);
             Controls.Add(Stop1);
-            Controls.Add(Bloquear1);
-            Controls.Add(labelSeleccionar1);
-            Controls.Add(BarraVolumenMic1);
+            Controls.Add(Block1);
+            Controls.Add(labelSelect1);
+            Controls.Add(scrollVolumeMic1);
             Controls.Add(labelVoice1);
             Controls.Add(Grabar1);
             Controls.Add(labelAudio1);
-            Controls.Add(BarraVolumenAudio1);
-            Controls.Add(BotónSeleccionar1);
-            Controls.Add(CBSalidas);
+            Controls.Add(scrollVolumeAudio1);
+            Controls.Add(buttonSelect1);
+            Controls.Add(CBOuts);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -1003,14 +1003,14 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Audio Controller";
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenAudio4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BarraVolumenMic4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeAudio4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)scrollVolumeMic4).EndInit();
             settings1.ResumeLayout(false);
             settings2.ResumeLayout(false);
             settings3.ResumeLayout(false);
@@ -1020,81 +1020,81 @@
         }
 
         #endregion
-        private ComboBox CBSalidas;
-        private OpenFileDialog AbrirArchivo;
-        private Button BotónSeleccionar1;
-        private TrackBar BarraVolumenAudio1;
+        private ComboBox CBOuts;
+        private OpenFileDialog openFile;
+        private Button buttonSelect1;
+        private TrackBar scrollVolumeAudio1;
         private Label labelAudio1;
         private Button Grabar1;
         private Label labelVoice1;
-        private TrackBar BarraVolumenMic1;
-        private Label labelSeleccionar1;
-        private CheckBox Bloquear1;
+        private TrackBar scrollVolumeMic1;
+        private Label labelSelect1;
+        private CheckBox Block1;
         private Button Stop1;
         private Button Play1;
-        private Label NombreCanal;
-        private Label NombreCanal2;
-        private Label labelSeleccionar2;
-        private ComboBox CBSalidas2;
-        private Button BotónSeleccionar2;
+        private Label labelChannel1;
+        private Label labelChannel2;
+        private Label labelSelect2;
+        private ComboBox CBOuts2;
+        private Button buttonSelect2;
         private Button Play2;
         private Button Stop2;
         private Button Grabar2;
-        private CheckBox Bloquear2;
-        private TrackBar BarraVolumenAudio2;
-        private TrackBar BarraVolumenMic2;
+        private CheckBox Block2;
+        private TrackBar scrollVolumeAudio2;
+        private TrackBar scrollVolumeMic2;
         private Label labelAudio2;
         private Label labelVoice2;
-        private OpenFileDialog AbrirArchivo2;
-        private Label NombreCanal3;
-        private Label labelSeleccionar3;
-        private ComboBox CBSalidas3;
-        private CheckBox Bloquear3;
-        private Button BotónSeleccionar3;
+        private OpenFileDialog openFile2;
+        private Label labelChannel3;
+        private Label labelSelect3;
+        private ComboBox CBOuts3;
+        private CheckBox Block3;
+        private Button buttonSelect3;
         private Button Play3;
         private Button Stop3;
         private Button Grabar3;
-        private TrackBar BarraVolumenAudio3;
-        private TrackBar BarraVolumenMic3;
+        private TrackBar scrollVolumeAudio3;
+        private TrackBar scrollVolumeMic3;
         private Label labelAudio3;
         private Label labelVoice3;
-        private Label NombreCanal4;
-        private Label labelSeleccionar4;
-        private ComboBox CBSalidas4;
-        private Button BotónSeleccionar4;
+        private Label labelChannel4;
+        private Label labelSelect4;
+        private ComboBox CBOuts4;
+        private Button buttonSelect4;
         private Button Play4;
         private Button Stop4;
         private Button Grabar4;
-        private CheckBox Bloquear4;
-        private TrackBar BarraVolumenAudio4;
-        private TrackBar BarraVolumenMic4;
+        private CheckBox Block4;
+        private TrackBar scrollVolumeAudio4;
+        private TrackBar scrollVolumeMic4;
         private Label labelAudio4;
         private Label labelVoice4;
-        private OpenFileDialog AbrirArchivo3;
-        private OpenFileDialog AbrirArchivo4;
+        private OpenFileDialog openFile3;
+        private OpenFileDialog openFile4;
         private Button recordSettings1;
         private ContextMenuStrip settings1;
-        private ToolStripMenuItem calidadBaja;
-        private ToolStripMenuItem calidadMedia;
-        private ToolStripMenuItem calidadAlta;
-        private ToolStripMenuItem calidadUltra;
+        private ToolStripMenuItem qualityLow;
+        private ToolStripMenuItem qualityMedium;
+        private ToolStripMenuItem qualityHigh;
+        private ToolStripMenuItem qualityUltra;
         private Button recordSettings2;
         private ContextMenuStrip settings2;
-        private ToolStripMenuItem calidadBaja2;
-        private ToolStripMenuItem calidadMedia2;
-        private ToolStripMenuItem calidadAlta2;
-        private ToolStripMenuItem calidadUltra2;
+        private ToolStripMenuItem qualityLow2;
+        private ToolStripMenuItem qualityMedium2;
+        private ToolStripMenuItem qualityHigh2;
+        private ToolStripMenuItem qualityUltra2;
         private Button recordSettings3;
         private ContextMenuStrip settings3;
-        private ToolStripMenuItem calidadBaja3;
-        private ToolStripMenuItem calidadMedia3;
-        private ToolStripMenuItem calidadAlta3;
-        private ToolStripMenuItem calidadUltra3;
+        private ToolStripMenuItem qualityLow3;
+        private ToolStripMenuItem qualityMedium3;
+        private ToolStripMenuItem qualityHigh3;
+        private ToolStripMenuItem qualityUltra3;
         private Button recordSettings4;
         private ContextMenuStrip settings4;
-        private ToolStripMenuItem calidadBaja4;
-        private ToolStripMenuItem calidadMedia4;
-        private ToolStripMenuItem calidadAlta4;
-        private ToolStripMenuItem calidadUltra4;
+        private ToolStripMenuItem qualityLow4;
+        private ToolStripMenuItem qualityMedium4;
+        private ToolStripMenuItem qualityHigh4;
+        private ToolStripMenuItem qualityUltra4;
     }
 }
