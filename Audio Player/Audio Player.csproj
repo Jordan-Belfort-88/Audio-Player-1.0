@@ -14,6 +14,11 @@
     <Description>Controlador de audio para salas de escape</Description>
     <Copyright>Copyright© 2023</Copyright>
     <PackageIcon>Controlador de Audio.png</PackageIcon>
+    <SignAssembly>False</SignAssembly>
+    <Version>1.2.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,7 +36,6 @@
     <PackageReference Include="NAudio" Version="2.1.0" />
     <PackageReference Include="Plugin.AudioRecorder" Version="1.1.0" />
     <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
-    <PackageReference Include="WinForms.DataVisualization" Version="1.8.0" />
   </ItemGroup>
 
   <ItemGroup>
