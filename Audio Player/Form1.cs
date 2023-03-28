@@ -1,9 +1,10 @@
-﻿using NAudio.Wave;
+﻿using NAudio.Gui;
+using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
+using System.Windows.Forms;
 
 namespace Audio_Player
 {
-
-
     public partial class Form1 : Form
     {
         // Channel 1
@@ -16,6 +17,9 @@ namespace Audio_Player
         private AudioFileReader reader;
         private float volumen = 1f;
         private WaveFormat waveFormatSelected;
+        private int volumeMic1;
+        private float currentAmplitude1 = 0.0f;
+        private VolumeMeter volumenMeterMic1;
 
         // Channel 2
         private WaveOutEvent waveOutAudio2;
@@ -27,6 +31,9 @@ namespace Audio_Player
         private AudioFileReader reader2;
         private float volumen2 = 1f;
         private WaveFormat waveFormatSelected2;
+        private int volumeMic2;
+        private VolumeMeter volumenMeterMic2;
+        private float currentAmplitude2 = 0.0f;
 
         // Channel 3
         private WaveOutEvent waveOutAudio3;
@@ -38,6 +45,9 @@ namespace Audio_Player
         private AudioFileReader reader3;
         private float volumen3 = 1f;
         private WaveFormat waveFormatSelected3;
+        private int volumeMic3;
+        private VolumeMeter volumenMeterMic3;
+        private float currentAmplitude3 = 0.0f;
 
         // Channel 4
         private WaveOutEvent waveOutAudio4;
@@ -49,6 +59,9 @@ namespace Audio_Player
         private AudioFileReader reader4;
         private float volumen4 = 1f;
         private WaveFormat waveFormatSelected4;
+        private int volumeMic4;
+        private VolumeMeter volumenMeterMic4;
+        private float currentAmplitude4 = 0.0f;
 
         public Form1()
         {
@@ -60,6 +73,11 @@ namespace Audio_Player
             waveFormatSelected2 = new WaveFormat(22050, 16, 1);
             waveFormatSelected3 = new WaveFormat(22050, 16, 1);
             waveFormatSelected4 = new WaveFormat(22050, 16, 1);
+
+            volumenMeterMic1 = new VolumeMeter();
+            volumenMeterMic2 = new VolumeMeter();
+            volumenMeterMic3 = new VolumeMeter();
+            volumenMeterMic4 = new VolumeMeter();
         }
 
         private void FillComboBoxOuts()
@@ -68,75 +86,29 @@ namespace Audio_Player
             for (int i = 0; i < WaveOut.DeviceCount; i++)
             {
                 WaveOutCapabilities capabilities = WaveOut.GetCapabilities(i);
-                CBOuts.Items.Add(capabilities.ProductName);
+                CBOuts1.Items.Add(capabilities.ProductName);
                 CBOuts2.Items.Add(capabilities.ProductName);
                 CBOuts3.Items.Add(capabilities.ProductName);
                 CBOuts4.Items.Add(capabilities.ProductName);
             }
         }
 
-        private void CBOuts_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void CBOuts2_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts2_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void CBOuts3_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts3_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void CBOuts4_SelectedIndexChanged(object sender, EventArgs e)
+        private void CBOuts4_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void block_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Block1.Checked)
-            {
-                CBOuts.Enabled = false;
-            }
-            else
-            {
-                CBOuts.Enabled = true;
-            }
-        }
-        private void block2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Block2.Checked)
-            {
-                CBOuts2.Enabled = false;
-            }
-            else
-            {
-                CBOuts2.Enabled = true;
-            }
-        }
-        private void block3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Block3.Checked)
-            {
-                CBOuts3.Enabled = false;
-            }
-            else
-            {
-                CBOuts3.Enabled = true;
-            }
-        }
-        private void block4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Block4.Checked)
-            {
-                CBOuts4.Enabled = false;
-            }
-            else
-            {
-                CBOuts4.Enabled = true;
-            }
-        }
-
 
         private void buttonSelect_Click(object sender, EventArgs e)
         {
@@ -195,7 +167,7 @@ namespace Audio_Player
                 waveOutAudio = new WaveOutEvent();
 
                 // Gets the selected output device index
-                int salidaSeleccionada = CBOuts.SelectedIndex;
+                int salidaSeleccionada = CBOuts1.SelectedIndex;
 
                 if (string.IsNullOrEmpty(fileRoute))
                 {
@@ -207,11 +179,15 @@ namespace Audio_Player
                 // Generates an AudioFileReade instance to read the audio file
                 reader = new AudioFileReader(fileRoute);
 
-
-
                 // Connects the output device with the AudioFileReader instance
                 waveOutAudio.DeviceNumber = salidaSeleccionada;
                 waveOutAudio.Init(reader);
+
+                // Create a MeteringSampleProvider and add it to the audio chain
+                MeteringSampleProvider meteringProvider = new MeteringSampleProvider(reader);
+                AttachVolumeMeter(meteringProvider, volumeMeter1);
+                waveOutAudio.Init(meteringProvider);
+
 
                 // Restore saved position and volume
                 reader.Volume = volumen;
@@ -233,6 +209,7 @@ namespace Audio_Player
                 waveOutAudio.Dispose();
 
                 // Changes button text and update playing state
+                volumeMeter1.Amplitude = 0f;
                 Play1.Text = "▶";
                 playing = false;
             }
@@ -265,11 +242,13 @@ namespace Audio_Player
                 // Generates an AudioFileReade instance to read the audio file
                 reader2 = new AudioFileReader(fileRoute2);
 
-
-
                 // Connects the output device with the AudioFileReader instance
                 waveOutAudio2.DeviceNumber = salidaSeleccionada2;
                 waveOutAudio2.Init(reader2);
+
+                MeteringSampleProvider meteringProvider2 = new MeteringSampleProvider(reader2);
+                AttachVolumeMeter(meteringProvider2, volumeMeter2);
+                waveOutAudio2.Init(meteringProvider2);
 
                 // Restore saved position and volume
                 reader2.Volume = volumen2;
@@ -291,6 +270,7 @@ namespace Audio_Player
                 waveOutAudio2.Dispose();
 
                 // Changes button text and update playing state
+                volumeMeter2.Amplitude = 0f;
                 Play2.Text = "▶";
                 playing2 = false;
             }
@@ -329,6 +309,10 @@ namespace Audio_Player
                 waveOutAudio3.DeviceNumber = salidaSeleccionada3;
                 waveOutAudio3.Init(reader3);
 
+                MeteringSampleProvider meteringProvider3 = new MeteringSampleProvider(reader3);
+                AttachVolumeMeter(meteringProvider3, volumeMeter3);
+                waveOutAudio3.Init(meteringProvider3);
+
                 // Restore saved position and volume
                 reader3.Volume = volumen3;
                 reader3.Position = pausePosition3;
@@ -337,6 +321,7 @@ namespace Audio_Player
                 waveOutAudio3.Play();
 
                 // Changes button text and update playing state
+                volumeMeter3.Amplitude = 0f;
                 Play3.Text = "⏸";
                 playing3 = true;
             }
@@ -381,11 +366,13 @@ namespace Audio_Player
                 // Generates an AudioFileReade instance to read the audio file
                 reader4 = new AudioFileReader(fileRoute4);
 
-
-
                 // Connects the output device with the AudioFileReader instance
                 waveOutAudio4.DeviceNumber = salidaSeleccionada4;
                 waveOutAudio4.Init(reader4);
+
+                MeteringSampleProvider meteringProvider4 = new MeteringSampleProvider(reader4);
+                AttachVolumeMeter(meteringProvider4, volumeMeter4);
+                waveOutAudio4.Init(meteringProvider4);
 
                 // Restore saved position and volume
                 reader4.Volume = volumen4;
@@ -407,11 +394,32 @@ namespace Audio_Player
                 waveOutAudio4.Dispose();
 
                 // Changes button text and update playing state
+                volumeMeter4.Amplitude = 0f;
                 Play4.Text = "▶";
                 playing4 = false;
             }
         }
+        private void AttachVolumeMeter(MeteringSampleProvider meteringProvider, VolumeMeter volumeMeter)
+        {
+            // Subscribe to the StreamVolume event of the MeteringSampleProvider
+            meteringProvider.StreamVolume += (sender, e) =>
+            {
+                // Get the maximum sample value in the stream
+                float max = e.MaxSampleValues[0];
 
+                for (int i = 1; i < e.MaxSampleValues.Length; i++)
+                {
+                    if (e.MaxSampleValues[i] > max)
+                        max = e.MaxSampleValues[i];
+                }
+
+                // Normalize the maximum value to the desired range
+                float normalizedVolume = Math.Min(8, max / 0.1f);
+
+                // Update the volume meter
+                volumeMeter.Amplitude = normalizedVolume;
+            };
+        }
         private void Stop_Click(object sender, EventArgs e)
         {
             if (waveOutAudio != null)
@@ -420,6 +428,7 @@ namespace Audio_Player
                 waveOutAudio.Stop();
                 waveOutAudio.Dispose();
                 waveOutAudio = null;
+                volumeMeter1.Amplitude = 0f;
                 playing = false;
                 Play1.Text = "▶";
             }
@@ -434,6 +443,7 @@ namespace Audio_Player
                 waveOutAudio2.Stop();
                 waveOutAudio2.Dispose();
                 waveOutAudio2 = null;
+                volumeMeter2.Amplitude = 0f;
                 playing2 = false;
                 Play2.Text = "▶";
             }
@@ -448,6 +458,7 @@ namespace Audio_Player
                 waveOutAudio3.Stop();
                 waveOutAudio3.Dispose();
                 waveOutAudio3 = null;
+                volumeMeter3.Amplitude = 0f;
                 playing3 = false;
                 Play3.Text = "▶";
             }
@@ -462,6 +473,7 @@ namespace Audio_Player
                 waveOutAudio4.Stop();
                 waveOutAudio4.Dispose();
                 waveOutAudio4 = null;
+                volumeMeter4.Amplitude = 0f;
                 playing4 = false;
                 Play4.Text = "▶";
             }
@@ -482,7 +494,7 @@ namespace Audio_Player
                 waveOutMic = new WaveOutEvent();
 
                 // Gets the selected output device index
-                int salidaSeleccionada = CBOuts.SelectedIndex;
+                int salidaSeleccionada = CBOuts1.SelectedIndex;
 
                 // Connect the output device with the WaveInProvider instance
                 waveOutMic.DeviceNumber = salidaSeleccionada;
@@ -491,7 +503,6 @@ namespace Audio_Player
                 // Plays the recorded audio in real time
                 waveOutMic.Volume = 0.8f;
                 waveOutMic.Play();
-
 
                 // Update UI
                 Grabar1.Text = "Stop";
@@ -513,7 +524,7 @@ namespace Audio_Player
             if (this.waveInDevice2 == null)
             {
                 this.waveInDevice2 = new WaveInEvent();
-                this.waveInDevice2.DataAvailable += WaveInDevice_DataAvailable;
+                this.waveInDevice2.DataAvailable += WaveInDevice2_DataAvailable;
                 this.waveInDevice2.WaveFormat = waveFormatSelected2;
                 this.waveInDevice2.StartRecording();
 
@@ -552,7 +563,7 @@ namespace Audio_Player
             if (this.waveInDevice3 == null)
             {
                 this.waveInDevice3 = new WaveInEvent();
-                this.waveInDevice3.DataAvailable += WaveInDevice_DataAvailable;
+                this.waveInDevice3.DataAvailable += WaveInDevice3_DataAvailable;
                 this.waveInDevice3.WaveFormat = waveFormatSelected3;
                 this.waveInDevice3.StartRecording();
 
@@ -591,7 +602,7 @@ namespace Audio_Player
             if (this.waveInDevice4 == null)
             {
                 this.waveInDevice4 = new WaveInEvent();
-                this.waveInDevice4.DataAvailable += WaveInDevice_DataAvailable;
+                this.waveInDevice4.DataAvailable += WaveInDevice4_DataAvailable;
                 this.waveInDevice4.WaveFormat = waveFormatSelected4;
                 this.waveInDevice4.StartRecording();
 
@@ -628,100 +639,109 @@ namespace Audio_Player
 
         private void WaveInDevice_DataAvailable(object sender, WaveInEventArgs e)
         {
+            float max = 0;
+            // Iterate through each sample and find the maximum amplitude
+            for (int i = 0; i < e.BytesRecorded; i += 2)
+            {
+                short sample = BitConverter.ToInt16(e.Buffer, i);
+                float sample32 = sample / 32768f;
+                if (sample32 < 0) sample32 = -sample32;
+                if (sample32 > max) max = sample32;
+            }
+            currentAmplitude1 = max;
 
+            volumeMeterMic1.Amplitude = currentAmplitude1;
+        }
+        private void WaveInDevice2_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            float max = 0;
+            // Iterate through each sample and find the maximum amplitude
+            for (int i = 0; i < e.BytesRecorded; i += 2)
+            {
+                short sample = BitConverter.ToInt16(e.Buffer, i);
+                float sample32 = sample / 32768f;
+                if (sample32 < 0) sample32 = -sample32;
+                if (sample32 > max) max = sample32;
+            }
+            currentAmplitude2 = max;
+
+            volumeMeterMic2.Amplitude = currentAmplitude2;
+        }
+        private void WaveInDevice3_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            float max = 0;
+            // Iterate through each sample and find the maximum amplitude
+            for (int i = 0; i < e.BytesRecorded; i += 2)
+            {
+                short sample = BitConverter.ToInt16(e.Buffer, i);
+                float sample32 = sample / 32768f;
+                if (sample32 < 0) sample32 = -sample32;
+                if (sample32 > max) max = sample32;
+            }
+            currentAmplitude3 = max;
+
+            volumeMeterMic3.Amplitude = currentAmplitude3;
+        }
+        private void WaveInDevice4_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            float max = 0;
+            // Iterate through each sample and find the maximum amplitude
+            for (int i = 0; i < e.BytesRecorded; i += 2)
+            {
+                short sample = BitConverter.ToInt16(e.Buffer, i);
+                float sample32 = sample / 32768f;
+                if (sample32 < 0) sample32 = -sample32;
+                if (sample32 > max) max = sample32;
+            }
+            currentAmplitude4 = max;
+
+            volumeMeterMic4.Amplitude = currentAmplitude4;
         }
 
-        public void scrollVolumeAudio_Scroll(object sender, EventArgs e)
+        // Audio scroll
+        private void scrollVolumeAudio_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio1, volumen, reader, labelAudio1);
+        private void scrollVolumeAudio2_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio2, volumen2, reader2, labelAudio2);
+        private void scrollVolumeAudio3_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio3, volumen3, reader3, labelAudio3);
+        private void scrollVolumeAudio4_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio4, volumen4, reader4, labelAudio4);
+        private void VolumeAudioFunction(TrackBar scroll, float volume, AudioFileReader reader, Label labelAudio)
         {
-            scrollVolumeAudio1.Tag = reader;
-            int volumen = scrollVolumeAudio1.Value;
-            labelAudio1.Text = "Audio\n   " + volumen.ToString();
+            scroll.Tag = reader;
+            volume = scroll.Value;
 
-            if (waveOutAudio != null)
+            if (scroll.Value >= 65)
             {
-                reader.Volume = (float)volumen / 100f;
+                labelAudio.Text = "🔊";
+            }
+
+            else if (scroll.Value > 0 && scroll.Value < 65)
+            {
+                labelAudio.Text = "🔉";
+            }
+
+            else if (scroll.Value == 0)
+            {
+                labelAudio.Text = "🔈";
+            }
+
+            if (reader != null)
+            {
+                reader.Volume = volume / 100f;
             }
         }
-        private void scrollVolumeAudio2_Scroll(object sender, EventArgs e)
-        {
-            scrollVolumeAudio2.Tag = reader2;
-            int volumen2 = scrollVolumeAudio2.Value;
-            labelAudio2.Text = "Audio\n   " + volumen2.ToString();
 
-            if (waveOutAudio2 != null)
-            {
-                reader2.Volume = (float)volumen2 / 100f;
-            }
-        }
-        private void scrollVolumeAudio3_Scroll(object sender, EventArgs e)
+        // Mic scroll
+        private void scrollVolumeMic_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic1, volumeMic1, waveOutMic);
+        private void scrollVolumeMic2_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic2, volumeMic2, waveOutMic2);
+        private void scrollVolumeMic3_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic3, volumeMic3, waveOutMic3);
+        private void scrollVolumeMic4_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic4, volumeMic4, waveOutMic4);
+        private void VolumeMicFunction(TrackBar scroll, int volume, WaveOutEvent waveOutMic)
         {
-            scrollVolumeAudio3.Tag = reader3;
-            int volumen3 = scrollVolumeAudio3.Value;
-            labelAudio3.Text = "Audio\n   " + volumen3.ToString();
-
-            if (waveOutAudio3 != null)
-            {
-                reader3.Volume = (float)volumen3 / 100f;
-            }
-        }
-        private void scrollVolumeAudio4_Scroll(object sender, EventArgs e)
-        {
-            scrollVolumeAudio4.Tag = reader4;
-            int volumen4 = scrollVolumeAudio4.Value;
-            labelAudio4.Text = "Audio\n   " + volumen4.ToString();
-
-            if (waveOutAudio4 != null)
-            {
-                reader4.Volume = (float)volumen4 / 100f;
-            }
-        }
-        private void labelAudio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void scrollVolumeMic_Scroll(object sender, EventArgs e)
-        {
-            scrollVolumeMic1.Tag = waveOutMic;
-            int volumen3 = scrollVolumeMic1.Value;
-            labelVoice1.Text = "Voice\n   " + volumen3.ToString();
+            scroll.Tag = waveOutMic;
+            volume = scroll.Value;
 
             if (waveOutMic != null)
             {
-                waveOutMic.Volume = (float)volumen3 / 100f;
-            }
-        }
-        private void scrollVolumeMic2_Scroll(object sender, EventArgs e)
-        {
-            scrollVolumeMic2.Tag = waveOutMic2;
-            int volumen4 = scrollVolumeMic2.Value;
-            labelVoice2.Text = "Voice\n   " + volumen4.ToString();
-
-            if (waveOutMic2 != null)
-            {
-                waveOutMic2.Volume = (float)volumen4 / 100f;
-            }
-        }
-        private void scrollVolumeMic3_Scroll(object sender, EventArgs e)
-        {
-            scrollVolumeMic3.Tag = waveOutMic3;
-            int volumen5 = scrollVolumeMic3.Value;
-            labelVoice3.Text = "Voice\n   " + volumen5.ToString();
-
-            if (waveOutMic3 != null)
-            {
-                waveOutMic3.Volume = (float)volumen5 / 100f;
-            }
-        }
-        private void scrollVolumeMic4_Scroll(object sender, EventArgs e)
-        {
-            scrollVolumeMic4.Tag = waveOutMic4;
-            int volumen6 = scrollVolumeMic4.Value;
-            labelVoice4.Text = "Voice\n   " + volumen6.ToString();
-
-            if (waveOutMic4 != null)
-            {
-                waveOutMic4.Volume = (float)volumen6 / 100f;
+                waveOutMic.Volume = (float)volume / 100f;
             }
         }
 
@@ -812,6 +832,7 @@ namespace Audio_Player
         {
             waveFormatSelected4 = new WaveFormat(96000, 24, 1);
         }
+
     }
 
 }

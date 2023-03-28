@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
     <RootNamespace>Audio_Player</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -15,10 +15,11 @@
     <Copyright>Copyright© 2023</Copyright>
     <PackageIcon>Controlador de Audio.png</PackageIcon>
     <SignAssembly>False</SignAssembly>
-    <Version>1.2.0</Version>
+    <Version>1.3.1</Version>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>1.2.0</AssemblyVersion>
-    <FileVersion>1.2.0</FileVersion>
+    <AssemblyVersion>1.3.1</AssemblyVersion>
+    <FileVersion>1.3.1</FileVersion>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>
