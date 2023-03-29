@@ -1,6 +1,8 @@
 ﻿using NAudio.Gui;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
+using Siticone.Desktop.UI.WinForms;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Audio_Player
@@ -20,6 +22,7 @@ namespace Audio_Player
         private int volumeMic1;
         private float currentAmplitude1 = 0.0f;
         private VolumeMeter volumenMeterMic1;
+        private TimeSpan currentTime;
 
         // Channel 2
         private WaveOutEvent waveOutAudio2;
@@ -193,11 +196,21 @@ namespace Audio_Player
                 reader.Volume = volumen;
                 reader.Position = pausePosition;
 
+                // Set up event handlers
+                string totalTimeString = TimeSpan.FromSeconds(reader.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT1.Text = totalTimeString;
+
+                // Suscribe al evento Tick del temporizador
+                timer1.Tick += timer1_Tick_1;
+
+                // Inicia el temporizador
+                timer1.Start();
+
                 // Play audio file
                 waveOutAudio.Play();
 
                 // Changes button text and update playing state
-                Play1.Text = "⏸";
+                Play1.IconChar = FontAwesome.Sharp.IconChar.Pause;
                 playing = true;
             }
             else
@@ -210,8 +223,36 @@ namespace Audio_Player
 
                 // Changes button text and update playing state
                 volumeMeter1.Amplitude = 0f;
-                Play1.Text = "▶";
+                Play1.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing = false;
+            }
+        }
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (reader != null)
+            {
+                labelCT1.Text = reader.CurrentTime.ToString(@"mm\:ss");
+            }
+        }
+        private void timer2_Tick_1(object sender, EventArgs e)
+        {
+            if (reader2 != null)
+            {
+                labelCT2.Text = reader2.CurrentTime.ToString(@"mm\:ss");
+            }
+        }
+        private void timer3_Tick_1(object sender, EventArgs e)
+        {
+            if (reader3 != null)
+            {
+                labelCT3.Text = reader3.CurrentTime.ToString(@"mm\:ss");
+            }
+        }
+        private void timer4_Tick_1(object sender, EventArgs e)
+        {
+            if (reader4 != null)
+            {
+                labelCT4.Text = reader4.CurrentTime.ToString(@"mm\:ss");
             }
         }
         private void Play_Click2(object sender, EventArgs e)
@@ -254,11 +295,21 @@ namespace Audio_Player
                 reader2.Volume = volumen2;
                 reader2.Position = pausePosition2;
 
+                // Set up event handlers
+                string totalTimeString2 = TimeSpan.FromSeconds(reader2.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT2.Text = totalTimeString2;
+
+                // Suscribe al evento Tick del temporizador
+                timer2.Tick += timer2_Tick_1;
+
+                // Inicia el temporizador
+                timer2.Start();
+
                 // Play audio file
                 waveOutAudio2.Play();
 
                 // Changes button text and update playing state
-                Play2.Text = "⏸";
+                Play2.IconChar = FontAwesome.Sharp.IconChar.Pause;
                 playing2 = true;
             }
             else
@@ -271,7 +322,7 @@ namespace Audio_Player
 
                 // Changes button text and update playing state
                 volumeMeter2.Amplitude = 0f;
-                Play2.Text = "▶";
+                Play2.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing2 = false;
             }
         }
@@ -317,12 +368,22 @@ namespace Audio_Player
                 reader3.Volume = volumen3;
                 reader3.Position = pausePosition3;
 
+                // Set up event handlers
+                string totalTimeString3 = TimeSpan.FromSeconds(reader3.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT3.Text = totalTimeString3;
+
+                // Suscribe al evento Tick del temporizador
+                timer3.Tick += timer3_Tick_1;
+
+                // Inicia el temporizador
+                timer3.Start();
+
                 // Play audio file
                 waveOutAudio3.Play();
 
                 // Changes button text and update playing state
                 volumeMeter3.Amplitude = 0f;
-                Play3.Text = "⏸";
+                Play3.IconChar = FontAwesome.Sharp.IconChar.Pause;
                 playing3 = true;
             }
             else
@@ -334,7 +395,7 @@ namespace Audio_Player
                 waveOutAudio3.Dispose();
 
                 // Changes button text and update playing state
-                Play3.Text = "▶";
+                Play3.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing3 = false;
             }
         }
@@ -378,11 +439,21 @@ namespace Audio_Player
                 reader4.Volume = volumen4;
                 reader4.Position = pausePosition4;
 
+                // Set up event handlers
+                string totalTimeString4 = TimeSpan.FromSeconds(reader4.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT4.Text = totalTimeString4;
+
+                // Suscribe al evento Tick del temporizador
+                timer4.Tick += timer4_Tick_1;
+
+                // Inicia el temporizador
+                timer4.Start();
+
                 // Play audio file
                 waveOutAudio4.Play();
 
                 // Changes button text and update playing state
-                Play4.Text = "⏸";
+                Play4.IconChar = FontAwesome.Sharp.IconChar.Pause;
                 playing4 = true;
             }
             else
@@ -395,7 +466,7 @@ namespace Audio_Player
 
                 // Changes button text and update playing state
                 volumeMeter4.Amplitude = 0f;
-                Play4.Text = "▶";
+                Play4.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing4 = false;
             }
         }
@@ -420,6 +491,7 @@ namespace Audio_Player
                 volumeMeter.Amplitude = normalizedVolume;
             };
         }
+
         private void Stop_Click(object sender, EventArgs e)
         {
             if (waveOutAudio != null)
@@ -430,7 +502,7 @@ namespace Audio_Player
                 waveOutAudio = null;
                 volumeMeter1.Amplitude = 0f;
                 playing = false;
-                Play1.Text = "▶";
+                Play1.IconChar = FontAwesome.Sharp.IconChar.Play;
             }
             else
                 return;
@@ -445,7 +517,7 @@ namespace Audio_Player
                 waveOutAudio2 = null;
                 volumeMeter2.Amplitude = 0f;
                 playing2 = false;
-                Play2.Text = "▶";
+                Play2.IconChar = FontAwesome.Sharp.IconChar.Play;
             }
             else
                 return;
@@ -460,7 +532,7 @@ namespace Audio_Player
                 waveOutAudio3 = null;
                 volumeMeter3.Amplitude = 0f;
                 playing3 = false;
-                Play3.Text = "▶";
+                Play3.IconChar = FontAwesome.Sharp.IconChar.Play;
             }
             else
                 return;
@@ -475,7 +547,7 @@ namespace Audio_Player
                 waveOutAudio4 = null;
                 volumeMeter4.Amplitude = 0f;
                 playing4 = false;
-                Play4.Text = "▶";
+                Play4.IconChar = FontAwesome.Sharp.IconChar.Play;
             }
             else
                 return;
@@ -505,7 +577,7 @@ namespace Audio_Player
                 waveOutMic.Play();
 
                 // Update UI
-                Grabar1.Text = "Stop";
+                Grabar1.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
             }
             else
             {
@@ -516,7 +588,7 @@ namespace Audio_Player
                 waveInDevice = null;
 
                 // Update UI
-                Grabar1.Text = "Record";
+                Grabar1.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             }
         }
         private void Grabar_Click2(object sender, EventArgs e)
@@ -544,7 +616,7 @@ namespace Audio_Player
 
 
                 // Update UI
-                Grabar2.Text = "Stop";
+              //  Grabar2.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
             }
             else
             {
@@ -555,7 +627,7 @@ namespace Audio_Player
                 waveInDevice2 = null;
 
                 // Update UI
-                Grabar2.Text = "Record";
+               // Grabar2.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             }
         }
         private void Grabar_Click3(object sender, EventArgs e)
@@ -583,7 +655,7 @@ namespace Audio_Player
 
 
                 // Update UI
-                Grabar3.Text = "Stop";
+                Grabar1.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
             }
             else
             {
@@ -594,7 +666,7 @@ namespace Audio_Player
                 waveInDevice3 = null;
 
                 // Update UI
-                Grabar3.Text = "Record";
+                Grabar3.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             }
         }
         private void Grabar_Click4(object sender, EventArgs e)
@@ -622,7 +694,7 @@ namespace Audio_Player
 
 
                 // Update UI
-                Grabar4.Text = "Stop";
+                Grabar3.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
             }
             else
             {
@@ -633,7 +705,7 @@ namespace Audio_Player
                 waveInDevice4 = null;
 
                 // Update UI
-                Grabar4.Text = "Record";
+                Grabar3.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             }
         }
 
@@ -699,11 +771,11 @@ namespace Audio_Player
         }
 
         // Audio scroll
-        private void scrollVolumeAudio_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio1, volumen, reader, labelAudio1);
-        private void scrollVolumeAudio2_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio2, volumen2, reader2, labelAudio2);
+        private void ScrollVolumeAudio_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio1, volumen, reader, labelAudio1);
+        private void ScrollVolumeAudio2_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio2, volumen2, reader2, labelAudio2);
         private void scrollVolumeAudio3_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio3, volumen3, reader3, labelAudio3);
         private void scrollVolumeAudio4_Scroll(object sender, EventArgs e) => VolumeAudioFunction(scrollVolumeAudio4, volumen4, reader4, labelAudio4);
-        private void VolumeAudioFunction(TrackBar scroll, float volume, AudioFileReader reader, Label labelAudio)
+        private void VolumeAudioFunction(SiticoneTrackBar scroll, float volume, AudioFileReader reader, Label labelAudio)
         {
             scroll.Tag = reader;
             volume = scroll.Value;
@@ -734,7 +806,7 @@ namespace Audio_Player
         private void scrollVolumeMic2_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic2, volumeMic2, waveOutMic2);
         private void scrollVolumeMic3_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic3, volumeMic3, waveOutMic3);
         private void scrollVolumeMic4_Scroll(object sender, EventArgs e) => VolumeMicFunction(scrollVolumeMic4, volumeMic4, waveOutMic4);
-        private void VolumeMicFunction(TrackBar scroll, int volume, WaveOutEvent waveOutMic)
+        private void VolumeMicFunction(SiticoneTrackBar scroll, int volume, WaveOutEvent waveOutMic)
         {
             scroll.Tag = waveOutMic;
             volume = scroll.Value;
@@ -833,6 +905,25 @@ namespace Audio_Player
             waveFormatSelected4 = new WaveFormat(96000, 24, 1);
         }
 
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void siticoneContainerControl5_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 
 }
