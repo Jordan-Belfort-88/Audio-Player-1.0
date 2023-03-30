@@ -263,7 +263,7 @@ namespace Audio_Player
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
         {
-            get { return cmbList.SelectedIndex; }
+            get => cmbList.SelectedIndex;
             set { cmbList.SelectedIndex = value; }
         }
 

@@ -15,10 +15,10 @@
     <Copyright>Copyright© 2023</Copyright>
     <PackageIcon>Controlador de Audio.png</PackageIcon>
     <SignAssembly>False</SignAssembly>
-    <Version>1.3.1</Version>
+    <Version>2.1</Version>
     <NeutralLanguage>en</NeutralLanguage>
-    <AssemblyVersion>1.3.1</AssemblyVersion>
-    <FileVersion>1.3.1</FileVersion>
+    <AssemblyVersion>2.1</AssemblyVersion>
+    <FileVersion>2.1</FileVersion>
     <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 

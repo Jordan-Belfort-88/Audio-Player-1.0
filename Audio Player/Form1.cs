@@ -1,4 +1,5 @@
-﻿using NAudio.Gui;
+﻿using Microsoft.Win32;
+using NAudio.Gui;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using Siticone.Desktop.UI.WinForms;
@@ -94,6 +95,7 @@ namespace Audio_Player
                 CBOuts3.Items.Add(capabilities.ProductName);
                 CBOuts4.Items.Add(capabilities.ProductName);
             }
+
         }
 
         private void CBOuts1_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -121,6 +123,24 @@ namespace Audio_Player
                 // Get the selected file route
                 fileRoute = openFile.FileName;
 
+                // Obtener el nombre del archivo seleccionado
+                string fileName = openFile.FileName;
+
+                // Actualizar el texto del botón "Select audio file"
+                SelectText1.Text = Path.GetFileName(fileName);
+
+                // Set up event handlers
+                reader = new AudioFileReader(fileRoute);
+                string totalTimeString = TimeSpan.FromSeconds(reader.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT1.Text = totalTimeString;
+                volumen = scrollVolumeAudio1.Value / 100f;
+                reader.Volume = volumen;
+
+                if (reader != null)
+                {
+                    Stop_Click(sender, e);
+                    reader.Volume = volumen;
+                }
             }
         }
         private void buttonSelect2_Click(object sender, EventArgs e)
@@ -131,6 +151,24 @@ namespace Audio_Player
                 // Get the selected file route
                 fileRoute2 = openFile2.FileName;
 
+                // Obtener el nombre del archivo seleccionado
+                string fileName2 = openFile2.FileName;
+
+                // Actualizar el texto del botón "Select audio file"
+                SelectText2.Text = Path.GetFileName(fileName2);
+
+                // Set up event handlers
+                reader2 = new AudioFileReader(fileRoute2);
+                string totalTimeString2 = TimeSpan.FromSeconds(reader2.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT2.Text = totalTimeString2;
+                volumen2 = scrollVolumeAudio2.Value / 100f;
+                reader2.Volume = volumen2;
+
+                if (reader2 != null)
+                {
+                    Stop_Click2(sender, e);
+                    reader2.Volume = volumen2;
+                }
             }
         }
         private void buttonSelect3_Click(object sender, EventArgs e)
@@ -141,6 +179,24 @@ namespace Audio_Player
                 // Get the selected file route
                 fileRoute3 = openFile3.FileName;
 
+                // Obtener el nombre del archivo seleccionado
+                string fileName3 = openFile3.FileName;
+
+                // Actualizar el texto del botón "Select audio file"
+                SelectText3.Text = Path.GetFileName(fileName3);
+
+                // Set up event handlers
+                reader3 = new AudioFileReader(fileRoute3);
+                string totalTimeString3 = TimeSpan.FromSeconds(reader3.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT3.Text = totalTimeString3;
+                volumen3 = scrollVolumeAudio3.Value / 100f;
+                reader3.Volume = volumen3;
+
+                if (reader3 != null)
+                {
+                    Stop_Click3(sender, e);
+                    reader3.Volume = volumen3;
+                }
             }
         }
         private void buttonSelect4_Click(object sender, EventArgs e)
@@ -151,6 +207,24 @@ namespace Audio_Player
                 // Get the selected file route
                 fileRoute4 = openFile4.FileName;
 
+                // Obtener el nombre del archivo seleccionado
+                string fileName4 = openFile4.FileName;
+
+                // Actualizar el texto del botón "Select audio file"
+                SelectText4.Text = Path.GetFileName(fileName4);
+
+                // Set up event handlers
+                reader4 = new AudioFileReader(fileRoute4);
+                string totalTimeString4 = TimeSpan.FromSeconds(reader4.TotalTime.TotalSeconds).ToString(@"mm\:ss");
+                labelTT4.Text = totalTimeString4;
+                volumen4 = scrollVolumeAudio4.Value / 100f;
+                reader4.Volume = volumen4;
+
+                if (reader4 != null)
+                {
+                    Stop_Click4(sender, e);
+                    reader4.Volume = volumen4;
+                }
             }
         }
 
@@ -172,15 +246,17 @@ namespace Audio_Player
                 // Gets the selected output device index
                 int salidaSeleccionada = CBOuts1.SelectedIndex;
 
-                if (string.IsNullOrEmpty(fileRoute))
+                if (CBOuts1.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select an audio file.");
+                    siticoneMessageDialog1.Show("Please select an audio output.");
                     return;
                 }
 
-
-                // Generates an AudioFileReade instance to read the audio file
-                reader = new AudioFileReader(fileRoute);
+                if (string.IsNullOrEmpty(fileRoute))
+                {
+                    siticoneMessageDialog1.Show("Please select an audio file.");
+                    return;
+                }
 
                 // Connects the output device with the AudioFileReader instance
                 waveOutAudio.DeviceNumber = salidaSeleccionada;
@@ -212,6 +288,9 @@ namespace Audio_Player
                 // Changes button text and update playing state
                 Play1.IconChar = FontAwesome.Sharp.IconChar.Pause;
                 playing = true;
+
+
+
             }
             else
             {
@@ -225,34 +304,6 @@ namespace Audio_Player
                 volumeMeter1.Amplitude = 0f;
                 Play1.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing = false;
-            }
-        }
-        private void timer1_Tick_1(object sender, EventArgs e)
-        {
-            if (reader != null)
-            {
-                labelCT1.Text = reader.CurrentTime.ToString(@"mm\:ss");
-            }
-        }
-        private void timer2_Tick_1(object sender, EventArgs e)
-        {
-            if (reader2 != null)
-            {
-                labelCT2.Text = reader2.CurrentTime.ToString(@"mm\:ss");
-            }
-        }
-        private void timer3_Tick_1(object sender, EventArgs e)
-        {
-            if (reader3 != null)
-            {
-                labelCT3.Text = reader3.CurrentTime.ToString(@"mm\:ss");
-            }
-        }
-        private void timer4_Tick_1(object sender, EventArgs e)
-        {
-            if (reader4 != null)
-            {
-                labelCT4.Text = reader4.CurrentTime.ToString(@"mm\:ss");
             }
         }
         private void Play_Click2(object sender, EventArgs e)
@@ -273,15 +324,17 @@ namespace Audio_Player
                 // Gets the selected output device index
                 int salidaSeleccionada2 = CBOuts2.SelectedIndex;
 
-                if (string.IsNullOrEmpty(fileRoute2))
+                if (CBOuts2.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select an audio file.");
+                    siticoneMessageDialog1.Show("Please select an audio output.");
                     return;
                 }
 
-
-                // Generates an AudioFileReade instance to read the audio file
-                reader2 = new AudioFileReader(fileRoute2);
+                if (string.IsNullOrEmpty(fileRoute2))
+                {
+                    siticoneMessageDialog1.Show("Please select an audio file.");
+                    return;
+                }
 
                 // Connects the output device with the AudioFileReader instance
                 waveOutAudio2.DeviceNumber = salidaSeleccionada2;
@@ -294,10 +347,6 @@ namespace Audio_Player
                 // Restore saved position and volume
                 reader2.Volume = volumen2;
                 reader2.Position = pausePosition2;
-
-                // Set up event handlers
-                string totalTimeString2 = TimeSpan.FromSeconds(reader2.TotalTime.TotalSeconds).ToString(@"mm\:ss");
-                labelTT2.Text = totalTimeString2;
 
                 // Suscribe al evento Tick del temporizador
                 timer2.Tick += timer2_Tick_1;
@@ -344,9 +393,15 @@ namespace Audio_Player
                 // Gets the selected output device index
                 int salidaSeleccionada3 = CBOuts3.SelectedIndex;
 
+                if (CBOuts3.SelectedIndex == -1)
+                {
+                    siticoneMessageDialog1.Show("Please select an audio output.");
+                    return;
+                }
+
                 if (string.IsNullOrEmpty(fileRoute3))
                 {
-                    MessageBox.Show("Please select an audio file.");
+                    siticoneMessageDialog1.Show("Please select an audio file.");
                     return;
                 }
 
@@ -397,6 +452,7 @@ namespace Audio_Player
                 // Changes button text and update playing state
                 Play3.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing3 = false;
+                volumeMeter3.Amplitude = 0f;
             }
         }
         private void Play_Click4(object sender, EventArgs e)
@@ -417,12 +473,17 @@ namespace Audio_Player
                 // Gets the selected output device index
                 int salidaSeleccionada4 = CBOuts4.SelectedIndex;
 
-                if (string.IsNullOrEmpty(fileRoute4))
+                if (CBOuts4.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select an audio file.");
+                    siticoneMessageDialog1.Show("Please select an audio output.");
                     return;
                 }
 
+                if (string.IsNullOrEmpty(fileRoute4))
+                {
+                    siticoneMessageDialog1.Show("Please select an audio file.");
+                    return;
+                }
 
                 // Generates an AudioFileReade instance to read the audio file
                 reader4 = new AudioFileReader(fileRoute4);
@@ -468,6 +529,7 @@ namespace Audio_Player
                 volumeMeter4.Amplitude = 0f;
                 Play4.IconChar = FontAwesome.Sharp.IconChar.Play;
                 playing4 = false;
+                volumeMeter4.Amplitude = 0f;
             }
         }
         private void AttachVolumeMeter(MeteringSampleProvider meteringProvider, VolumeMeter volumeMeter)
@@ -491,7 +553,46 @@ namespace Audio_Player
                 volumeMeter.Amplitude = normalizedVolume;
             };
         }
-
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (reader != null)
+            {
+                if (waveOutAudio != null)
+                {
+                    labelCT1.Text = reader.CurrentTime.ToString(@"mm\:ss");
+                }
+            }
+        }
+        private void timer2_Tick_1(object sender, EventArgs e)
+        {
+            if (reader2 != null)
+            {
+                if (waveOutAudio2 != null)
+                {
+                    labelCT2.Text = reader2.CurrentTime.ToString(@"mm\:ss");
+                }
+            }
+        }
+        private void timer3_Tick_1(object sender, EventArgs e)
+        {
+            if (reader3 != null)
+            {
+                if (waveOutAudio3 != null)
+                {
+                    labelCT3.Text = reader3.CurrentTime.ToString(@"mm\:ss");
+                }
+            }
+        }
+        private void timer4_Tick_1(object sender, EventArgs e)
+        {
+            if (reader4 != null)
+            {
+                if (waveOutAudio4 != null)
+                {
+                    labelCT4.Text = reader4.CurrentTime.ToString(@"mm\:ss");
+                }
+            }
+        }
         private void Stop_Click(object sender, EventArgs e)
         {
             if (waveOutAudio != null)
@@ -503,6 +604,8 @@ namespace Audio_Player
                 volumeMeter1.Amplitude = 0f;
                 playing = false;
                 Play1.IconChar = FontAwesome.Sharp.IconChar.Play;
+                labelCT1.Text = "00:00";
+                volumen = reader.Volume;
             }
             else
                 return;
@@ -518,6 +621,8 @@ namespace Audio_Player
                 volumeMeter2.Amplitude = 0f;
                 playing2 = false;
                 Play2.IconChar = FontAwesome.Sharp.IconChar.Play;
+                labelCT2.Text = "00:00";
+                volumen2 = reader2.Volume;
             }
             else
                 return;
@@ -533,6 +638,8 @@ namespace Audio_Player
                 volumeMeter3.Amplitude = 0f;
                 playing3 = false;
                 Play3.IconChar = FontAwesome.Sharp.IconChar.Play;
+                labelCT3.Text = "00:00";
+                //  volumen3 = reader3.Volume;
             }
             else
                 return;
@@ -548,6 +655,8 @@ namespace Audio_Player
                 volumeMeter4.Amplitude = 0f;
                 playing4 = false;
                 Play4.IconChar = FontAwesome.Sharp.IconChar.Play;
+                labelCT4.Text = "00:00";
+                volumen4 = reader4.Volume;
             }
             else
                 return;
@@ -589,6 +698,7 @@ namespace Audio_Player
 
                 // Update UI
                 Grabar1.IconChar = FontAwesome.Sharp.IconChar.Microphone;
+                volumeMeterMic1.Amplitude = 0f;
             }
         }
         private void Grabar_Click2(object sender, EventArgs e)
@@ -616,7 +726,7 @@ namespace Audio_Player
 
 
                 // Update UI
-              //  Grabar2.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
+                Grabar2.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
             }
             else
             {
@@ -627,7 +737,8 @@ namespace Audio_Player
                 waveInDevice2 = null;
 
                 // Update UI
-               // Grabar2.IconChar = FontAwesome.Sharp.IconChar.Microphone;
+                Grabar2.IconChar = FontAwesome.Sharp.IconChar.Microphone;
+                volumeMeterMic2.Amplitude = 0f;
             }
         }
         private void Grabar_Click3(object sender, EventArgs e)
@@ -655,7 +766,7 @@ namespace Audio_Player
 
 
                 // Update UI
-                Grabar1.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
+                Grabar3.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
             }
             else
             {
@@ -667,6 +778,7 @@ namespace Audio_Player
 
                 // Update UI
                 Grabar3.IconChar = FontAwesome.Sharp.IconChar.Microphone;
+                volumeMeterMic3.Amplitude = 0f;
             }
         }
         private void Grabar_Click4(object sender, EventArgs e)
@@ -694,7 +806,8 @@ namespace Audio_Player
 
 
                 // Update UI
-                Grabar3.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
+                Grabar4.IconChar = FontAwesome.Sharp.IconChar.RecordVinyl;
+                volumeMeterMic4.Amplitude = 0f;
             }
             else
             {
@@ -705,7 +818,7 @@ namespace Audio_Player
                 waveInDevice4 = null;
 
                 // Update UI
-                Grabar3.IconChar = FontAwesome.Sharp.IconChar.Microphone;
+                Grabar4.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             }
         }
 
@@ -923,6 +1036,38 @@ namespace Audio_Player
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void timer5_Tick(object sender, EventArgs e)
+        {
+            // Save current selection
+            string selectedOut1 = CBOuts1.SelectedItem?.ToString();
+            string selectedOut2 = CBOuts2.SelectedItem?.ToString();
+            string selectedOut3 = CBOuts3.SelectedItem?.ToString();
+            string selectedOut4 = CBOuts4.SelectedItem?.ToString();
+
+            // Clear the ComboBoxes
+            CBOuts1.Items.Clear();
+            CBOuts2.Items.Clear();
+            CBOuts3.Items.Clear();
+            CBOuts4.Items.Clear();
+
+            // Fill the ComboBoxes with the available devices
+            for (int i = 0; i < WaveOut.DeviceCount; i++)
+            {
+                WaveOutCapabilities capabilities = WaveOut.GetCapabilities(i);
+                CBOuts1.Items.Add(capabilities.ProductName);
+                CBOuts2.Items.Add(capabilities.ProductName);
+                CBOuts3.Items.Add(capabilities.ProductName);
+                CBOuts4.Items.Add(capabilities.ProductName);
+            }
+
+            // Restore previous selection
+            CBOuts1.SelectedItem = selectedOut1;
+            CBOuts2.SelectedItem = selectedOut2;
+            CBOuts3.SelectedItem = selectedOut3;
+            CBOuts4.SelectedItem = selectedOut4;
+
         }
     }
 

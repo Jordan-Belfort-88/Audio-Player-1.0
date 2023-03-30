@@ -20,10 +20,7 @@
             base.Dispose(disposing);
         }
 
-        private void InitializeComponent()
-        {
-            InitializeComponent(Grabar3);
-        }
+
 
         #region Windows Form Designer generated code
 
@@ -31,32 +28,21 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent(FontAwesome.Sharp.IconButton grabar3)
+        private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             openFile = new OpenFileDialog();
-            buttonSelect1 = new Button();
             labelAudio1 = new Label();
             labelVoice1 = new Label();
-            labelSelect1 = new Label();
             labelChannel1 = new Label();
             labelChannel2 = new Label();
-            labelSelect2 = new Label();
-            buttonSelect2 = new Button();
-         //   Grabar22 = new Button();
             labelAudio2 = new Label();
             labelVoice2 = new Label();
             openFile2 = new OpenFileDialog();
             labelChannel3 = new Label();
-            labelSelect3 = new Label();
-            buttonSelect3 = new Button();
-            Grabar33 = new Button();
             labelAudio3 = new Label();
             labelChannel4 = new Label();
-            labelSelect4 = new Label();
-            buttonSelect4 = new Button();
-            Grabar44 = new Button();
             labelAudio4 = new Label();
             openFile3 = new OpenFileDialog();
             openFile4 = new OpenFileDialog();
@@ -65,19 +51,16 @@
             qualityMedium = new ToolStripMenuItem();
             qualityHigh = new ToolStripMenuItem();
             qualityUltra = new ToolStripMenuItem();
-            recordSettings2 = new Button();
             settings2 = new ContextMenuStrip(components);
             qualityLow2 = new ToolStripMenuItem();
             qualityMedium2 = new ToolStripMenuItem();
             qualityHigh2 = new ToolStripMenuItem();
             qualityUltra2 = new ToolStripMenuItem();
-            recordSettings3 = new Button();
             settings3 = new ContextMenuStrip(components);
             qualityLow3 = new ToolStripMenuItem();
             qualityMedium3 = new ToolStripMenuItem();
             qualityHigh3 = new ToolStripMenuItem();
             qualityUltra3 = new ToolStripMenuItem();
-            recordSettings4 = new Button();
             settings4 = new ContextMenuStrip(components);
             qualityLow4 = new ToolStripMenuItem();
             qualityMedium4 = new ToolStripMenuItem();
@@ -124,6 +107,7 @@
             recordSettings1 = new FontAwesome.Sharp.IconButton();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             siticoneContainerControl5 = new Siticone.Desktop.UI.WinForms.SiticoneContainerControl();
+            button1 = new Button();
             btnMinimize = new Button();
             btnExit = new Button();
             timer2 = new System.Windows.Forms.Timer(components);
@@ -136,11 +120,29 @@
             Play2 = new FontAwesome.Sharp.IconButton();
             Play4 = new FontAwesome.Sharp.IconButton();
             Stop2 = new FontAwesome.Sharp.IconButton();
-            this.Stop4 = new FontAwesome.Sharp.IconButton();
+            Stop4 = new FontAwesome.Sharp.IconButton();
             Stop3 = new FontAwesome.Sharp.IconButton();
-           // Grabar2 = new FontAwesome.Sharp.IconButton();
+            Grabar2 = new FontAwesome.Sharp.IconButton();
             Grabar3 = new FontAwesome.Sharp.IconButton();
             Grabar4 = new FontAwesome.Sharp.IconButton();
+            recordSettings3 = new FontAwesome.Sharp.IconButton();
+            recordSettings2 = new FontAwesome.Sharp.IconButton();
+            recordSettings4 = new FontAwesome.Sharp.IconButton();
+            siticoneCustomGradientPanel1 = new Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel();
+            siticoneContainerControl9 = new Siticone.Desktop.UI.WinForms.SiticoneContainerControl();
+            iconButton4 = new FontAwesome.Sharp.IconButton();
+            SelectText4 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            siticoneContainerControl8 = new Siticone.Desktop.UI.WinForms.SiticoneContainerControl();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
+            SelectText2 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            siticoneContainerControl7 = new Siticone.Desktop.UI.WinForms.SiticoneContainerControl();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
+            SelectText3 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            siticoneContainerControl6 = new Siticone.Desktop.UI.WinForms.SiticoneContainerControl();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            SelectText1 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            timer5 = new System.Windows.Forms.Timer(components);
+            siticoneMessageDialog1 = new Siticone.Desktop.UI.WinForms.SiticoneMessageDialog();
             settings1.SuspendLayout();
             settings2.SuspendLayout();
             settings3.SuspendLayout();
@@ -154,67 +156,48 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
+            siticoneCustomGradientPanel1.SuspendLayout();
+            siticoneContainerControl9.SuspendLayout();
+            siticoneContainerControl8.SuspendLayout();
+            siticoneContainerControl7.SuspendLayout();
+            siticoneContainerControl6.SuspendLayout();
             SuspendLayout();
             // 
             // openFile
             // 
             openFile.Filter = "\"|*.wav;*.mp3;*.ogg\"";
             // 
-            // buttonSelect1
-            // 
-            buttonSelect1.BackColor = Color.FromArgb(34, 33, 74);
-            buttonSelect1.FlatAppearance.BorderColor = Color.Gray;
-            buttonSelect1.FlatAppearance.BorderSize = 0;
-            buttonSelect1.FlatStyle = FlatStyle.Flat;
-            buttonSelect1.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSelect1.ForeColor = SystemColors.ControlDark;
-            buttonSelect1.Location = new Point(47, 175);
-            buttonSelect1.Name = "buttonSelect1";
-            buttonSelect1.Size = new Size(266, 34);
-            buttonSelect1.TabIndex = 3;
-            buttonSelect1.Text = "Select audio file";
-            buttonSelect1.UseVisualStyleBackColor = false;
-            buttonSelect1.Click += buttonSelect_Click;
-            // 
             // labelAudio1
             // 
             labelAudio1.AutoSize = true;
-            labelAudio1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAudio1.BackColor = Color.Transparent;
+            labelAudio1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelAudio1.ForeColor = SystemColors.ControlDark;
-            labelAudio1.Location = new Point(12, 303);
+            labelAudio1.Location = new Point(4, 241);
             labelAudio1.Name = "labelAudio1";
-            labelAudio1.Size = new Size(39, 28);
+            labelAudio1.Size = new Size(47, 32);
             labelAudio1.TabIndex = 5;
             labelAudio1.Text = "🔉";
             // 
             // labelVoice1
             // 
             labelVoice1.AutoSize = true;
-            labelVoice1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVoice1.BackColor = Color.Transparent;
+            labelVoice1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelVoice1.ForeColor = SystemColors.ControlDark;
-            labelVoice1.Location = new Point(12, 365);
+            labelVoice1.Location = new Point(4, 307);
             labelVoice1.Name = "labelVoice1";
-            labelVoice1.Size = new Size(39, 28);
+            labelVoice1.Size = new Size(47, 32);
             labelVoice1.TabIndex = 7;
             labelVoice1.Text = "🎙️";
-            // 
-            // labelSelect1
-            // 
-            labelSelect1.AutoSize = true;
-            labelSelect1.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSelect1.ForeColor = SystemColors.ControlDark;
-            labelSelect1.Location = new Point(47, 108);
-            labelSelect1.Name = "labelSelect1";
-            labelSelect1.Size = new Size(185, 22);
-            labelSelect1.TabIndex = 9;
-            labelSelect1.Text = "Select audio output:";
             // 
             // labelChannel1
             // 
             labelChannel1.AutoSize = true;
+            labelChannel1.BackColor = Color.Transparent;
             labelChannel1.Font = new Font("Lucida Sans Unicode", 13F, FontStyle.Bold, GraphicsUnit.Point);
             labelChannel1.ForeColor = SystemColors.ControlDark;
-            labelChannel1.Location = new Point(110, 63);
+            labelChannel1.Location = new Point(110, 32);
             labelChannel1.Name = "labelChannel1";
             labelChannel1.Size = new Size(168, 32);
             labelChannel1.TabIndex = 13;
@@ -223,75 +206,36 @@
             // labelChannel2
             // 
             labelChannel2.AutoSize = true;
+            labelChannel2.BackColor = Color.Transparent;
             labelChannel2.Font = new Font("Lucida Sans Unicode", 13F, FontStyle.Bold, GraphicsUnit.Point);
             labelChannel2.ForeColor = SystemColors.ControlDark;
-            labelChannel2.Location = new Point(110, 434);
+            labelChannel2.Location = new Point(110, 403);
             labelChannel2.Name = "labelChannel2";
             labelChannel2.Size = new Size(168, 32);
             labelChannel2.TabIndex = 14;
             labelChannel2.Text = "CHANNEL 2";
             // 
-            // labelSelect2
-            // 
-            labelSelect2.AutoSize = true;
-            labelSelect2.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSelect2.ForeColor = SystemColors.ControlDark;
-            labelSelect2.Location = new Point(47, 482);
-            labelSelect2.Name = "labelSelect2";
-            labelSelect2.Size = new Size(185, 22);
-            labelSelect2.TabIndex = 15;
-            labelSelect2.Text = "Select audio output:";
-            // 
-            // buttonSelect2
-            // 
-            buttonSelect2.BackColor = Color.FromArgb(34, 33, 74);
-            buttonSelect2.FlatAppearance.BorderColor = Color.Gray;
-            buttonSelect2.FlatAppearance.BorderSize = 0;
-            buttonSelect2.FlatStyle = FlatStyle.Flat;
-            buttonSelect2.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSelect2.ForeColor = SystemColors.ControlDark;
-            buttonSelect2.Location = new Point(47, 549);
-            buttonSelect2.Name = "buttonSelect2";
-            buttonSelect2.Size = new Size(266, 34);
-            buttonSelect2.TabIndex = 17;
-            buttonSelect2.Text = "Select audio file";
-            buttonSelect2.UseVisualStyleBackColor = false;
-            buttonSelect2.Click += buttonSelect2_Click;
-            // 
-            // Grabar22
-            /*/ 
-            this.Grabar22.BackColor = Color.DimGray;
-            this.Grabar22.FlatAppearance.BorderColor = Color.Gray;
-            this.Grabar22.FlatAppearance.BorderSize = 0;
-            this.Grabar22.FlatStyle = FlatStyle.Flat;
-            this.Grabar22.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            this.Grabar22.ForeColor = SystemColors.ActiveCaptionText;
-            this.Grabar22.Location = new Point(284, 437);
-            this.Grabar22.Name = "Grabar22";
-            this.Grabar22.Size = new Size(81, 34);
-            this.Grabar22.TabIndex = 20;
-            this.Grabar22.Text = "Record";
-            this.Grabar22.UseVisualStyleBackColor = false;
-            /*/ 
             // labelAudio2
             // 
             labelAudio2.AutoSize = true;
-            labelAudio2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAudio2.BackColor = Color.Transparent;
+            labelAudio2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelAudio2.ForeColor = SystemColors.ControlDark;
-            labelAudio2.Location = new Point(17, 676);
+            labelAudio2.Location = new Point(4, 613);
             labelAudio2.Name = "labelAudio2";
-            labelAudio2.Size = new Size(39, 28);
+            labelAudio2.Size = new Size(47, 32);
             labelAudio2.TabIndex = 24;
             labelAudio2.Text = "🔉";
             // 
             // labelVoice2
             // 
             labelVoice2.AutoSize = true;
-            labelVoice2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelVoice2.BackColor = Color.Transparent;
+            labelVoice2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelVoice2.ForeColor = SystemColors.ControlDark;
-            labelVoice2.Location = new Point(17, 740);
+            labelVoice2.Location = new Point(4, 683);
             labelVoice2.Name = "labelVoice2";
-            labelVoice2.Size = new Size(39, 28);
+            labelVoice2.Size = new Size(47, 32);
             labelVoice2.TabIndex = 25;
             labelVoice2.Text = "🎙️";
             // 
@@ -302,129 +246,47 @@
             // labelChannel3
             // 
             labelChannel3.AutoSize = true;
+            labelChannel3.BackColor = Color.Transparent;
             labelChannel3.Font = new Font("Lucida Sans Unicode", 13F, FontStyle.Bold, GraphicsUnit.Point);
             labelChannel3.ForeColor = SystemColors.ControlDark;
-            labelChannel3.Location = new Point(452, 63);
+            labelChannel3.Location = new Point(452, 32);
             labelChannel3.Name = "labelChannel3";
             labelChannel3.Size = new Size(168, 32);
             labelChannel3.TabIndex = 26;
             labelChannel3.Text = "CHANNEL 3";
             // 
-            // labelSelect3
-            // 
-            labelSelect3.AutoSize = true;
-            labelSelect3.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSelect3.ForeColor = SystemColors.ControlDark;
-            labelSelect3.Location = new Point(400, 108);
-            labelSelect3.Name = "labelSelect3";
-            labelSelect3.Size = new Size(185, 22);
-            labelSelect3.TabIndex = 27;
-            labelSelect3.Text = "Select audio output:";
-            // 
-            // buttonSelect3
-            // 
-            buttonSelect3.BackColor = Color.FromArgb(34, 33, 74);
-            buttonSelect3.FlatAppearance.BorderColor = Color.Gray;
-            buttonSelect3.FlatAppearance.BorderSize = 0;
-            buttonSelect3.FlatStyle = FlatStyle.Flat;
-            buttonSelect3.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSelect3.ForeColor = SystemColors.ControlDark;
-            buttonSelect3.Location = new Point(400, 175);
-            buttonSelect3.Name = "buttonSelect3";
-            buttonSelect3.Size = new Size(266, 34);
-            buttonSelect3.TabIndex = 30;
-            buttonSelect3.Text = "Select audio file";
-            buttonSelect3.UseVisualStyleBackColor = false;
-            buttonSelect3.Click += buttonSelect3_Click;
-            // 
-            // Grabar33
-            // 
-            Grabar33.BackColor = Color.DimGray;
-            Grabar33.FlatAppearance.BorderColor = Color.Gray;
-            Grabar33.FlatAppearance.BorderSize = 0;
-            Grabar33.FlatStyle = FlatStyle.Flat;
-            Grabar33.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Grabar33.ForeColor = SystemColors.ActiveCaptionText;
-            Grabar33.Location = new Point(327, 266);
-            Grabar33.Name = "Grabar33";
-            Grabar33.Size = new Size(81, 34);
-            Grabar33.TabIndex = 33;
-            Grabar33.Text = "Record";
-            Grabar33.UseVisualStyleBackColor = false;
-            // 
             // labelAudio3
             // 
             labelAudio3.AutoSize = true;
-            labelAudio3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAudio3.BackColor = Color.Transparent;
+            labelAudio3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelAudio3.ForeColor = SystemColors.ControlDark;
-            labelAudio3.Location = new Point(365, 303);
+            labelAudio3.Location = new Point(357, 241);
             labelAudio3.Name = "labelAudio3";
-            labelAudio3.Size = new Size(39, 28);
+            labelAudio3.Size = new Size(47, 32);
             labelAudio3.TabIndex = 36;
             labelAudio3.Text = "🔉";
             // 
             // labelChannel4
             // 
             labelChannel4.AutoSize = true;
+            labelChannel4.BackColor = Color.Transparent;
             labelChannel4.Font = new Font("Lucida Sans Unicode", 13F, FontStyle.Bold, GraphicsUnit.Point);
             labelChannel4.ForeColor = SystemColors.ControlDark;
-            labelChannel4.Location = new Point(452, 434);
+            labelChannel4.Location = new Point(452, 403);
             labelChannel4.Name = "labelChannel4";
             labelChannel4.Size = new Size(168, 32);
             labelChannel4.TabIndex = 38;
             labelChannel4.Text = "CHANNEL 4";
             // 
-            // labelSelect4
-            // 
-            labelSelect4.AutoSize = true;
-            labelSelect4.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSelect4.ForeColor = SystemColors.ControlDark;
-            labelSelect4.Location = new Point(400, 482);
-            labelSelect4.Name = "labelSelect4";
-            labelSelect4.Size = new Size(185, 22);
-            labelSelect4.TabIndex = 39;
-            labelSelect4.Text = "Select audio output:";
-            // 
-            // buttonSelect4
-            // 
-            buttonSelect4.BackColor = Color.FromArgb(34, 33, 74);
-            buttonSelect4.FlatAppearance.BorderColor = Color.Gray;
-            buttonSelect4.FlatAppearance.BorderSize = 0;
-            buttonSelect4.FlatStyle = FlatStyle.Flat;
-            buttonSelect4.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSelect4.ForeColor = SystemColors.ControlDark;
-            buttonSelect4.Location = new Point(400, 549);
-            buttonSelect4.Name = "buttonSelect4";
-            buttonSelect4.Size = new Size(266, 34);
-            buttonSelect4.TabIndex = 41;
-            buttonSelect4.Text = "Select audio file";
-            buttonSelect4.UseVisualStyleBackColor = false;
-            buttonSelect4.Click += buttonSelect4_Click;
-            // 
-            // Grabar44
-            // 
-            Grabar44.BackColor = Color.DimGray;
-            Grabar44.FlatAppearance.BorderColor = Color.Gray;
-            Grabar44.FlatAppearance.BorderSize = 0;
-            Grabar44.FlatStyle = FlatStyle.Flat;
-            Grabar44.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Grabar44.ForeColor = SystemColors.ActiveCaptionText;
-            Grabar44.Location = new Point(602, 407);
-            Grabar44.Name = "Grabar44";
-            Grabar44.Size = new Size(81, 34);
-            Grabar44.TabIndex = 44;
-            Grabar44.Text = "Record";
-            Grabar44.UseVisualStyleBackColor = false;
-            Grabar44.Click += Grabar_Click4;
-            // 
             // labelAudio4
             // 
             labelAudio4.AutoSize = true;
-            labelAudio4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelAudio4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             labelAudio4.ForeColor = SystemColors.ControlDark;
-            labelAudio4.Location = new Point(365, 676);
+            labelAudio4.Location = new Point(357, 613);
             labelAudio4.Name = "labelAudio4";
-            labelAudio4.Size = new Size(39, 28);
+            labelAudio4.Size = new Size(47, 32);
             labelAudio4.TabIndex = 48;
             labelAudio4.Text = "🔉";
             // 
@@ -438,7 +300,7 @@
             // 
             // settings1
             // 
-            settings1.BackColor = SystemColors.ControlDark;
+            settings1.BackColor = Color.FromArgb(34, 33, 74);
             settings1.ImageScalingSize = new Size(24, 24);
             settings1.Items.AddRange(new ToolStripItem[] { qualityLow, qualityMedium, qualityHigh, qualityUltra });
             settings1.Name = "contextMenuStrip1";
@@ -472,25 +334,9 @@
             qualityUltra.Text = "96000 Hz 24 bits (Ultra)";
             qualityUltra.Click += qualityUltra_Click;
             // 
-            // recordSettings2
-            // 
-            recordSettings2.BackColor = Color.DimGray;
-            recordSettings2.ContextMenuStrip = settings2;
-            recordSettings2.FlatAppearance.BorderColor = Color.Gray;
-            recordSettings2.FlatAppearance.BorderSize = 0;
-            recordSettings2.FlatStyle = FlatStyle.Flat;
-            recordSettings2.ForeColor = SystemColors.ActiveCaptionText;
-            recordSettings2.Location = new Point(284, 589);
-            recordSettings2.Name = "recordSettings2";
-            recordSettings2.Size = new Size(29, 34);
-            recordSettings2.TabIndex = 51;
-            recordSettings2.Text = "⚙️";
-            recordSettings2.UseVisualStyleBackColor = false;
-            recordSettings2.Click += recordSettings2_Click;
-            // 
             // settings2
             // 
-            settings2.BackColor = SystemColors.ControlDark;
+            settings2.BackColor = Color.FromArgb(34, 33, 74);
             settings2.ImageScalingSize = new Size(24, 24);
             settings2.Items.AddRange(new ToolStripItem[] { qualityLow2, qualityMedium2, qualityHigh2, qualityUltra2 });
             settings2.Name = "contextMenuStrip1";
@@ -524,25 +370,9 @@
             qualityUltra2.Text = "96000 Hz 24 bits (Ultra)";
             qualityUltra2.Click += qualityUltra2_Click;
             // 
-            // recordSettings3
-            // 
-            recordSettings3.BackColor = Color.DimGray;
-            recordSettings3.ContextMenuStrip = settings3;
-            recordSettings3.FlatAppearance.BorderColor = Color.Gray;
-            recordSettings3.FlatAppearance.BorderSize = 0;
-            recordSettings3.FlatStyle = FlatStyle.Flat;
-            recordSettings3.ForeColor = SystemColors.ActiveCaptionText;
-            recordSettings3.Location = new Point(637, 215);
-            recordSettings3.Name = "recordSettings3";
-            recordSettings3.Size = new Size(29, 34);
-            recordSettings3.TabIndex = 52;
-            recordSettings3.Text = "⚙️";
-            recordSettings3.UseVisualStyleBackColor = false;
-            recordSettings3.Click += recordSettings3_Click;
-            // 
             // settings3
             // 
-            settings3.BackColor = SystemColors.ControlDark;
+            settings3.BackColor = Color.FromArgb(34, 33, 74);
             settings3.ImageScalingSize = new Size(24, 24);
             settings3.Items.AddRange(new ToolStripItem[] { qualityLow3, qualityMedium3, qualityHigh3, qualityUltra3 });
             settings3.Name = "contextMenuStrip1";
@@ -576,25 +406,9 @@
             qualityUltra3.Text = "96000 Hz 24 bits (Ultra)";
             qualityUltra3.Click += qualityUltra3_Click;
             // 
-            // recordSettings4
-            // 
-            recordSettings4.BackColor = Color.DimGray;
-            recordSettings4.ContextMenuStrip = settings3;
-            recordSettings4.FlatAppearance.BorderColor = Color.Gray;
-            recordSettings4.FlatAppearance.BorderSize = 0;
-            recordSettings4.FlatStyle = FlatStyle.Flat;
-            recordSettings4.ForeColor = SystemColors.ActiveCaptionText;
-            recordSettings4.Location = new Point(637, 589);
-            recordSettings4.Name = "recordSettings4";
-            recordSettings4.Size = new Size(29, 34);
-            recordSettings4.TabIndex = 53;
-            recordSettings4.Text = "⚙️";
-            recordSettings4.UseVisualStyleBackColor = false;
-            recordSettings4.Click += recordSettings4_Click;
-            // 
             // settings4
             // 
-            settings4.BackColor = SystemColors.ControlDark;
+            settings4.BackColor = Color.FromArgb(34, 33, 74);
             settings4.ImageScalingSize = new Size(24, 24);
             settings4.Items.AddRange(new ToolStripItem[] { qualityLow4, qualityMedium4, qualityHigh4, qualityUltra4 });
             settings4.Name = "contextMenuStrip1";
@@ -631,22 +445,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDark;
-            label1.Location = new Point(365, 365);
+            label1.Location = new Point(357, 307);
             label1.Name = "label1";
-            label1.Size = new Size(39, 28);
+            label1.Size = new Size(47, 32);
             label1.TabIndex = 54;
             label1.Text = "🎙️";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlDark;
-            label2.Location = new Point(365, 740);
+            label2.Location = new Point(357, 683);
             label2.Name = "label2";
-            label2.Size = new Size(39, 28);
+            label2.Size = new Size(47, 32);
             label2.TabIndex = 55;
             label2.Text = "🎙️";
             // 
@@ -661,20 +476,20 @@
             CBOuts1.IconColor = SystemColors.ControlDark;
             CBOuts1.ListBackColor = Color.FromArgb(34, 33, 74);
             CBOuts1.ListTextColor = SystemColors.ControlDark;
-            CBOuts1.Location = new Point(47, 137);
+            CBOuts1.Location = new Point(47, 110);
             CBOuts1.MinimumSize = new Size(150, 25);
             CBOuts1.Name = "CBOuts1";
             CBOuts1.Size = new Size(266, 32);
             CBOuts1.TabIndex = 56;
-            CBOuts1.Texts = "";
+            CBOuts1.Texts = "Select audio output";
             CBOuts1.OnSelectedIndexChanged += CBOuts1_OnSelectedIndexChanged;
             // 
             // volumeMeter1
             // 
             volumeMeter1.Amplitude = 0.01F;
             volumeMeter1.BackColor = SystemColors.ControlDark;
-            volumeMeter1.ForeColor = Color.SteelBlue;
-            volumeMeter1.Location = new Point(47, 320);
+            volumeMeter1.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeter1.Location = new Point(47, 293);
             volumeMeter1.MaxDb = 25F;
             volumeMeter1.MinDb = -15F;
             volumeMeter1.Name = "volumeMeter1";
@@ -687,8 +502,8 @@
             // 
             volumeMeterMic1.Amplitude = 0F;
             volumeMeterMic1.BackColor = SystemColors.ControlDark;
-            volumeMeterMic1.ForeColor = Color.SteelBlue;
-            volumeMeterMic1.Location = new Point(47, 386);
+            volumeMeterMic1.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeterMic1.Location = new Point(47, 359);
             volumeMeterMic1.MaxDb = 15F;
             volumeMeterMic1.MinDb = -50F;
             volumeMeterMic1.Name = "volumeMeterMic1";
@@ -701,8 +516,8 @@
             // 
             volumeMeter2.Amplitude = 0.01F;
             volumeMeter2.BackColor = SystemColors.ControlDark;
-            volumeMeter2.ForeColor = Color.SteelBlue;
-            volumeMeter2.Location = new Point(47, 695);
+            volumeMeter2.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeter2.Location = new Point(47, 665);
             volumeMeter2.MaxDb = 25F;
             volumeMeter2.MinDb = -15F;
             volumeMeter2.Name = "volumeMeter2";
@@ -715,8 +530,8 @@
             // 
             volumeMeter3.Amplitude = 0.01F;
             volumeMeter3.BackColor = SystemColors.ControlDark;
-            volumeMeter3.ForeColor = Color.SteelBlue;
-            volumeMeter3.Location = new Point(400, 320);
+            volumeMeter3.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeter3.Location = new Point(400, 293);
             volumeMeter3.MaxDb = 25F;
             volumeMeter3.MinDb = -15F;
             volumeMeter3.Name = "volumeMeter3";
@@ -729,8 +544,8 @@
             // 
             volumeMeter4.Amplitude = 0.01F;
             volumeMeter4.BackColor = SystemColors.ControlDark;
-            volumeMeter4.ForeColor = Color.SteelBlue;
-            volumeMeter4.Location = new Point(400, 695);
+            volumeMeter4.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeter4.Location = new Point(400, 665);
             volumeMeter4.MaxDb = 25F;
             volumeMeter4.MinDb = -15F;
             volumeMeter4.Name = "volumeMeter4";
@@ -743,8 +558,8 @@
             // 
             volumeMeterMic2.Amplitude = 0F;
             volumeMeterMic2.BackColor = SystemColors.ControlDark;
-            volumeMeterMic2.ForeColor = Color.SteelBlue;
-            volumeMeterMic2.Location = new Point(47, 765);
+            volumeMeterMic2.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeterMic2.Location = new Point(47, 735);
             volumeMeterMic2.MaxDb = 15F;
             volumeMeterMic2.MinDb = -50F;
             volumeMeterMic2.Name = "volumeMeterMic2";
@@ -757,8 +572,8 @@
             // 
             volumeMeterMic3.Amplitude = 0F;
             volumeMeterMic3.BackColor = SystemColors.ControlDark;
-            volumeMeterMic3.ForeColor = Color.SteelBlue;
-            volumeMeterMic3.Location = new Point(400, 386);
+            volumeMeterMic3.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeterMic3.Location = new Point(400, 359);
             volumeMeterMic3.MaxDb = 15F;
             volumeMeterMic3.MinDb = -50F;
             volumeMeterMic3.Name = "volumeMeterMic3";
@@ -771,8 +586,8 @@
             // 
             volumeMeterMic4.Amplitude = 0F;
             volumeMeterMic4.BackColor = SystemColors.ControlDark;
-            volumeMeterMic4.ForeColor = Color.SteelBlue;
-            volumeMeterMic4.Location = new Point(400, 765);
+            volumeMeterMic4.ForeColor = Color.FromArgb(34, 33, 100);
+            volumeMeterMic4.Location = new Point(400, 735);
             volumeMeterMic4.MaxDb = 15F;
             volumeMeterMic4.MinDb = -50F;
             volumeMeterMic4.Name = "volumeMeterMic4";
@@ -792,12 +607,12 @@
             CBOuts2.IconColor = SystemColors.ControlDark;
             CBOuts2.ListBackColor = Color.FromArgb(34, 33, 74);
             CBOuts2.ListTextColor = SystemColors.ControlDark;
-            CBOuts2.Location = new Point(47, 511);
+            CBOuts2.Location = new Point(47, 481);
             CBOuts2.MinimumSize = new Size(150, 25);
             CBOuts2.Name = "CBOuts2";
             CBOuts2.Size = new Size(266, 32);
             CBOuts2.TabIndex = 66;
-            CBOuts2.Texts = "";
+            CBOuts2.Texts = "Select audio output";
             CBOuts2.OnSelectedIndexChanged += CBOuts2_OnSelectedIndexChanged;
             // 
             // CBOuts3
@@ -811,12 +626,12 @@
             CBOuts3.IconColor = SystemColors.ControlDark;
             CBOuts3.ListBackColor = Color.FromArgb(34, 33, 74);
             CBOuts3.ListTextColor = SystemColors.ControlDark;
-            CBOuts3.Location = new Point(400, 137);
+            CBOuts3.Location = new Point(400, 110);
             CBOuts3.MinimumSize = new Size(150, 25);
             CBOuts3.Name = "CBOuts3";
             CBOuts3.Size = new Size(266, 32);
             CBOuts3.TabIndex = 67;
-            CBOuts3.Texts = "";
+            CBOuts3.Texts = "Select audio output";
             CBOuts3.OnSelectedIndexChanged += CBOuts3_OnSelectedIndexChanged;
             // 
             // CBOuts4
@@ -830,18 +645,19 @@
             CBOuts4.IconColor = SystemColors.ControlDark;
             CBOuts4.ListBackColor = Color.FromArgb(34, 33, 74);
             CBOuts4.ListTextColor = SystemColors.ControlDark;
-            CBOuts4.Location = new Point(400, 511);
+            CBOuts4.Location = new Point(400, 481);
             CBOuts4.MinimumSize = new Size(150, 25);
             CBOuts4.Name = "CBOuts4";
             CBOuts4.Size = new Size(266, 32);
             CBOuts4.TabIndex = 68;
-            CBOuts4.Texts = "";
+            CBOuts4.Texts = "Select audio output";
             CBOuts4.OnSelectedIndexChanged += CBOuts4_OnSelectedIndexChanged;
             // 
             // scrollVolumeAudio1
             // 
+            scrollVolumeAudio1.BackColor = Color.Transparent;
             scrollVolumeAudio1.FillColor = SystemColors.ControlDark;
-            scrollVolumeAudio1.Location = new Point(47, 287);
+            scrollVolumeAudio1.Location = new Point(47, 229);
             scrollVolumeAudio1.Name = "scrollVolumeAudio1";
             scrollVolumeAudio1.Size = new Size(266, 34);
             scrollVolumeAudio1.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -879,8 +695,9 @@
             // 
             // scrollVolumeAudio2
             // 
+            scrollVolumeAudio2.BackColor = Color.Transparent;
             scrollVolumeAudio2.FillColor = SystemColors.ControlDark;
-            scrollVolumeAudio2.Location = new Point(47, 661);
+            scrollVolumeAudio2.Location = new Point(47, 600);
             scrollVolumeAudio2.Name = "scrollVolumeAudio2";
             scrollVolumeAudio2.Size = new Size(266, 34);
             scrollVolumeAudio2.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -890,8 +707,9 @@
             // 
             // scrollVolumeMic1
             // 
+            scrollVolumeMic1.BackColor = Color.Transparent;
             scrollVolumeMic1.FillColor = SystemColors.ControlDark;
-            scrollVolumeMic1.Location = new Point(47, 350);
+            scrollVolumeMic1.Location = new Point(47, 288);
             scrollVolumeMic1.Name = "scrollVolumeMic1";
             scrollVolumeMic1.Size = new Size(266, 34);
             scrollVolumeMic1.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -905,7 +723,7 @@
             siticoneContainerControl1.Controls.Add(labelTT1);
             siticoneContainerControl1.Controls.Add(labelCT1);
             siticoneContainerControl1.FillColor = Color.FromArgb(34, 33, 74);
-            siticoneContainerControl1.Location = new Point(47, 255);
+            siticoneContainerControl1.Location = new Point(47, 228);
             siticoneContainerControl1.Name = "siticoneContainerControl1";
             siticoneContainerControl1.Size = new Size(266, 26);
             siticoneContainerControl1.TabIndex = 74;
@@ -916,7 +734,7 @@
             siticoneContainerControl2.Controls.Add(labelTT2);
             siticoneContainerControl2.Controls.Add(labelCT2);
             siticoneContainerControl2.FillColor = Color.FromArgb(34, 33, 74);
-            siticoneContainerControl2.Location = new Point(47, 629);
+            siticoneContainerControl2.Location = new Point(47, 599);
             siticoneContainerControl2.Name = "siticoneContainerControl2";
             siticoneContainerControl2.Size = new Size(266, 26);
             siticoneContainerControl2.TabIndex = 76;
@@ -946,8 +764,9 @@
             // 
             // scrollVolumeMic2
             // 
+            scrollVolumeMic2.BackColor = Color.Transparent;
             scrollVolumeMic2.FillColor = SystemColors.ControlDark;
-            scrollVolumeMic2.Location = new Point(47, 725);
+            scrollVolumeMic2.Location = new Point(47, 664);
             scrollVolumeMic2.Name = "scrollVolumeMic2";
             scrollVolumeMic2.Size = new Size(266, 34);
             scrollVolumeMic2.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -960,7 +779,7 @@
             siticoneContainerControl3.Controls.Add(labelTT3);
             siticoneContainerControl3.Controls.Add(labelCT3);
             siticoneContainerControl3.FillColor = Color.FromArgb(34, 33, 74);
-            siticoneContainerControl3.Location = new Point(400, 255);
+            siticoneContainerControl3.Location = new Point(400, 228);
             siticoneContainerControl3.Name = "siticoneContainerControl3";
             siticoneContainerControl3.Size = new Size(266, 26);
             siticoneContainerControl3.TabIndex = 75;
@@ -993,7 +812,7 @@
             siticoneContainerControl4.Controls.Add(labelTT4);
             siticoneContainerControl4.Controls.Add(labelCT4);
             siticoneContainerControl4.FillColor = Color.FromArgb(34, 33, 74);
-            siticoneContainerControl4.Location = new Point(400, 629);
+            siticoneContainerControl4.Location = new Point(400, 599);
             siticoneContainerControl4.Name = "siticoneContainerControl4";
             siticoneContainerControl4.Size = new Size(266, 26);
             siticoneContainerControl4.TabIndex = 75;
@@ -1023,8 +842,9 @@
             // 
             // scrollVolumeAudio3
             // 
+            scrollVolumeAudio3.BackColor = Color.Transparent;
             scrollVolumeAudio3.FillColor = SystemColors.ControlDark;
-            scrollVolumeAudio3.Location = new Point(400, 287);
+            scrollVolumeAudio3.Location = new Point(400, 229);
             scrollVolumeAudio3.Name = "scrollVolumeAudio3";
             scrollVolumeAudio3.Size = new Size(266, 34);
             scrollVolumeAudio3.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -1034,8 +854,9 @@
             // 
             // scrollVolumeMic3
             // 
+            scrollVolumeMic3.BackColor = Color.Transparent;
             scrollVolumeMic3.FillColor = SystemColors.ControlDark;
-            scrollVolumeMic3.Location = new Point(400, 350);
+            scrollVolumeMic3.Location = new Point(400, 292);
             scrollVolumeMic3.Name = "scrollVolumeMic3";
             scrollVolumeMic3.Size = new Size(266, 34);
             scrollVolumeMic3.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -1045,8 +866,9 @@
             // 
             // scrollVolumeAudio4
             // 
+            scrollVolumeAudio4.BackColor = Color.Transparent;
             scrollVolumeAudio4.FillColor = SystemColors.ControlDark;
-            scrollVolumeAudio4.Location = new Point(400, 661);
+            scrollVolumeAudio4.Location = new Point(400, 600);
             scrollVolumeAudio4.Name = "scrollVolumeAudio4";
             scrollVolumeAudio4.Size = new Size(266, 34);
             scrollVolumeAudio4.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -1056,8 +878,9 @@
             // 
             // scrollVolumeMic4
             // 
+            scrollVolumeMic4.BackColor = Color.Transparent;
             scrollVolumeMic4.FillColor = SystemColors.ControlDark;
-            scrollVolumeMic4.Location = new Point(400, 725);
+            scrollVolumeMic4.Location = new Point(400, 664);
             scrollVolumeMic4.Name = "scrollVolumeMic4";
             scrollVolumeMic4.Size = new Size(266, 34);
             scrollVolumeMic4.Style = Siticone.Desktop.UI.WinForms.Enums.TrackBarStyle.Metro;
@@ -1069,14 +892,14 @@
             // 
             Play1.BackColor = Color.FromArgb(34, 33, 74);
             Play1.FlatAppearance.BorderSize = 0;
-            Play1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Play1.FlatStyle = FlatStyle.Flat;
             Play1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Play1.ForeColor = Color.FromArgb(34, 33, 74);
             Play1.IconChar = FontAwesome.Sharp.IconChar.Play;
             Play1.IconColor = SystemColors.ControlDark;
             Play1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Play1.IconSize = 20;
-            Play1.Location = new Point(47, 215);
+            Play1.Location = new Point(47, 188);
             Play1.Name = "Play1";
             Play1.Size = new Size(69, 34);
             Play1.TabIndex = 82;
@@ -1087,14 +910,14 @@
             // 
             Stop1.BackColor = Color.FromArgb(34, 33, 74);
             Stop1.FlatAppearance.BorderSize = 0;
-            Stop1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Stop1.FlatStyle = FlatStyle.Flat;
             Stop1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Stop1.ForeColor = Color.FromArgb(34, 33, 74);
             Stop1.IconChar = FontAwesome.Sharp.IconChar.Stop;
             Stop1.IconColor = SystemColors.ControlDark;
             Stop1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Stop1.IconSize = 20;
-            Stop1.Location = new Point(122, 215);
+            Stop1.Location = new Point(122, 188);
             Stop1.Name = "Stop1";
             Stop1.Size = new Size(69, 34);
             Stop1.TabIndex = 83;
@@ -1105,14 +928,14 @@
             // 
             Grabar1.BackColor = Color.FromArgb(34, 33, 74);
             Grabar1.FlatAppearance.BorderSize = 0;
-            Grabar1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Grabar1.FlatStyle = FlatStyle.Flat;
             Grabar1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Grabar1.ForeColor = Color.FromArgb(34, 33, 74);
             Grabar1.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             Grabar1.IconColor = SystemColors.ControlDark;
             Grabar1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Grabar1.IconSize = 20;
-            Grabar1.Location = new Point(197, 215);
+            Grabar1.Location = new Point(197, 188);
             Grabar1.Name = "Grabar1";
             Grabar1.Size = new Size(81, 34);
             Grabar1.TabIndex = 84;
@@ -1123,7 +946,6 @@
             // 
             recordSettings1.BackColor = Color.FromArgb(34, 33, 74);
             recordSettings1.FlatAppearance.BorderSize = 0;
-            recordSettings1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             recordSettings1.FlatStyle = FlatStyle.Flat;
             recordSettings1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             recordSettings1.ForeColor = SystemColors.ControlDark;
@@ -1131,7 +953,7 @@
             recordSettings1.IconColor = SystemColors.ControlDark;
             recordSettings1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             recordSettings1.IconSize = 20;
-            recordSettings1.Location = new Point(284, 215);
+            recordSettings1.Location = new Point(284, 188);
             recordSettings1.Name = "recordSettings1";
             recordSettings1.Size = new Size(29, 34);
             recordSettings1.TabIndex = 85;
@@ -1140,13 +962,13 @@
             // 
             // iconPictureBox1
             // 
-            iconPictureBox1.BackColor = Color.FromArgb(30, 30, 50);
+            iconPictureBox1.BackColor = Color.Transparent;
             iconPictureBox1.ForeColor = SystemColors.ControlDark;
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.FileAudio;
             iconPictureBox1.IconColor = SystemColors.ControlDark;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 34;
-            iconPictureBox1.Location = new Point(12, 175);
+            iconPictureBox1.Location = new Point(12, 117);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(43, 34);
             iconPictureBox1.TabIndex = 87;
@@ -1154,6 +976,7 @@
             // 
             // siticoneContainerControl5
             // 
+            siticoneContainerControl5.Controls.Add(button1);
             siticoneContainerControl5.Controls.Add(btnMinimize);
             siticoneContainerControl5.Controls.Add(btnExit);
             siticoneContainerControl5.Dock = DockStyle.Top;
@@ -1164,6 +987,19 @@
             siticoneContainerControl5.TabIndex = 88;
             siticoneContainerControl5.Text = "siticoneContainerControl5";
             siticoneContainerControl5.MouseDown += siticoneContainerControl5_MouseDown;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(30, 30, 35);
+            button1.Dock = DockStyle.Left;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(0, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(32, 32);
+            button1.TabIndex = 3;
+            button1.UseVisualStyleBackColor = false;
             // 
             // btnMinimize
             // 
@@ -1213,13 +1049,13 @@
             // 
             // iconPictureBox2
             // 
-            iconPictureBox2.BackColor = Color.FromArgb(30, 30, 50);
+            iconPictureBox2.BackColor = Color.Transparent;
             iconPictureBox2.ForeColor = SystemColors.ControlDark;
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.FileAudio;
             iconPictureBox2.IconColor = SystemColors.ControlDark;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 34;
-            iconPictureBox2.Location = new Point(361, 175);
+            iconPictureBox2.Location = new Point(365, 117);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(43, 34);
             iconPictureBox2.TabIndex = 89;
@@ -1227,13 +1063,13 @@
             // 
             // iconPictureBox3
             // 
-            iconPictureBox3.BackColor = Color.FromArgb(30, 30, 50);
+            iconPictureBox3.BackColor = Color.Transparent;
             iconPictureBox3.ForeColor = SystemColors.ControlDark;
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.FileAudio;
             iconPictureBox3.IconColor = SystemColors.ControlDark;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox3.IconSize = 34;
-            iconPictureBox3.Location = new Point(365, 549);
+            iconPictureBox3.Location = new Point(365, 488);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(43, 34);
             iconPictureBox3.TabIndex = 90;
@@ -1241,13 +1077,13 @@
             // 
             // iconPictureBox4
             // 
-            iconPictureBox4.BackColor = Color.FromArgb(30, 30, 50);
+            iconPictureBox4.BackColor = Color.Transparent;
             iconPictureBox4.ForeColor = SystemColors.ControlDark;
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.FileAudio;
             iconPictureBox4.IconColor = SystemColors.ControlDark;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 34;
-            iconPictureBox4.Location = new Point(12, 549);
+            iconPictureBox4.Location = new Point(12, 488);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(43, 34);
             iconPictureBox4.TabIndex = 91;
@@ -1257,14 +1093,14 @@
             // 
             Play3.BackColor = Color.FromArgb(34, 33, 74);
             Play3.FlatAppearance.BorderSize = 0;
-            Play3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Play3.FlatStyle = FlatStyle.Flat;
             Play3.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Play3.ForeColor = Color.FromArgb(34, 33, 74);
             Play3.IconChar = FontAwesome.Sharp.IconChar.Play;
             Play3.IconColor = SystemColors.ControlDark;
             Play3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Play3.IconSize = 20;
-            Play3.Location = new Point(400, 215);
+            Play3.Location = new Point(400, 188);
             Play3.Name = "Play3";
             Play3.Size = new Size(69, 34);
             Play3.TabIndex = 92;
@@ -1275,14 +1111,14 @@
             // 
             Play2.BackColor = Color.FromArgb(34, 33, 74);
             Play2.FlatAppearance.BorderSize = 0;
-            Play2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Play2.FlatStyle = FlatStyle.Flat;
             Play2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Play2.ForeColor = Color.FromArgb(34, 33, 74);
             Play2.IconChar = FontAwesome.Sharp.IconChar.Play;
             Play2.IconColor = SystemColors.ControlDark;
             Play2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Play2.IconSize = 20;
-            Play2.Location = new Point(47, 589);
+            Play2.Location = new Point(47, 559);
             Play2.Name = "Play2";
             Play2.Size = new Size(69, 34);
             Play2.TabIndex = 93;
@@ -1293,14 +1129,14 @@
             // 
             Play4.BackColor = Color.FromArgb(34, 33, 74);
             Play4.FlatAppearance.BorderSize = 0;
-            Play4.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Play4.FlatStyle = FlatStyle.Flat;
             Play4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Play4.ForeColor = Color.FromArgb(34, 33, 74);
             Play4.IconChar = FontAwesome.Sharp.IconChar.Play;
             Play4.IconColor = SystemColors.ControlDark;
             Play4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Play4.IconSize = 20;
-            Play4.Location = new Point(400, 589);
+            Play4.Location = new Point(400, 559);
             Play4.Name = "Play4";
             Play4.Size = new Size(69, 34);
             Play4.TabIndex = 94;
@@ -1311,14 +1147,14 @@
             // 
             Stop2.BackColor = Color.FromArgb(34, 33, 74);
             Stop2.FlatAppearance.BorderSize = 0;
-            Stop2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Stop2.FlatStyle = FlatStyle.Flat;
             Stop2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Stop2.ForeColor = Color.FromArgb(34, 33, 74);
             Stop2.IconChar = FontAwesome.Sharp.IconChar.Stop;
             Stop2.IconColor = SystemColors.ControlDark;
             Stop2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Stop2.IconSize = 20;
-            Stop2.Location = new Point(122, 589);
+            Stop2.Location = new Point(122, 559);
             Stop2.Name = "Stop2";
             Stop2.Size = new Size(69, 34);
             Stop2.TabIndex = 95;
@@ -1327,34 +1163,34 @@
             // 
             // Stop4
             // 
-            this.Stop4.BackColor = Color.FromArgb(34, 33, 74);
-            this.Stop4.FlatAppearance.BorderSize = 0;
-            this.Stop4.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            this.Stop4.FlatStyle = FlatStyle.Flat;
-            this.Stop4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            this.Stop4.IconChar = FontAwesome.Sharp.IconChar.Stop;
-            this.Stop4.IconColor = SystemColors.ControlDark;
-            this.Stop4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Stop4.IconSize = 20;
-            this.Stop4.Location = new Point(475, 589);
-            this.Stop4.Name = "Stop4";
-            this.Stop4.Size = new Size(69, 34);
-            this.Stop4.TabIndex = 96;
-            this.Stop4.UseVisualStyleBackColor = false;
-            this.Stop4.Click += this.Stop_Click4;
+            Stop4.BackColor = Color.FromArgb(34, 33, 74);
+            Stop4.FlatAppearance.BorderSize = 0;
+            Stop4.FlatStyle = FlatStyle.Flat;
+            Stop4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Stop4.ForeColor = Color.FromArgb(34, 33, 74);
+            Stop4.IconChar = FontAwesome.Sharp.IconChar.Stop;
+            Stop4.IconColor = SystemColors.ControlDark;
+            Stop4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            Stop4.IconSize = 20;
+            Stop4.Location = new Point(475, 559);
+            Stop4.Name = "Stop4";
+            Stop4.Size = new Size(69, 34);
+            Stop4.TabIndex = 96;
+            Stop4.UseVisualStyleBackColor = false;
+            Stop4.Click += Stop_Click4;
             // 
             // Stop3
             // 
             Stop3.BackColor = Color.FromArgb(34, 33, 74);
             Stop3.FlatAppearance.BorderSize = 0;
-            Stop3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Stop3.FlatStyle = FlatStyle.Flat;
             Stop3.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Stop3.ForeColor = Color.FromArgb(34, 33, 74);
             Stop3.IconChar = FontAwesome.Sharp.IconChar.Stop;
             Stop3.IconColor = SystemColors.ControlDark;
             Stop3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Stop3.IconSize = 20;
-            Stop3.Location = new Point(475, 215);
+            Stop3.Location = new Point(475, 188);
             Stop3.Name = "Stop3";
             Stop3.Size = new Size(69, 34);
             Stop3.TabIndex = 97;
@@ -1362,35 +1198,35 @@
             Stop3.Click += Stop_Click3;
             // 
             // Grabar2
-            /*/ 
-            this.Grabar2.BackColor = Color.FromArgb(34, 33, 74);
-            this.Grabar2.FlatAppearance.BorderSize = 0;
-            this.Grabar2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            this.Grabar2.FlatStyle = FlatStyle.Flat;
-            this.Grabar2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            this.Grabar2.IconChar = FontAwesome.Sharp.IconChar.Microphone;
-            this.Grabar2.IconColor = SystemColors.ControlDark;
-            this.Grabar2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Grabar2.IconSize = 20;
-            this.Grabar2.Location = new Point(197, 589);
-            this.Grabar2.Name = "Grabar2";
+            // 
+            Grabar2.BackColor = Color.FromArgb(34, 33, 74);
+            Grabar2.FlatAppearance.BorderSize = 0;
+            Grabar2.FlatStyle = FlatStyle.Flat;
+            Grabar2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Grabar2.ForeColor = Color.FromArgb(34, 33, 74);
+            Grabar2.IconChar = FontAwesome.Sharp.IconChar.Microphone;
+            Grabar2.IconColor = SystemColors.ControlDark;
+            Grabar2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            Grabar2.IconSize = 20;
+            Grabar2.Location = new Point(197, 559);
+            Grabar2.Name = "Grabar2";
             Grabar2.Size = new Size(81, 34);
             Grabar2.TabIndex = 98;
             Grabar2.UseVisualStyleBackColor = false;
             Grabar2.Click += Grabar_Click2;
-            /*/ 
+            // 
             // Grabar3
             // 
             Grabar3.BackColor = Color.FromArgb(34, 33, 74);
             Grabar3.FlatAppearance.BorderSize = 0;
-            Grabar3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Grabar3.FlatStyle = FlatStyle.Flat;
             Grabar3.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Grabar3.ForeColor = Color.FromArgb(34, 33, 74);
             Grabar3.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             Grabar3.IconColor = SystemColors.ControlDark;
             Grabar3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Grabar3.IconSize = 20;
-            Grabar3.Location = new Point(550, 218);
+            Grabar3.Location = new Point(550, 188);
             Grabar3.Name = "Grabar3";
             Grabar3.Size = new Size(81, 34);
             Grabar3.TabIndex = 99;
@@ -1401,51 +1237,377 @@
             // 
             Grabar4.BackColor = Color.FromArgb(34, 33, 74);
             Grabar4.FlatAppearance.BorderSize = 0;
-            Grabar4.FlatAppearance.MouseOverBackColor = Color.Transparent;
             Grabar4.FlatStyle = FlatStyle.Flat;
             Grabar4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            Grabar4.ForeColor = Color.FromArgb(34, 33, 74);
             Grabar4.IconChar = FontAwesome.Sharp.IconChar.Microphone;
             Grabar4.IconColor = SystemColors.ControlDark;
             Grabar4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Grabar4.IconSize = 20;
-            Grabar4.Location = new Point(550, 589);
+            Grabar4.Location = new Point(550, 559);
             Grabar4.Name = "Grabar4";
             Grabar4.Size = new Size(81, 34);
             Grabar4.TabIndex = 100;
             Grabar4.UseVisualStyleBackColor = false;
             Grabar4.Click += Grabar_Click4;
             // 
+            // recordSettings3
+            // 
+            recordSettings3.BackColor = Color.FromArgb(34, 33, 74);
+            recordSettings3.FlatAppearance.BorderSize = 0;
+            recordSettings3.FlatStyle = FlatStyle.Flat;
+            recordSettings3.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            recordSettings3.ForeColor = SystemColors.ControlDark;
+            recordSettings3.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            recordSettings3.IconColor = SystemColors.ControlDark;
+            recordSettings3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            recordSettings3.IconSize = 20;
+            recordSettings3.Location = new Point(637, 188);
+            recordSettings3.Name = "recordSettings3";
+            recordSettings3.Size = new Size(29, 34);
+            recordSettings3.TabIndex = 101;
+            recordSettings3.UseVisualStyleBackColor = false;
+            recordSettings3.Click += recordSettings3_Click;
+            // 
+            // recordSettings2
+            // 
+            recordSettings2.BackColor = Color.FromArgb(34, 33, 74);
+            recordSettings2.FlatAppearance.BorderSize = 0;
+            recordSettings2.FlatStyle = FlatStyle.Flat;
+            recordSettings2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            recordSettings2.ForeColor = SystemColors.ControlDark;
+            recordSettings2.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            recordSettings2.IconColor = SystemColors.ControlDark;
+            recordSettings2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            recordSettings2.IconSize = 20;
+            recordSettings2.Location = new Point(284, 559);
+            recordSettings2.Name = "recordSettings2";
+            recordSettings2.Size = new Size(29, 34);
+            recordSettings2.TabIndex = 102;
+            recordSettings2.UseVisualStyleBackColor = false;
+            recordSettings2.Click += recordSettings2_Click;
+            // 
+            // recordSettings4
+            // 
+            recordSettings4.BackColor = Color.FromArgb(34, 33, 74);
+            recordSettings4.FlatAppearance.BorderSize = 0;
+            recordSettings4.FlatStyle = FlatStyle.Flat;
+            recordSettings4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            recordSettings4.ForeColor = SystemColors.ControlDark;
+            recordSettings4.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            recordSettings4.IconColor = SystemColors.ControlDark;
+            recordSettings4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            recordSettings4.IconSize = 20;
+            recordSettings4.Location = new Point(637, 559);
+            recordSettings4.Name = "recordSettings4";
+            recordSettings4.Size = new Size(29, 34);
+            recordSettings4.TabIndex = 103;
+            recordSettings4.UseVisualStyleBackColor = false;
+            recordSettings4.Click += recordSettings4_Click;
+            // 
+            // siticoneCustomGradientPanel1
+            // 
+            siticoneCustomGradientPanel1.Controls.Add(siticoneContainerControl9);
+            siticoneCustomGradientPanel1.Controls.Add(siticoneContainerControl8);
+            siticoneCustomGradientPanel1.Controls.Add(siticoneContainerControl7);
+            siticoneCustomGradientPanel1.Controls.Add(siticoneContainerControl6);
+            siticoneCustomGradientPanel1.Controls.Add(labelChannel4);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeAudio3);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeMic3);
+            siticoneCustomGradientPanel1.Controls.Add(label1);
+            siticoneCustomGradientPanel1.Controls.Add(labelAudio3);
+            siticoneCustomGradientPanel1.Controls.Add(iconPictureBox2);
+            siticoneCustomGradientPanel1.Controls.Add(labelChannel3);
+            siticoneCustomGradientPanel1.Controls.Add(labelChannel1);
+            siticoneCustomGradientPanel1.Controls.Add(labelChannel2);
+            siticoneCustomGradientPanel1.Controls.Add(iconPictureBox1);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeAudio1);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeMic1);
+            siticoneCustomGradientPanel1.Controls.Add(labelAudio1);
+            siticoneCustomGradientPanel1.Controls.Add(labelVoice1);
+            siticoneCustomGradientPanel1.Controls.Add(iconPictureBox3);
+            siticoneCustomGradientPanel1.Controls.Add(iconPictureBox4);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeAudio4);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeMic4);
+            siticoneCustomGradientPanel1.Controls.Add(labelAudio4);
+            siticoneCustomGradientPanel1.Controls.Add(label2);
+            siticoneCustomGradientPanel1.Controls.Add(labelAudio2);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeAudio2);
+            siticoneCustomGradientPanel1.Controls.Add(scrollVolumeMic2);
+            siticoneCustomGradientPanel1.Controls.Add(labelVoice2);
+            siticoneCustomGradientPanel1.CustomizableEdges.BottomRight = false;
+            siticoneCustomGradientPanel1.CustomizableEdges.TopLeft = false;
+            siticoneCustomGradientPanel1.CustomizableEdges.TopRight = false;
+            siticoneCustomGradientPanel1.FillColor = Color.FromArgb(30, 30, 50);
+            siticoneCustomGradientPanel1.FillColor2 = Color.FromArgb(30, 30, 50);
+            siticoneCustomGradientPanel1.FillColor3 = Color.FromArgb(34, 33, 100);
+            siticoneCustomGradientPanel1.FillColor4 = Color.FromArgb(30, 30, 50);
+            siticoneCustomGradientPanel1.Location = new Point(0, 31);
+            siticoneCustomGradientPanel1.Name = "siticoneCustomGradientPanel1";
+            siticoneCustomGradientPanel1.Size = new Size(715, 748);
+            siticoneCustomGradientPanel1.TabIndex = 104;
+            // 
+            // siticoneContainerControl9
+            // 
+            siticoneContainerControl9.Controls.Add(iconButton4);
+            siticoneContainerControl9.Controls.Add(SelectText4);
+            siticoneContainerControl9.Location = new Point(400, 488);
+            siticoneContainerControl9.Name = "siticoneContainerControl9";
+            siticoneContainerControl9.Size = new Size(266, 34);
+            siticoneContainerControl9.TabIndex = 108;
+            siticoneContainerControl9.Text = "siticoneContainerControl9";
+            // 
+            // iconButton4
+            // 
+            iconButton4.BackColor = Color.FromArgb(34, 33, 74);
+            iconButton4.Dock = DockStyle.Right;
+            iconButton4.FlatAppearance.BorderSize = 0;
+            iconButton4.FlatStyle = FlatStyle.Flat;
+            iconButton4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton4.ForeColor = SystemColors.ControlDark;
+            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Ellipsis;
+            iconButton4.IconColor = SystemColors.ControlDark;
+            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton4.IconSize = 20;
+            iconButton4.Location = new Point(237, 0);
+            iconButton4.Name = "iconButton4";
+            iconButton4.Size = new Size(29, 34);
+            iconButton4.TabIndex = 105;
+            iconButton4.UseVisualStyleBackColor = false;
+            iconButton4.Click += buttonSelect4_Click;
+            // 
+            // SelectText4
+            // 
+            SelectText4.BackColor = Color.FromArgb(34, 33, 74);
+            SelectText4.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText4.DefaultText = "Select audio file";
+            SelectText4.DisabledState.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText4.DisabledState.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText4.DisabledState.ForeColor = SystemColors.ControlDark;
+            SelectText4.DisabledState.PlaceholderForeColor = SystemColors.ControlDark;
+            SelectText4.Dock = DockStyle.Left;
+            SelectText4.Enabled = false;
+            SelectText4.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText4.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SelectText4.ForeColor = SystemColors.ControlDark;
+            SelectText4.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText4.Location = new Point(0, 0);
+            SelectText4.Name = "SelectText4";
+            SelectText4.PasswordChar = '\0';
+            SelectText4.PlaceholderText = "";
+            SelectText4.ReadOnly = true;
+            SelectText4.SelectedText = "";
+            SelectText4.Size = new Size(243, 34);
+            SelectText4.TabIndex = 93;
+            SelectText4.TextAlign = HorizontalAlignment.Center;
+            // 
+            // siticoneContainerControl8
+            // 
+            siticoneContainerControl8.Controls.Add(iconButton2);
+            siticoneContainerControl8.Controls.Add(SelectText2);
+            siticoneContainerControl8.Location = new Point(47, 488);
+            siticoneContainerControl8.Name = "siticoneContainerControl8";
+            siticoneContainerControl8.Size = new Size(266, 34);
+            siticoneContainerControl8.TabIndex = 107;
+            siticoneContainerControl8.Text = "siticoneContainerControl8";
+            // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.FromArgb(34, 33, 74);
+            iconButton2.Dock = DockStyle.Right;
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton2.ForeColor = SystemColors.ControlDark;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Ellipsis;
+            iconButton2.IconColor = SystemColors.ControlDark;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 20;
+            iconButton2.Location = new Point(237, 0);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(29, 34);
+            iconButton2.TabIndex = 105;
+            iconButton2.UseVisualStyleBackColor = false;
+            iconButton2.Click += buttonSelect2_Click;
+            // 
+            // SelectText2
+            // 
+            SelectText2.BackColor = Color.FromArgb(34, 33, 74);
+            SelectText2.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText2.DefaultText = "Select audio file";
+            SelectText2.DisabledState.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText2.DisabledState.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText2.DisabledState.ForeColor = SystemColors.ControlDark;
+            SelectText2.DisabledState.PlaceholderForeColor = SystemColors.ControlDark;
+            SelectText2.Dock = DockStyle.Left;
+            SelectText2.Enabled = false;
+            SelectText2.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText2.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SelectText2.ForeColor = SystemColors.ControlDark;
+            SelectText2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText2.Location = new Point(0, 0);
+            SelectText2.Name = "SelectText2";
+            SelectText2.PasswordChar = '\0';
+            SelectText2.PlaceholderText = "";
+            SelectText2.ReadOnly = true;
+            SelectText2.SelectedText = "";
+            SelectText2.Size = new Size(237, 34);
+            SelectText2.TabIndex = 93;
+            SelectText2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // siticoneContainerControl7
+            // 
+            siticoneContainerControl7.Controls.Add(iconButton3);
+            siticoneContainerControl7.Controls.Add(SelectText3);
+            siticoneContainerControl7.Location = new Point(400, 117);
+            siticoneContainerControl7.Name = "siticoneContainerControl7";
+            siticoneContainerControl7.Size = new Size(266, 34);
+            siticoneContainerControl7.TabIndex = 106;
+            siticoneContainerControl7.Text = "siticoneContainerControl7";
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.FromArgb(34, 33, 74);
+            iconButton3.Dock = DockStyle.Right;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton3.ForeColor = SystemColors.ControlDark;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Ellipsis;
+            iconButton3.IconColor = SystemColors.ControlDark;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 20;
+            iconButton3.Location = new Point(237, 0);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(29, 34);
+            iconButton3.TabIndex = 105;
+            iconButton3.UseVisualStyleBackColor = false;
+            iconButton3.Click += buttonSelect3_Click;
+            // 
+            // SelectText3
+            // 
+            SelectText3.BackColor = Color.FromArgb(34, 33, 74);
+            SelectText3.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText3.DefaultText = "Select audio file";
+            SelectText3.DisabledState.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText3.DisabledState.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText3.DisabledState.ForeColor = SystemColors.ControlDark;
+            SelectText3.DisabledState.PlaceholderForeColor = SystemColors.ControlDark;
+            SelectText3.Dock = DockStyle.Left;
+            SelectText3.Enabled = false;
+            SelectText3.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText3.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SelectText3.ForeColor = SystemColors.ControlDark;
+            SelectText3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText3.Location = new Point(0, 0);
+            SelectText3.Name = "SelectText3";
+            SelectText3.PasswordChar = '\0';
+            SelectText3.PlaceholderText = "";
+            SelectText3.ReadOnly = true;
+            SelectText3.SelectedText = "";
+            SelectText3.Size = new Size(243, 34);
+            SelectText3.TabIndex = 93;
+            SelectText3.TextAlign = HorizontalAlignment.Center;
+            // 
+            // siticoneContainerControl6
+            // 
+            siticoneContainerControl6.Controls.Add(iconButton1);
+            siticoneContainerControl6.Controls.Add(SelectText1);
+            siticoneContainerControl6.Location = new Point(47, 117);
+            siticoneContainerControl6.Name = "siticoneContainerControl6";
+            siticoneContainerControl6.Size = new Size(266, 34);
+            siticoneContainerControl6.TabIndex = 92;
+            siticoneContainerControl6.Text = "siticoneContainerControl6";
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(34, 33, 74);
+            iconButton1.Dock = DockStyle.Right;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = SystemColors.ControlDark;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Ellipsis;
+            iconButton1.IconColor = SystemColors.ControlDark;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 20;
+            iconButton1.Location = new Point(237, 0);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(29, 34);
+            iconButton1.TabIndex = 105;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += buttonSelect_Click;
+            // 
+            // SelectText1
+            // 
+            SelectText1.BackColor = Color.FromArgb(34, 33, 74);
+            SelectText1.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText1.DefaultText = "Select audio file";
+            SelectText1.DisabledState.BorderColor = Color.FromArgb(34, 33, 74);
+            SelectText1.DisabledState.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText1.DisabledState.ForeColor = SystemColors.ControlDark;
+            SelectText1.DisabledState.PlaceholderForeColor = SystemColors.ControlDark;
+            SelectText1.Dock = DockStyle.Left;
+            SelectText1.Enabled = false;
+            SelectText1.FillColor = Color.FromArgb(34, 33, 74);
+            SelectText1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText1.Font = new Font("Lucida Sans Unicode", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            SelectText1.ForeColor = SystemColors.ControlDark;
+            SelectText1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            SelectText1.Location = new Point(0, 0);
+            SelectText1.Name = "SelectText1";
+            SelectText1.PasswordChar = '\0';
+            SelectText1.PlaceholderText = "";
+            SelectText1.ReadOnly = true;
+            SelectText1.SelectedText = "";
+            SelectText1.Size = new Size(237, 34);
+            SelectText1.TabIndex = 93;
+            SelectText1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // timer5
+            // 
+            timer5.Enabled = true;
+            timer5.Interval = 5000;
+            timer5.Tick += timer5_Tick;
+            // 
+            // siticoneMessageDialog1
+            // 
+            siticoneMessageDialog1.Buttons = Siticone.Desktop.UI.WinForms.MessageDialogButtons.OK;
+            siticoneMessageDialog1.Caption = "";
+            siticoneMessageDialog1.Icon = Siticone.Desktop.UI.WinForms.MessageDialogIcon.None;
+            siticoneMessageDialog1.Parent = this;
+            siticoneMessageDialog1.Style = Siticone.Desktop.UI.WinForms.MessageDialogStyle.Dark;
+            siticoneMessageDialog1.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 50);
-            ClientSize = new Size(715, 811);
+            ClientSize = new Size(715, 778);
+            Controls.Add(siticoneContainerControl5);
+            Controls.Add(recordSettings4);
+            Controls.Add(recordSettings2);
+            Controls.Add(recordSettings3);
             Controls.Add(Grabar4);
             Controls.Add(Grabar3);
-            //Controls.Add(this.Grabar2);
+            Controls.Add(Grabar2);
             Controls.Add(Stop3);
-           // Controls.Add(Stop4);
+            Controls.Add(Stop4);
             Controls.Add(Stop2);
             Controls.Add(Play4);
             Controls.Add(Play2);
             Controls.Add(Play3);
-            Controls.Add(siticoneContainerControl5);
             Controls.Add(recordSettings1);
             Controls.Add(Grabar1);
             Controls.Add(Stop1);
             Controls.Add(Play1);
-            Controls.Add(scrollVolumeMic4);
-            Controls.Add(scrollVolumeAudio4);
-            Controls.Add(scrollVolumeMic3);
-            Controls.Add(scrollVolumeAudio3);
             Controls.Add(siticoneContainerControl4);
             Controls.Add(siticoneContainerControl3);
-            Controls.Add(scrollVolumeMic2);
             Controls.Add(siticoneContainerControl2);
-            Controls.Add(scrollVolumeMic1);
-            Controls.Add(scrollVolumeAudio2);
-            Controls.Add(scrollVolumeAudio1);
             Controls.Add(CBOuts4);
             Controls.Add(CBOuts3);
             Controls.Add(CBOuts2);
@@ -1458,37 +1620,8 @@
             Controls.Add(volumeMeterMic1);
             Controls.Add(volumeMeter1);
             Controls.Add(CBOuts1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(recordSettings4);
-            Controls.Add(recordSettings3);
-            Controls.Add(recordSettings2);
-            Controls.Add(labelAudio4);
-            Controls.Add(Grabar44);
-            Controls.Add(buttonSelect4);
-            Controls.Add(labelSelect4);
-            Controls.Add(labelChannel4);
-            Controls.Add(labelAudio3);
-            Controls.Add(Grabar33);
-            Controls.Add(buttonSelect3);
-            Controls.Add(labelSelect3);
-            Controls.Add(labelChannel3);
-            Controls.Add(labelVoice2);
-            Controls.Add(labelAudio2);
-            //Controls.Add(this.Grabar22);
-            Controls.Add(buttonSelect2);
-            Controls.Add(labelSelect2);
-            Controls.Add(labelChannel2);
-            Controls.Add(labelChannel1);
-            Controls.Add(labelSelect1);
-            Controls.Add(labelAudio1);
-            Controls.Add(buttonSelect1);
-            Controls.Add(labelVoice1);
             Controls.Add(siticoneContainerControl1);
-            Controls.Add(iconPictureBox1);
-            Controls.Add(iconPictureBox2);
-            Controls.Add(iconPictureBox3);
-            Controls.Add(iconPictureBox4);
+            Controls.Add(siticoneCustomGradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -1514,45 +1647,29 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
+            siticoneCustomGradientPanel1.ResumeLayout(false);
+            siticoneCustomGradientPanel1.PerformLayout();
+            siticoneContainerControl9.ResumeLayout(false);
+            siticoneContainerControl8.ResumeLayout(false);
+            siticoneContainerControl7.ResumeLayout(false);
+            siticoneContainerControl6.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private ComboBox CBOuts;
         private OpenFileDialog openFile;
-        private Button buttonSelect1;
         private Label labelAudio1;
         private Label labelVoice1;
         private TrackBar scrollVolumeMic11;
-        private Label labelSelect1;
         private Label labelChannel1;
         private Label labelChannel2;
-        private Label labelSelect2;
-        private ComboBox CBOuts22;
-        private Button buttonSelect2;
-        private Button Play22;
-        private Button Stop2;
-        private Button Grabar2;
-        private TrackBar scrollVolumeMic22;
         private Label labelAudio2;
         private Label labelVoice2;
         private OpenFileDialog openFile2;
         private Label labelChannel3;
-        private Label labelSelect3;
-        private Button buttonSelect3;
-        private Button Stop33;
-        private Button Grabar33;
-        private TrackBar scrollVolumeAudio33;
-        private TrackBar scrollVolumeMic333;
         private Label labelAudio3;
         private Label labelChannel4;
-        private Label labelSelect4;
-        private Button buttonSelect4;
-        private Button Play44;
-       // private Button Stop4;
-        private Button Grabar44;
-        private TrackBar scrollVolumeAudio44;
         private Label labelAudio4;
         private OpenFileDialog openFile3;
         private OpenFileDialog openFile4;
@@ -1561,19 +1678,16 @@
         private ToolStripMenuItem qualityMedium;
         private ToolStripMenuItem qualityHigh;
         private ToolStripMenuItem qualityUltra;
-        private Button recordSettings2;
         private ContextMenuStrip settings2;
         private ToolStripMenuItem qualityLow2;
         private ToolStripMenuItem qualityMedium2;
         private ToolStripMenuItem qualityHigh2;
         private ToolStripMenuItem qualityUltra2;
-        private Button recordSettings3;
         private ContextMenuStrip settings3;
         private ToolStripMenuItem qualityLow3;
         private ToolStripMenuItem qualityMedium3;
         private ToolStripMenuItem qualityHigh3;
         private ToolStripMenuItem qualityUltra3;
-        private Button recordSettings4;
         private ContextMenuStrip settings4;
         private ToolStripMenuItem qualityLow4;
         private ToolStripMenuItem qualityMedium4;
@@ -1632,11 +1746,30 @@
         private FontAwesome.Sharp.IconButton Play3;
         private FontAwesome.Sharp.IconButton Play2;
         private FontAwesome.Sharp.IconButton Play4;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton Stop4;
         private FontAwesome.Sharp.IconButton Stop3;
-      //  private FontAwesome.Sharp.IconButton Grabar2;
+        private FontAwesome.Sharp.IconButton Stop2;
+        private FontAwesome.Sharp.IconButton Grabar2;
         private FontAwesome.Sharp.IconButton Grabar3;
         private FontAwesome.Sharp.IconButton Grabar4;
+        private FontAwesome.Sharp.IconButton recordSettings3;
+        private FontAwesome.Sharp.IconButton recordSettings2;
+        private FontAwesome.Sharp.IconButton recordSettings4;
+        private Siticone.Desktop.UI.WinForms.SiticoneCustomGradientPanel siticoneCustomGradientPanel1;
+        private Button button1;
+        private System.Windows.Forms.Timer timer5;
+        private Siticone.Desktop.UI.WinForms.SiticoneContainerControl siticoneContainerControl6;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox SelectText1;
+        private Siticone.Desktop.UI.WinForms.SiticoneContainerControl siticoneContainerControl7;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox SelectText3;
+        private Siticone.Desktop.UI.WinForms.SiticoneContainerControl siticoneContainerControl8;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox SelectText2;
+        private Siticone.Desktop.UI.WinForms.SiticoneContainerControl siticoneContainerControl9;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox SelectText4;
+        private Siticone.Desktop.UI.WinForms.SiticoneMessageDialog siticoneMessageDialog1;
     }
 }
